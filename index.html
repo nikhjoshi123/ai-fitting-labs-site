@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI FITTING LABS | True to Size</title>
+    <title>AI FITTING LABS | Business Integration</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -15,80 +15,104 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent;
         }
 
-        /* Video Background - No Crop */
-        .video-container { position: relative; height: 80vh; width: 100%; overflow: hidden; }
-        .video-background { width: 100%; height: 100%; object-fit: contain; z-index: -1; }
-
+        /* Hero Video - Top Focused */
+        .hero-video-container { position: relative; width: 100%; height: 70vh; background: #000; overflow: hidden; display: flex; align-items: center; justify-content: center; }
+        .hero-video { width: 100%; height: 100%; object-fit: contain; }
+        
         /* Slider Styles */
-        .comparison-slider { position: relative; width: 100%; max-width: 1000px; height: 600px; margin: 0 auto; overflow: hidden; border-radius: 4px; border: 1px solid rgba(255,255,255,0.1); }
+        .comparison-slider { position: relative; width: 100%; max-width: 1000px; height: 500px; margin: 0 auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
         .image-before, .image-after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; }
         .image-after { width: 50%; border-right: 2px solid #fff; z-index: 2; overflow: hidden; }
         .slider-handle { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #fff; z-index: 3; cursor: ew-resize; transform: translateX(-50%); }
-        .slider-handle::before { content: '↔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 40px; height: 40px; background: #fff; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; box-shadow: 0 0 20px rgba(0,0,0,0.5); }
+        .slider-handle::before { content: '↔'; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 35px; height: 35px; background: #fff; color: #000; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; }
 
-        .btn-black { background: #fff; color: #000; transition: all 0.3s ease; letter-spacing: 0.1em; }
-        .btn-black:hover { background: var(--gold); color: #fff; }
+        .step-card { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; transition: 0.3s; }
+        .step-card:hover { border-color: var(--gold); }
     </style>
 </head>
 <body>
 
-    <nav class="p-8 flex justify-between items-center absolute w-full z-50">
-        <div class="lux-font text-xl font-bold tracking-widest">AI FITTING LABS</div>
-        <a href="mailto:nikhjoshi123@gmail.com" class="text-[10px] tracking-[0.2em] border border-white/30 px-6 py-2 rounded-full uppercase">Book Demo</a>
+    <nav class="p-6 flex justify-between items-center bg-black/50 backdrop-blur-md sticky top-0 z-50 border-b border-white/5">
+        <div class="lux-font text-xl font-bold tracking-widest uppercase">AI Fitting Labs</div>
+        <a href="mailto:nikhjoshi123@gmail.com" class="text-[10px] tracking-widest border border-white/30 px-5 py-2 rounded-full uppercase hover:bg-white hover:text-black transition">Request Demo</a>
     </nav>
 
-    <section class="video-container flex items-center justify-center pt-20">
-        <video autoplay muted loop playsinline class="video-background">
+    <section class="hero-video-container">
+        <video autoplay muted loop playsinline class="hero-video">
             <source src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/main/ai-fitting-labs-site.mp4.mp4" type="video/mp4">
         </video>
-        <div class="absolute text-center">
-            <span class="text-[10px] tracking-[0.5em] text-gray-400 uppercase">The Future of Digital Fashion</span>
-            <h1 class="lux-font text-5xl md:text-7xl mt-4 gold-gradient italic">Try on Virtually.</h1>
+        <div class="absolute bottom-10 text-center w-full bg-gradient-to-t from-black to-transparent pb-10">
+            <span class="text-[10px] tracking-[0.5em] text-gray-400 uppercase">The Feature of Digital Fashion</span>
+            <h1 class="lux-font text-5xl md:text-6xl mt-4 gold-gradient italic">Try on Virtually.</h1>
         </div>
     </section>
 
-    <section class="py-24 px-6 max-w-5xl mx-auto text-center">
-        <h2 class="lux-font text-4xl md:text-6xl mb-8">True to Size.</h2>
-        <p class="text-xl md:text-2xl lux-font italic text-gray-300 mb-12">"You're Perfect, Just the Way You Are"</p>
-        
-        <div class="grid md:grid-cols-2 gap-12 text-left items-center">
-            <p class="text-gray-400 leading-relaxed font-light">
-                We ensure that every try-on stays true to the person's original body shape, preserving natural proportions without alteration. With realistic garment fitting that doesn't distort body size, muscle tone, or curves, our technology is the perfect solution for modern retailers.
-            </p>
-            <p class="text-gray-400 leading-relaxed font-light border-l border-white/10 pl-12">
-                By eliminating "Size Guesswork," we solve the e-commerce return crisis at its root. Giving your customers the confidence to shop with trust leads to a <b>60% drop in returns</b> and a massive boost in loyalty.
-            </p>
-        </div>
-    </section>
+    <section class="py-20 px-6 max-w-5xl mx-auto text-center">
+        <h2 class="lux-font text-4xl md:text-6xl mb-6">True to Size.</h2>
+        <p class="text-lg md:text-xl lux-font italic text-gray-400 mb-12 italic">"You're Perfect, Just the Way You Are"</p>
+        <p class="text-gray-400 leading-relaxed max-w-3xl mx-auto font-light mb-16">
+            Our technology preserves natural body proportions without alteration. By providing realistic garment fitting that respects human curves and muscle tone, we give retailers the ultimate tool to build <b>consumer trust</b> and eliminate the return crisis.
+        </p>
 
-    <section class="py-12 px-6">
         <div class="comparison-slider" id="slider">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=80&w=1200" class="image-before" alt="Original Body Shape">
-            
+            <img src="YOUR_BEFORE_IMAGE.jpg" class="image-before" alt="Original">
             <div class="image-after" id="after-div">
-                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&q=80&w=1200" style="width: 1000px; height: 600px; max-width: none; object-fit: cover;">
+                <img src="YOUR_AFTER_IMAGE.jpg" style="width: 1000px; height: 500px; max-width: none; object-fit: cover;">
             </div>
-            
             <div class="slider-handle" id="handle"></div>
         </div>
-        <div class="text-center mt-8 text-[10px] tracking-widest text-gray-500 uppercase">
-            ← Drag to witness the precision fitting →
+        <p class="mt-4 text-[10px] text-gray-500 tracking-widest uppercase">Swipe to see Precision Fitting</p>
+    </section>
+
+    <section class="py-24 px-6 bg-[#0c0c0c]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="lux-font text-3xl md:text-5xl mb-16 text-center">Implementation Journey</h2>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="step-card p-8">
+                    <div class="text-gold mb-6 text-sm font-bold tracking-widest opacity-50">PHASE 01</div>
+                    <h3 class="lux-font text-2xl mb-4 text-white">The Virtual Button</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">Add the "See It On Me" button to your Product Detail Pages (PDP). Our script detects your inventory and appears only when ready.</p>
+                    <div class="rounded-xl overflow-hidden bg-black border border-white/5">
+                        <img src="YOUR_BUTTON_SCREENSHOT.jpg" alt="Button Integration">
+                    </div>
+                </div>
+
+                <div class="step-card p-8">
+                    <div class="text-gold mb-6 text-sm font-bold tracking-widest opacity-50">PHASE 02</div>
+                    <h3 class="lux-font text-2xl mb-4 text-white">Branded Guidance</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">A luxurious pop-up guides your customer through the fitting process, ensuring high-quality inputs for perfect renders.</p>
+                    <div class="rounded-xl overflow-hidden bg-black border border-white/5">
+                        <img src="YOUR_GUIDE_SCREENSHOT.jpg" alt="Guidance UI">
+                    </div>
+                </div>
+
+                <div class="step-card p-8">
+                    <div class="text-gold mb-6 text-sm font-bold tracking-widest opacity-50">PHASE 03</div>
+                    <h3 class="lux-font text-2xl mb-4 text-white">Neural Output</h3>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">The final output allows the customer to witness the fit on their own body, driving conversion and reducing size-guesswork.</p>
+                    <div class="rounded-xl overflow-hidden bg-black border border-white/5">
+                        <img src="YOUR_OUTPUT_SCREENSHOT.jpg" alt="Final Output">
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <section class="py-32 text-center bg-white text-black mt-20">
-        <h2 class="lux-font text-5xl mb-6">Built for Retail Excellence.</h2>
-        <p class="max-w-2xl mx-auto mb-10 font-light px-6">
-            Our mission is to bridge the gap between digital inventory and the physical body. Seamless integration for your website. Instant trust for your customers.
-        </p>
-        <div class="flex flex-col md:flex-row gap-6 justify-center px-6">
-            <a href="mailto:nikhjoshi123@gmail.com" class="btn-black px-12 py-5 rounded-sm text-[10px] font-bold uppercase">Schedule Private Demo</a>
-            <a href="#" class="px-12 py-5 rounded-sm text-[10px] font-bold uppercase border border-black/20">Integration Guide (PDF)</a>
+    <section class="py-32 text-center bg-white text-black">
+        <div class="max-w-3xl mx-auto px-6">
+            <h2 class="lux-font text-5xl mb-8 leading-tight">Empower Your Retail Space.</h2>
+            <p class="text-gray-600 mb-12 font-light">Join the ranks of forward-thinking retailers who are decreasing returns and increasing cart values via AI intelligence.</p>
+            
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="mailto:nikhjoshi123@gmail.com" class="bg-black text-white px-10 py-5 rounded-sm text-xs font-bold tracking-widest uppercase hover:bg-gray-800 transition">Contact For Pricing</a>
+                <a href="/AI-Fitting-Labs-Apply.pdf" download class="border border-black px-10 py-5 rounded-sm text-xs font-bold tracking-widest uppercase hover:bg-black hover:text-white transition">Get Integration PDF</a>
+            </div>
         </div>
     </section>
 
-    <footer class="py-10 text-center text-gray-600 text-[10px] tracking-widest">
-        © 2026 AI FITTING LABS | LUXURY RETAIL TECHNOLOGY
+    <footer class="py-12 border-t border-white/5 text-center text-gray-600 text-[10px] tracking-widest">
+        © 2026 AI FITTING LABS | DESIGNED FOR THE FASHION ELITE
     </footer>
 
     <script>
@@ -97,8 +121,9 @@
         const handle = document.getElementById('handle');
 
         const slide = (e) => {
-            let x = (e.pageX || e.touches[0].pageX) - slider.getBoundingClientRect().left;
-            let percent = (x / slider.offsetWidth) * 100;
+            let rect = slider.getBoundingClientRect();
+            let x = (e.pageX || (e.touches ? e.touches[0].pageX : 0)) - rect.left;
+            let percent = (x / rect.width) * 100;
             if (percent < 0) percent = 0;
             if (percent > 100) percent = 100;
             afterDiv.style.width = percent + '%';
