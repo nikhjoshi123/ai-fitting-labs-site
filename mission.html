@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Mission | AI FITTING LABS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #c5a059; --dark: #050505; }
+        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; }
+        .lux-font { font-family: 'Playfair Display', serif; }
+        .text-gold-gradient { color: var(--gold); background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .nav-link { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--gold); }
+
+        .mission-bg {
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('https://images.unsplash.com/photo-1490481651871-ab68de25d43d?auto=format&fit=crop&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .quote-box { border-left: 1px solid var(--gold); padding-left: 2rem; margin-left: 1rem; }
+    </style>
+</head>
+<body>
+
+    <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/50 backdrop-blur-lg border-b border-white/5">
+        <div class="lux-font text-xl uppercase tracking-tighter text-white font-bold">AI FITTING LABS</div>
+        <div class="hidden md:flex gap-10">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="mission.html" class="nav-link active">Our Mission</a>
+        </div>
+    </nav>
+
+    <section class="relative h-screen flex items-center justify-center mission-bg overflow-hidden">
+        <div class="text-center z-10 px-6">
+            <h2 class="text-gold uppercase text-[10px] tracking-[0.6em] mb-4">The Soul of our Work</h2>
+            <h1 class="lux-font text-6xl md:text-8xl italic mb-8">Beyond the Code.</h1>
+            <p class="max-w-2xl mx-auto text-gray-400 font-light leading-relaxed italic">
+                "We don't just build virtual fitting rooms. We build the moment a customer looks at their screen and says, 'Yes, this is me.'"
+            </p>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-20 items-center">
+            <div>
+                <h3 class="lux-font text-4xl mb-8 italic text-gold-gradient">Fashion is Personal. <br>Technology should be too.</h3>
+                <div class="space-y-6 text-gray-400 leading-relaxed font-light">
+                    <p>
+                        In the world of fast e-commerce, the human element is often lost. People buy clothes because they want to feel a certain way—powerful, elegant, comfortable, or bold. But a static image on a website can't tell them if they'll feel that way.
+                    </p>
+                    <p>
+                        Our mission is to bridge the gap between <span class="text-white">"What if?"</span> and <span class="text-white">"It's mine."</span> We use AI to ensure that every body type, every skin tone, and every individual can see themselves reflected in your brand's vision.
+                    </p>
+                </div>
+            </div>
+            <div class="relative">
+                <div class="absolute -inset-4 border border-gold/20 rounded-3xl -rotate-3"></div>
+                <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80" alt="Fashion Mission" class="rounded-3xl relative z-10 grayscale hover:grayscale-0 transition duration-700">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-16">
+                <div class="space-y-4">
+                    <h4 class="lux-font text-2xl italic text-gold">Dignity in Fit</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed uppercase tracking-widest">
+                        We believe returns are a failure of communication. We give users the dignity of knowing exactly how they look before they click buy.
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="lux-font text-2xl italic text-gold">Honest Innovation</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed uppercase tracking-widest">
+                        As a startup, we don't hide behind jargon. We use cutting-edge GPU rendering to solve real human problems, not to look "cool."
+                    </p>
+                </div>
+                <div class="space-y-4">
+                    <h4 class="lux-font text-2xl italic text-gold">Sustainable Fashion</h4>
+                    <p class="text-xs text-gray-500 leading-relaxed uppercase tracking-widest">
+                        By reducing return rates, we reduce the carbon footprint of logistics. Better fit means a better planet.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6">
+        <div class="max-w-3xl mx-auto text-center">
+            <div class="quote-box mb-12">
+                <p class="lux-font text-3xl italic leading-relaxed text-white">
+                    "Our technology is the servant. Your customer's joy is the master."
+                </p>
+            </div>
+            <p class="text-gray-500 text-sm leading-relaxed mb-12 font-light">
+                We started AI Fitting Labs because we were tired of seeing brands struggle with the 'Return Cycle.' We wanted to create a tool that felt like a luxury boutique experience, available for everyone, anywhere. When you partner with us, you're not just buying a plugin. You're joining a movement to make the internet a more confident place to shop.
+            </p>
+            <a href="mailto:nikhjoshi123@gmail.com" class="inline-block bg-gold text-black px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white transition-all shadow-2xl">Start the Journey</a>
+        </div>
+    </section>
+
+    <footer class="py-20 border-t border-white/5 text-center">
+        <div class="lux-font text-2xl italic text-white mb-4">AI FITTING LABS</div>
+        <p class="text-[8px] text-gray-600 uppercase tracking-[0.4em] mb-10">© 2026 Crafted for the Visionaries</p>
+        <div class="flex justify-center gap-8">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="#" class="nav-link">Instagram</a>
+        </div>
+    </footer>
+
+</body>
+</html>
