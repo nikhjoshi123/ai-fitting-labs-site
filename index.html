@@ -16,12 +16,10 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;
         }
 
-        /* Video Blur */
         .hero-video-container { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
         .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(12px) brightness(0.4); }
         .hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; z-index: 10; pointer-events: none; }
 
-        /* ROI Circle Graph */
         .roi-circle {
             width: 220px; height: 220px; border-radius: 50%;
             background: conic-gradient(#c5a059 60%, #1a1a1a 0);
@@ -29,13 +27,13 @@
         }
         .roi-circle::after { content: "60%"; position: absolute; width: 180px; height: 180px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; }
 
-        /* Phase Slider Cinematic 2.35:1 */
+        /* Fixed Cinematic Phase Container */
         .cinematic-container { position: relative; width: 100%; aspect-ratio: 2.35 / 1; background: #000; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
         .phase-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease; visibility: hidden; }
         .phase-img.active { opacity: 1; visibility: visible; }
 
-        /* Slider */
-        .ba-slider { position: relative; width: 100%; aspect-ratio: 2.35 / 1; cursor: ew-resize; overflow: hidden; }
+        /* Fixed Slider */
+        .ba-slider { position: relative; width: 100%; aspect-ratio: 2.35 / 1; cursor: ew-resize; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
         .ba-after { position: absolute; top: 0; left: 0; height: 100%; width: 50%; border-right: 3px solid #fff; overflow: hidden; z-index: 5; }
         .ba-after img { width: 100vw; height: 100%; object-fit: cover; max-width: none; }
     </style>
@@ -52,7 +50,7 @@
             <source src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/main/ai-fitting-labs-site.mp4.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay">
-            <span class="text-[10px] tracking-[0.6em] text-gray-300 uppercase">The Future of Digital Fashion</span>
+            <span class="text-[10px] tracking-[0.6em] text-gray-300 uppercase font-semibold">The Gold Standard for Enterprise Fashion</span>
             <h1 class="lux-font text-6xl md:text-9xl mt-4 italic">Try on Virtually.</h1>
         </div>
     </section>
@@ -60,32 +58,32 @@
     <section class="py-32 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
         <div class="roi-circle"></div>
         <div class="text-left flex-1">
-            <h2 class="lux-font text-4xl md:text-6xl mb-6 italic leading-tight">One Button. <br><span class="text-gold font-bold">60% Fewer Returns.</span></h2>
+            <h2 class="lux-font text-4xl md:text-6xl mb-6 italic leading-tight">Slash Returns <br><span class="text-gold font-bold">Drive Confidence.</span></h2>
             <p class="text-gray-400 font-light leading-relaxed">
-                The future of online shopping solves the return crisis at its root. By empowering customers to visualize the fit on their own body, we eliminate size-uncertainty and massive logistics waste.
+                60% of online returns are due to size and fit issues. We provide the solution. By letting your buyers see the drape and fit on their own digital twin, you move from "maybe" to "purchased" instantly.
             </p>
         </div>
     </section>
 
     <section class="py-24 px-6 bg-[#080808]">
         <div class="max-w-6xl mx-auto">
-            <h2 class="lux-font text-4xl mb-12 text-center">How Looks on Your Web</h2>
+            <h2 class="lux-font text-4xl mb-12 text-center">Platform Integration Journey</h2>
             
             <div class="cinematic-container mb-12 shadow-2xl">
                 <img id="p1" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/no%20button%20appears%20in%20anyother%20page.png" class="phase-img active">
                 <img id="p2" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/appears%20only%20product%26catogry%20page.png" class="phase-img">
                 <img id="p3" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/after%20click%20our%20guidance%20pop%20up%20appears.png" class="phase-img">
                 <img id="p4" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/then%20its%20shows%20analyzing%20and%20wokring%20for%2020%20seconds.png" class="phase-img">
-                <img id="p5" src="https://github.com/nikhjoshi123/ai-fitting-labs-site/blob/9f3d4eb2da32c27f3f8be41f1aae1e37b91c18f4/final-output.png">
+                <img id="p5" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/9f3d4eb2da32c27f3f8be41f1aae1e37b91c18f4/final-output.png" class="phase-img">
             </div>
 
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    <div id="t1" class="phase-text"><h3 class="lux-font text-2xl">01. Hidden on Home</h3><p class="text-gray-500">Invisible on generic pages to maintain brand luxury.</p></div>
-                    <div id="t2" class="phase-text hidden"><h3 class="lux-font text-2xl">02. PDP Activation</h3><p class="text-gray-500">"See it on me" button appears strictly on product pages.</p></div>
-                    <div id="t3" class="phase-text hidden"><h3 class="lux-font text-2xl">03. Guidance Popup</h3><p class="text-gray-500">Ensuring customer pose and lighting for perfect AI renders.</p></div>
-                    <div id="t4" class="phase-text hidden"><h3 class="lux-font text-2xl">04. Neural Processing</h3><p class="text-gray-500">20 seconds of cloud-based garment fitting analysis.</p></div>
-                    <div id="t5" class="phase-text hidden"><h3 class="lux-font text-2xl">05. Conversion Scarcity</h3><p class="text-gray-500">Trial limits (5/day) to push immediate purchase decisions.</p></div>
+                    <div id="t1" class="phase-text"><h3 class="lux-font text-2xl">01. Hidden on Home</h3><p class="text-gray-500">Zero interference with your luxury landing experience.</p></div>
+                    <div id="t2" class="phase-text hidden"><h3 class="lux-font text-2xl">02. PDP Activation</h3><p class="text-gray-500">The "See it on Me" trigger activates only on relevant SKUs.</p></div>
+                    <div id="t3" class="phase-text hidden"><h3 class="lux-font text-2xl">03. Guidance Popup</h3><p class="text-gray-500">AI-led instructions ensure the buyer captures a perfect reference.</p></div>
+                    <div id="t4" class="phase-text hidden"><h3 class="lux-font text-2xl">04. Neural Rendering</h3><p class="text-gray-500">Cloud computing wraps your garments around their body shape.</p></div>
+                    <div id="t5" class="phase-text hidden"><h3 class="lux-font text-2xl">05. Decision Engine</h3><p class="text-gray-500">Trial limits (5/day) create urgency to checkout now.</p></div>
                 </div>
                 <div class="text-right">
                     <button onclick="nextPhase()" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gold transition shadow-xl">
@@ -96,46 +94,52 @@
         </div>
     </section>
 
-    <section class="py-32 px-6 text-center">
-        <h2 class="lux-font text-5xl md:text-7xl mb-12 italic">True to Size.</h2>
-        <div class="max-w-6xl mx-auto cinematic-container ba-slider" id="ba-parent">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000" class="w-full h-full object-cover">
-            <div class="ba-after" id="ba-overlay">
-                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=2000" id="ba-img">
+    <section class="py-32 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="lux-font text-5xl md:text-7xl mb-6 italic">Convert Browsers to Buyers.</h2>
+            <p class="text-gray-400 mb-16 max-w-3xl mx-auto">
+                When a buyer sees themselves in your clothes, the emotional barrier to purchase vanishes. Give them the confidence of a dressing room from their smartphone—increasing your AOV and customer loyalty.
+            </p>
+            
+            <div class="cinematic-container ba-slider" id="ba-parent">
+                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/before.jpeg" class="w-full h-full object-cover">
+                <div class="ba-after" id="ba-overlay">
+                    <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/after.png" id="ba-img">
+                </div>
             </div>
+            <p class="mt-8 text-[10px] tracking-[0.4em] text-gray-500 uppercase">Swipe to see the buyer's transformation</p>
         </div>
     </section>
 
     <section class="py-32 px-6 text-center">
-        <h2 class="lux-font text-4xl mb-6">Client Safety First.</h2>
-        <p class="text-gray-500 max-w-2xl mx-auto mb-24 italic font-light italic">"Safety is the ultimate luxury. Images are analyzed and deleted in real-time. No data storage."</p>
+        <h2 class="lux-font text-4xl mb-6">Security for Your Customers.</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto mb-24 italic font-light">"Trust is built on privacy. No images are stored. No data is harvested. Just pure, temporary neural rendering."</p>
         <h2 class="lux-font text-6xl md:text-[10rem] tracking-tighter uppercase text-white/5 leading-none mb-24 select-none">WE REDUCE RETURNS.</h2>
         <a href="#" class="bg-white text-black px-16 py-6 rounded-full font-bold uppercase tracking-[0.3em] hover:bg-gold transition shadow-2xl">Get Integration Guide</a>
     </section>
 
     <script>
-        // PHASE SWITCHER SCRIPT
+        // PHASE SWITCHER
         let current = 1;
         function nextPhase() {
-            // Hide current
             document.getElementById('p' + current).classList.remove('active');
             document.getElementById('t' + current).classList.add('hidden');
-            
-            // Increment
             current = (current % 5) + 1;
-            
-            // Show next
             document.getElementById('p' + current).classList.add('active');
             document.getElementById('t' + current).classList.remove('hidden');
         }
 
-        // BEFORE/AFTER SLIDER SCRIPT
+        // SLIDER
         const parent = document.getElementById('ba-parent');
         const overlay = document.getElementById('ba-overlay');
         const img = document.getElementById('ba-img');
 
-        function sync() { img.style.width = parent.offsetWidth + 'px'; }
-        window.onresize = sync; sync();
+        function sync() { 
+            img.style.width = parent.offsetWidth + 'px'; 
+            img.style.height = parent.offsetHeight + 'px'; 
+        }
+        window.onresize = sync;
+        sync();
 
         function move(e) {
             let x = (e.pageX || (e.touches ? e.touches[0].pageX : 0)) - parent.getBoundingClientRect().left;
