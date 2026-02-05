@@ -22,7 +22,8 @@
         }
         .investment-card:hover { border-color: var(--gold); background: rgba(197, 160, 89, 0.03); }
 
-        input[type="range"] { accent-color: var(--gold); cursor: pointer; }
+        input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 8px; border-radius: 8px; color: white; width: 100%; margin-top: 5px; }
+        label { font-size: 11px; text-transform: uppercase; color: #666; letter-spacing: 1px; }
     </style>
 </head>
 <body>
@@ -36,115 +37,123 @@
         </div>
     </nav>
 
-    <section class="pt-48 pb-20 px-6 text-center">
-        <span class="text-gold font-bold text-[10px] uppercase tracking-[0.5em] mb-4 block">Transparency First</span>
-        <h1 class="lux-font text-5xl md:text-7xl italic text-gold-gradient mb-8">Why we charge what we charge.</h1>
-        <p class="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
-            Running high-end Neural Engines isn't cheap. We don't just sell a button; we sell high-performance GPU compute time, fabric physics research, and a commitment to your brand's growth.
-        </p>
-    </section>
+    <section class="pt-48 pb-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="lux-font text-5xl md:text-7xl italic text-gold-gradient mb-4">Investment Tiers</h1>
+            <p class="text-gray-500 uppercase text-[10px] tracking-[0.4em]">Select the scale that matches your brand's ambition</p>
+        </div>
 
-    <section class="pb-32 px-6 max-w-6xl mx-auto">
         <div class="grid md:grid-cols-3 gap-8">
-            
-            <div class="investment-card p-10 rounded-3xl border border-white/5">
-                <h3 class="lux-font text-3xl mb-4 italic">Professional</h3>
-                <div class="mb-6">
-                    <span class="text-4xl font-bold">₹30,000</span>
-                    <p class="text-[10px] text-gold uppercase mt-2">Covers 500 High-Res Generations</p>
-                </div>
-                <p class="text-gray-500 text-sm mb-8 leading-relaxed">
-                    Out of this, <span class="text-white">$100 goes directly into server costs</span> and GPU compute. The rest is re-invested to keep your integration bug-free.
-                </p>
+            <div class="investment-card p-10 rounded-3xl">
+                <h3 class="lux-font text-2xl mb-4 italic">Standard</h3>
+                <div class="mb-6"><span class="text-4xl font-bold">₹30,000</span></div>
+                <p class="text-gray-500 text-sm mb-8 leading-relaxed italic">Ideal for 500 High-Fidelity Generations</p>
                 <a href="mailto:nikhjoshi123@gmail.com" class="block bg-white text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition">Secure Spot</a>
             </div>
 
-            <div class="investment-card p-10 rounded-3xl border-gold/40 relative scale-105 bg-black">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[8px] font-bold px-4 py-1 rounded-full uppercase">High Volume</div>
-                <h3 class="lux-font text-3xl mb-4 italic text-gold-gradient">Enterprise</h3>
-                <div class="mb-6">
-                    <span class="text-4xl font-bold">₹70,000</span>
-                    <p class="text-[10px] text-gold uppercase mt-2">Covers 1500+ Generations</p>
-                </div>
-                <p class="text-gray-500 text-sm mb-8 leading-relaxed">
-                    We re-invest <span class="text-white">$250 back into the AI model</span> specifically for your brand's unique fabric textures.
-                </p>
-                <a href="mailto:nikhjoshi123@gmail.com" class="block bg-gold text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white transition">Secure Spot</a>
+            <div class="investment-card p-10 rounded-3xl border-gold/50 relative scale-105 bg-black">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[8px] font-bold px-4 py-1 rounded-full uppercase">High Performance</div>
+                <h3 class="lux-font text-2xl mb-4 italic text-gold-gradient">Growth</h3>
+                <div class="mb-6"><span class="text-4xl font-bold">₹70,000</span></div>
+                <p class="text-gray-500 text-sm mb-8 leading-relaxed italic">Ideal for 1500+ Generations</p>
+                <a href="mailto:nikhjoshi123@gmail.com" class="block bg-gold text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white transition shadow-xl">Secure Spot</a>
             </div>
 
-            <div class="investment-card p-10 rounded-3xl border border-white/5">
-                <h3 class="lux-font text-3xl mb-4 italic">Bespoke</h3>
-                <div class="mb-6">
-                    <span class="text-4xl font-bold italic">Custom</span>
-                    <p class="text-[10px] text-gray-500 uppercase mt-2">Scalable Infrastructure</p>
-                </div>
-                <p class="text-gray-400 text-sm mb-8">For brands seeing 10,000+ monthly visits. Dedicated GPU pipelines for zero-latency fitting.</p>
-                <a href="mailto:nikhjoshi123@gmail.com" class="block border border-white/20 text-white text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Talk to Us</a>
+            <div class="investment-card p-10 rounded-3xl">
+                <h3 class="lux-font text-2xl mb-4 italic">Scale</h3>
+                <div class="mb-6"><span class="text-4xl font-bold">Custom</span></div>
+                <p class="text-gray-500 text-sm mb-8 leading-relaxed italic">Unlimited compute for global volume</p>
+                <a href="mailto:nikhjoshi123@gmail.com" class="block border border-white/20 text-white text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Consult</a>
             </div>
         </div>
 
-        <div class="mt-12 p-8 bg-white/5 rounded-2xl border border-white/10 max-w-3xl mx-auto text-center">
-            <h4 class="text-gold font-bold text-xs uppercase tracking-widest mb-2">The Process</h4>
-            <p class="text-gray-300 text-sm italic">"Pay <strong>₹10,000 advance</strong> to secure your slot. We provide the code immediately. Your button starts working within <strong>2 hours</strong>."</p>
+        <div class="mt-16 text-center">
+            <p class="text-sm italic text-gray-400">
+                <span class="text-gold font-bold">The Protocol:</span> Pay ₹10,000 advance. Receive your integration code immediately. <br>Your "Try It On" button goes live in <strong>2 hours</strong>.
+            </p>
         </div>
     </section>
 
     <section class="py-32 bg-white/[0.02] border-y border-white/5">
-        <div class="max-w-4xl mx-auto px-6 text-center">
-            <h2 class="lux-font text-4xl mb-12 italic">Savings Calculator</h2>
-            <div class="bg-black/40 p-10 rounded-3xl border border-white/5">
-                <p class="text-sm text-gray-400 mb-4">How many returns do you get monthly?</p>
-                <input type="range" id="returnRange" min="10" max="500" value="50" class="w-full h-2 rounded-lg appearance-none bg-white/10 mb-6">
-                <div class="flex justify-between text-gold font-bold text-xl mb-10">
-                    <span id="returnCount">50 Returns</span>
-                    <span id="savingAmount">₹22,500 Loss</span>
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-20 items-center">
+                <div>
+                    <h2 class="lux-font text-4xl mb-8 italic">Why we charge this.</h2>
+                    <div class="space-y-6 text-gray-400 text-sm leading-relaxed">
+                        <p>We are a startup building a system very few people on earth are doing. Every generation requires heavy GPU compute. For a <span class="text-white">₹30k plan, we invest $100</span> back into servers. For the <span class="text-white">₹70k plan, we re-invest $250</span> into model training for your specific fabrics.</p>
+                        <p>We aren't just selling a button; we are selling <span class="text-white">Engagement and User Experience</span>. We take full responsibility for privacy and data security.</p>
+                        <ul class="space-y-3 text-xs uppercase tracking-wider text-gold font-bold">
+                            <li>• 24HR Support Response</li>
+                            <li>• Zero-Redirect Integration (Users stay on your site)</li>
+                            <li>• Redundant Backup API Pipelines</li>
+                            <li>• 5-Trial Cap per user to ensure quality</li>
+                        </ul>
+                    </div>
                 </div>
-                <p class="text-xs text-gray-500 uppercase tracking-widest leading-loose">
-                    Our system eliminates 'Fitting Uncertainty.' <br>Preventing these returns saves you more than the subscription cost.
-                </p>
+                <div class="bg-black/40 p-10 rounded-3xl border border-white/10">
+                    <h3 class="lux-font text-2xl mb-6 italic">Our Guarantee.</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">We know the fear of advance payments. But to build a system that upgrades your brand's soul, we need your trust. We are not just connecting a button; we are continually updating the logic to ensure your returns drop every month.</p>
+                    <p class="text-gold italic text-sm">"Trust is the bridge between a startup and a revolution."</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="py-32 px-6 max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-20">
-            <div>
-                <h3 class="lux-font text-3xl mb-6 italic">The Trust Gap.</h3>
-                <p class="text-gray-500 text-sm leading-relaxed mb-6">
-                    We know the fear of advance payments. But as a boutique AI startup, we dedicate real human time and expensive computing resources the moment you sign up. 
-                </p>
-                <p class="text-gold font-bold text-sm italic">
-                    We aren't just selling a button. We are upgrading your site's soul.
-                </p>
+    <section class="py-32 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="lux-font text-4xl mb-4 italic">Calculate Your Monthly Loss.</h2>
+                <p class="text-gray-500 text-sm uppercase tracking-widest">See how much Fitting Uncertainty is costing you.</p>
             </div>
-            <div class="space-y-6">
-                <div class="flex gap-4">
-                    <span class="text-gold font-bold">01.</span>
-                    <p class="text-sm text-gray-400"><strong class="text-white">Stay On-Site:</strong> Customers never leave your brand environment.</p>
+
+            <div class="grid md:grid-cols-2 gap-12 bg-white/[0.02] p-12 rounded-3xl border border-white/5">
+                <div class="space-y-6">
+                    <div>
+                        <label>Monthly Orders</label>
+                        <input type="number" id="orders" value="1000" oninput="calculate()">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label>Return Rate (%)</label>
+                            <input type="number" id="rate" value="30" oninput="calculate()">
+                        </div>
+                        <div>
+                            <label>Shipping/Order</label>
+                            <input type="number" id="ship" value="100" oninput="calculate()">
+                        </div>
+                    </div>
+                    <div>
+                        <label>Inventory/Maintenance Cost per piece</label>
+                        <input type="number" id="maint" value="50" oninput="calculate()">
+                    </div>
                 </div>
-                <div class="flex gap-4">
-                    <span class="text-gold font-bold">02.</span>
-                    <p class="text-sm text-gray-400"><strong class="text-white">Anti-Abuse:</strong> 5 trials per user ensures high-intent buyers only.</p>
-                </div>
-                <div class="flex gap-4">
-                    <span class="text-gold font-bold">03.</span>
-                    <p class="text-sm text-gray-400"><strong class="text-white">24hr Backup:</strong> If an API crashes, our backup servers trigger instantly.</p>
+
+                <div class="flex flex-col justify-center text-center md:text-left border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12">
+                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Your Current Monthly Loss</p>
+                    <div class="text-5xl font-bold text-red-500 mb-6" id="totalLoss">₹45,000</div>
+                    <p class="text-sm text-gray-400 italic mb-4">Our ₹30k plan saves you from this loss while gaining profit from higher engagement.</p>
+                    <div class="p-4 bg-gold/10 border border-gold/20 rounded-xl">
+                        <p class="text-[10px] text-gold font-bold uppercase mb-1">The Data Says:</p>
+                        <p class="text-xs text-white leading-relaxed">92% of users who try your clothes 5 times buy with certainty. Return rates for these users drop to <span class="text-gold">under 4%</span>.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <script>
-        const range = document.getElementById('returnRange');
-        const count = document.getElementById('returnCount');
-        const saving = document.getElementById('savingAmount');
+        function calculate() {
+            const orders = document.getElementById('orders').value;
+            const rate = document.getElementById('rate').value / 100;
+            const shipping = document.getElementById('ship').value;
+            const maintenance = document.getElementById('maint').value;
 
-        range.addEventListener('input', (e) => {
-            const val = e.target.value;
-            count.innerText = val + " Returns";
-            // Assuming average return cost (shipping + restocking) is ₹450
-            saving.innerText = "₹" + (val * 450).toLocaleString() + " Loss";
-        });
+            const totalReturns = orders * rate;
+            const lossPerReturn = parseInt(shipping) + parseInt(maintenance);
+            const finalLoss = totalReturns * lossPerReturn;
+
+            document.getElementById('totalLoss').innerText = "₹" + finalLoss.toLocaleString();
+        }
     </script>
 </body>
 </html>
