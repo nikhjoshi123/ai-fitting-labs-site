@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pricing | AI FITTING LABS</title>
+    <title>Investment | AI FITTING LABS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -12,28 +12,23 @@
         .lux-font { font-family: 'Playfair Display', serif; }
         .text-gold-gradient { color: var(--gold); background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Navigation Styling */
         .nav-link { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
         .nav-link:hover, .nav-link.active { color: var(--gold); }
 
-        /* Card Styling */
-        .price-card {
-            background: linear-gradient(145deg, #0f0f0f, #050505);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        .investment-card {
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.4s ease;
         }
-        .price-card:hover {
-            border-color: var(--gold);
-            transform: translateY(-10px);
-        }
+        .investment-card:hover { border-color: var(--gold); background: rgba(197, 160, 89, 0.03); }
+
+        input[type="range"] { accent-color: var(--gold); cursor: pointer; }
     </style>
 </head>
 <body>
 
     <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/50 backdrop-blur-lg border-b border-white/5">
-        <div class="lux-font text-xl uppercase tracking-tighter text-white font-bold">
-            AI FITTING LABS
-        </div>
+        <div class="lux-font text-xl uppercase tracking-tighter text-white font-bold">AI FITTING LABS</div>
         <div class="hidden md:flex gap-10">
             <a href="index.html" class="nav-link">Home</a>
             <a href="pricing.html" class="nav-link active">Pricing</a>
@@ -42,68 +37,114 @@
     </nav>
 
     <section class="pt-48 pb-20 px-6 text-center">
-        <h1 class="lux-font text-5xl md:text-7xl italic text-gold-gradient mb-4">Investment Tiers</h1>
-        <p class="text-gray-500 max-w-xl mx-auto font-light text-sm uppercase tracking-widest">Select the scale that matches your brand's ambition.</p>
+        <span class="text-gold font-bold text-[10px] uppercase tracking-[0.5em] mb-4 block">Transparency First</span>
+        <h1 class="lux-font text-5xl md:text-7xl italic text-gold-gradient mb-8">Why we charge what we charge.</h1>
+        <p class="text-gray-400 max-w-2xl mx-auto font-light leading-relaxed">
+            Running high-end Neural Engines isn't cheap. We don't just sell a button; we sell high-performance GPU compute time, fabric physics research, and a commitment to your brand's growth.
+        </p>
     </section>
 
     <section class="pb-32 px-6 max-w-6xl mx-auto">
         <div class="grid md:grid-cols-3 gap-8">
             
-            <div class="price-card p-10 rounded-2xl flex flex-col">
-                <span class="text-gray-600 text-[10px] uppercase tracking-widest mb-2">Boutique</span>
-                <h3 class="lux-font text-2xl mb-6 italic">Emerging</h3>
-                <div class="mb-8">
-                    <span class="text-4xl font-bold">₹15,000</span>
-                    <span class="text-gray-500 text-sm">/mo</span>
+            <div class="investment-card p-10 rounded-3xl border border-white/5">
+                <h3 class="lux-font text-3xl mb-4 italic">Professional</h3>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold">₹30,000</span>
+                    <p class="text-[10px] text-gold uppercase mt-2">Covers 500 High-Res Generations</p>
                 </div>
-                <ul class="text-sm space-y-4 mb-12 flex-1 text-gray-400">
-                    <li>• Up to 500 Try-ons</li>
-                    <li>• Standard Physics Engine</li>
-                    <li>• Shopify Integration</li>
-                </ul>
-                <a href="#" class="border border-white/10 text-white py-4 rounded-full text-[10px] font-bold uppercase tracking-widest text-center hover:bg-white hover:text-black transition">Get Started</a>
+                <p class="text-gray-500 text-sm mb-8 leading-relaxed">
+                    Out of this, <span class="text-white">$100 goes directly into server costs</span> and GPU compute. The rest is re-invested to keep your integration bug-free.
+                </p>
+                <a href="mailto:nikhjoshi123@gmail.com" class="block bg-white text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition">Secure Spot</a>
             </div>
 
-            <div class="price-card p-10 rounded-2xl flex flex-col border-gold/50 bg-white/[0.02] relative scale-105">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[8px] font-bold px-4 py-1 rounded-full uppercase tracking-[0.2em]">Recommended</div>
-                <span class="text-gold text-[10px] uppercase tracking-widest mb-2 font-bold">Established</span>
-                <h3 class="lux-font text-2xl mb-6 italic">Professional</h3>
-                <div class="mb-8">
-                    <span class="text-4xl font-bold text-gold-gradient">₹30,000</span>
-                    <span class="text-gray-500 text-sm">/mo</span>
+            <div class="investment-card p-10 rounded-3xl border-gold/40 relative scale-105 bg-black">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[8px] font-bold px-4 py-1 rounded-full uppercase">High Volume</div>
+                <h3 class="lux-font text-3xl mb-4 italic text-gold-gradient">Enterprise</h3>
+                <div class="mb-6">
+                    <span class="text-4xl font-bold">₹70,000</span>
+                    <p class="text-[10px] text-gold uppercase mt-2">Covers 1500+ Generations</p>
                 </div>
-                <ul class="text-sm space-y-4 mb-12 flex-1 text-white">
-                    <li>• Up to 2,500 Try-ons</li>
-                    <li>• High-Fidelity Neural Drape</li>
-                    <li>• Priority Brand Support</li>
-                    <li>• Advanced Analytics</li>
-                </ul>
-                <a href="mailto:nikhjoshi123@gmail.com" class="bg-gold text-black py-4 rounded-full text-[10px] font-bold uppercase tracking-widest text-center hover:bg-white transition shadow-xl">Secure This Plan</a>
+                <p class="text-gray-500 text-sm mb-8 leading-relaxed">
+                    We re-invest <span class="text-white">$250 back into the AI model</span> specifically for your brand's unique fabric textures.
+                </p>
+                <a href="mailto:nikhjoshi123@gmail.com" class="block bg-gold text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white transition">Secure Spot</a>
             </div>
 
-            <div class="price-card p-10 rounded-2xl flex flex-col">
-                <span class="text-gray-600 text-[10px] uppercase tracking-widest mb-2">Retailer</span>
-                <h3 class="lux-font text-2xl mb-6 italic">Enterprise</h3>
-                <div class="mb-8">
+            <div class="investment-card p-10 rounded-3xl border border-white/5">
+                <h3 class="lux-font text-3xl mb-4 italic">Bespoke</h3>
+                <div class="mb-6">
                     <span class="text-4xl font-bold italic">Custom</span>
+                    <p class="text-[10px] text-gray-500 uppercase mt-2">Scalable Infrastructure</p>
                 </div>
-                <ul class="text-sm space-y-4 mb-12 flex-1 text-gray-400">
-                    <li>• Unlimited Access</li>
-                    <li>• Custom API Implementation</li>
-                    <li>• White-label Experience</li>
-                </ul>
-                <a href="mailto:nikhjoshi123@gmail.com" class="border border-white/10 text-white py-4 rounded-full text-[10px] font-bold uppercase tracking-widest text-center hover:bg-white hover:text-black transition">Consult Sales</a>
+                <p class="text-gray-400 text-sm mb-8">For brands seeing 10,000+ monthly visits. Dedicated GPU pipelines for zero-latency fitting.</p>
+                <a href="mailto:nikhjoshi123@gmail.com" class="block border border-white/20 text-white text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Talk to Us</a>
             </div>
+        </div>
 
+        <div class="mt-12 p-8 bg-white/5 rounded-2xl border border-white/10 max-w-3xl mx-auto text-center">
+            <h4 class="text-gold font-bold text-xs uppercase tracking-widest mb-2">The Process</h4>
+            <p class="text-gray-300 text-sm italic">"Pay <strong>₹10,000 advance</strong> to secure your slot. We provide the code immediately. Your button starts working within <strong>2 hours</strong>."</p>
         </div>
     </section>
 
-    <section class="py-20 border-t border-white/5 bg-white/[0.01]">
-        <div class="max-w-4xl mx-auto text-center px-6">
-            <h4 class="lux-font text-2xl mb-4 italic text-gray-300">"Efficiency is the ultimate luxury."</h4>
-            <p class="text-gray-500 text-sm font-light">Join the brands reducing return logistics costs by 60% with AI Fitting Labs.</p>
+    <section class="py-32 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-4xl mx-auto px-6 text-center">
+            <h2 class="lux-font text-4xl mb-12 italic">Savings Calculator</h2>
+            <div class="bg-black/40 p-10 rounded-3xl border border-white/5">
+                <p class="text-sm text-gray-400 mb-4">How many returns do you get monthly?</p>
+                <input type="range" id="returnRange" min="10" max="500" value="50" class="w-full h-2 rounded-lg appearance-none bg-white/10 mb-6">
+                <div class="flex justify-between text-gold font-bold text-xl mb-10">
+                    <span id="returnCount">50 Returns</span>
+                    <span id="savingAmount">₹22,500 Loss</span>
+                </div>
+                <p class="text-xs text-gray-500 uppercase tracking-widest leading-loose">
+                    Our system eliminates 'Fitting Uncertainty.' <br>Preventing these returns saves you more than the subscription cost.
+                </p>
+            </div>
         </div>
     </section>
 
+    <section class="py-32 px-6 max-w-5xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-20">
+            <div>
+                <h3 class="lux-font text-3xl mb-6 italic">The Trust Gap.</h3>
+                <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                    We know the fear of advance payments. But as a boutique AI startup, we dedicate real human time and expensive computing resources the moment you sign up. 
+                </p>
+                <p class="text-gold font-bold text-sm italic">
+                    We aren't just selling a button. We are upgrading your site's soul.
+                </p>
+            </div>
+            <div class="space-y-6">
+                <div class="flex gap-4">
+                    <span class="text-gold font-bold">01.</span>
+                    <p class="text-sm text-gray-400"><strong class="text-white">Stay On-Site:</strong> Customers never leave your brand environment.</p>
+                </div>
+                <div class="flex gap-4">
+                    <span class="text-gold font-bold">02.</span>
+                    <p class="text-sm text-gray-400"><strong class="text-white">Anti-Abuse:</strong> 5 trials per user ensures high-intent buyers only.</p>
+                </div>
+                <div class="flex gap-4">
+                    <span class="text-gold font-bold">03.</span>
+                    <p class="text-sm text-gray-400"><strong class="text-white">24hr Backup:</strong> If an API crashes, our backup servers trigger instantly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        const range = document.getElementById('returnRange');
+        const count = document.getElementById('returnCount');
+        const saving = document.getElementById('savingAmount');
+
+        range.addEventListener('input', (e) => {
+            const val = e.target.value;
+            count.innerText = val + " Returns";
+            // Assuming average return cost (shipping + restocking) is ₹450
+            saving.innerText = "₹" + (val * 450).toLocaleString() + " Loss";
+        });
+    </script>
 </body>
 </html>
