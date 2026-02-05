@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | AI FITTING LABS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #c5a059; --dark: #050505; }
+        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; }
+        .lux-font { font-family: 'Playfair Display', serif; }
+        .text-gold-gradient { color: var(--gold); background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .price-card {
+            background: linear-gradient(145deg, #0f0f0f, #050505);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            transition: all 0.4s ease;
+        }
+        .price-card:hover {
+            border-color: var(--gold);
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(197, 160, 89, 0.1);
+        }
+        .check-icon { color: var(--gold); margin-right: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav class="w-full px-8 py-6 flex justify-between items-center bg-black/50 backdrop-blur-md border-b border-white/5">
+        <div class="lux-font text-xl uppercase tracking-tighter text-white">AI FITTING LABS</div>
+        <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-400 hover:text-white transition">← Back to Home</a>
+    </nav>
+
+    <section class="py-24 px-6 text-center">
+        <span class="text-gold font-bold text-xs uppercase tracking-[0.5em] mb-4 block">Flexible Investment</span>
+        <h1 class="lux-font text-5xl md:text-7xl italic text-gold-gradient mb-6">Scale with Confidence</h1>
+        <p class="text-gray-500 max-w-2xl mx-auto font-light">Choose the plan that fits your brand's volume. Every plan includes our core Neural Drape™ engine.</p>
+    </section>
+
+    <section class="pb-32 px-6 max-w-7xl mx-auto">
+        <div class="grid md:grid-cols-3 gap-8">
+            
+            <div class="price-card p-10 rounded-3xl flex flex-col">
+                <h3 class="lux-font text-2xl mb-2">Emerging</h3>
+                <p class="text-gray-500 text-sm mb-8">For boutique brands finding their fit.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold">₹15,000</span>
+                    <span class="text-gray-500 text-sm">/month</span>
+                </div>
+                <ul class="text-sm space-y-4 mb-12 flex-1 text-gray-300">
+                    <li><span class="check-icon">✓</span> Up to 500 Virtual Try-ons</li>
+                    <li><span class="check-icon">✓</span> Standard Neural Rendering</li>
+                    <li><span class="check-icon">✓</span> Shopify/WooCommerce Plugin</li>
+                    <li><span class="check-icon">✓</span> Email Support</li>
+                </ul>
+                <a href="#" class="border border-white/20 text-white py-4 rounded-xl text-[10px] font-bold uppercase tracking-widest text-center hover:bg-white hover:text-black transition">Get Started</a>
+            </div>
+
+            <div class="price-card p-10 rounded-3xl flex flex-col border-gold relative scale-105 bg-black">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-gold text-black text-[9px] font-bold px-4 py-1 rounded-full uppercase tracking-widest">Most Popular</div>
+                <h3 class="lux-font text-2xl mb-2">Professional</h3>
+                <p class="text-gray-500 text-sm mb-8">The sweet spot for growing labels.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold text-gold-gradient">₹30,000</span>
+                    <span class="text-gray-500 text-sm">/month</span>
+                </div>
+                <ul class="text-sm space-y-4 mb-12 flex-1 text-white">
+                    <li><span class="check-icon">✓</span> Up to 2,500 Virtual Try-ons</li>
+                    <li><span class="check-icon">✓</span> High-Fidelity Fabric Physics</li>
+                    <li><span class="check-icon">✓</span> Priority Implementation</li>
+                    <li><span class="check-icon">✓</span> Advanced Analytics Dashboard</li>
+                    <li><span class="check-icon">✓</span> WhatsApp Support</li>
+                </ul>
+                <a href="mailto:nikhjoshi123@gmail.com" class="bg-gold text-black py-4 rounded-xl text-[10px] font-bold uppercase tracking-widest text-center hover:bg-white transition">Select Professional</a>
+            </div>
+
+            <div class="price-card p-10 rounded-3xl flex flex-col">
+                <h3 class="lux-font text-2xl mb-2">Enterprise</h3>
+                <p class="text-gray-500 text-sm mb-8">Custom power for global retailers.</p>
+                <div class="mb-8">
+                    <span class="text-4xl font-bold italic">Custom</span>
+                </div>
+                <ul class="text-sm space-y-4 mb-12 flex-1 text-gray-300">
+                    <li><span class="check-icon">✓</span> Unlimited Virtual Try-ons</li>
+                    <li><span class="check-icon">✓</span> Custom API Integration</li>
+                    <li><span class="check-icon">✓</span> Dedicated Account Manager</li>
+                    <li><span class="check-icon">✓</span> White-label Interface</li>
+                    <li><span class="check-icon">✓</span> 24/7 Phone Support</li>
+                </ul>
+                <a href="mailto:nikhjoshi123@gmail.com" class="border border-white/20 text-white py-4 rounded-xl text-[10px] font-bold uppercase tracking-widest text-center hover:bg-white hover:text-black transition">Contact Sales</a>
+            </div>
+
+        </div>
+    </section>
+
+    <section class="py-24 bg-white/[0.02] border-t border-white/5">
+        <div class="max-w-4xl mx-auto px-6">
+            <h2 class="lux-font text-3xl mb-12 text-center italic">The ROI is simple.</h2>
+            <div class="grid grid-cols-2 gap-10">
+                <div class="text-center p-8 border border-white/5 rounded-2xl">
+                    <p class="text-gray-500 text-xs uppercase mb-2">Cost of 100 Returns</p>
+                    <p class="text-3xl font-light text-red-500">~ ₹45,000+</p>
+                    <p class="text-[10px] text-gray-600 mt-2">(Shipping + Restocking + Loss)</p>
+                </div>
+                <div class="text-center p-8 border border-gold/20 rounded-2xl bg-gold/5">
+                    <p class="text-gold text-xs uppercase mb-2">Our Subscription</p>
+                    <p class="text-3xl font-bold text-gold">₹30,000</p>
+                    <p class="text-[10px] text-gold/60 mt-2">(Stops the returns before they happen)</p>
+                </div>
+            </div>
+            <p class="text-center mt-12 text-gray-500 text-sm italic">"Our system pays for itself by preventing just 70 returns a month."</p>
+        </div>
+    </section>
+
+</body>
+</html>
