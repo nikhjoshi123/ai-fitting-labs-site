@@ -53,25 +53,26 @@
             <source src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/main/ai-fitting-labs-site.mp4.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay">
-            <span class="text-[10px] tracking-[0.6em] text-gray-400 uppercase font-bold mb-4 block">Redefining E-Commerce Logic</span>
-            <h1 class="lux-font text-5xl md:text-8xl italic text-gold-gradient">Let Customers Try Your Clothes</h1>
+            <span class="text-[10px] tracking-[0.6em] text-gray-400 uppercase font-bold mb-4 block">Give Uniqueness To Your Brand</span>
+            <h1 class="lux-font text-5xl md:text-8xl italic text-gold-gradient mb-12">Let Customers Try Your Clothes</h1>
+            
+            <div class="flex flex-col md:flex-row justify-center items-center gap-6 pointer-events-auto">
+                <a href="mailto:nikhjoshi123@gmail.com" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-64 text-center">Book a Demo</a>
+                <a href="#" class="backdrop-blur-md border border-white/40 text-white px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 w-64 text-center">Implementation PDF</a>
+            </div>
         </div>
     </section>
 
     <section class="py-32 px-6 max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center gap-16 mb-20">
+        <div class="flex flex-col md:flex-row items-center gap-16">
             <div class="roi-circle"></div>
             <div class="text-left flex-1">
                 <h2 class="lux-font text-4xl md:text-6xl mb-6 italic leading-tight">60% Less Returns. <br><span class="text-white font-bold text-3xl">By using just one button.</span></h2>
                 <p class="text-gray-400 font-light leading-relaxed">
-                    When a buyer can visualize themselves in your fabric, they don't "guess-buy." They purchase with certainty. Our data shows a 60% reduction in return shipping costs for brands using our neural engine.
+                    Industry data shows that 30% of all e-commerce returns happen solely because of "Fitting Uncertainty." Customers don't return clothes because they are bad; they return them because they didn't know how the fabric would sit on their specific frame. <br><br>
+                    <strong>We eliminate the "Will this fit me?" doubt.</strong> When they see it, they know it. When they know it, they keep it.
                 </p>
             </div>
-        </div>
-        
-        <div class="flex flex-col md:flex-row justify-center items-center gap-6">
-            <a href="mailto:nikhjoshi123@gmail.com" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-full md:w-auto text-center">Book a Demo</a>
-            <a href="#" class="border border-white/20 text-white px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 w-full md:w-auto text-center">Implementation PDF</a>
         </div>
     </section>
 
@@ -133,7 +134,6 @@
                     <p class="text-gray-500 text-sm leading-relaxed">Our infrastructure is SOC2 compliant, ensuring that your brand's reputation and your customer's data are protected by world-class encryption.</p>
                 </div>
             </div>
-            <p class="mt-16 text-gray-500 italic text-sm">"Trust is the bridge between a visitor and a loyal customer. We build that bridge."</p>
         </div>
     </section>
 
@@ -153,7 +153,7 @@
             document.getElementById('t' + pCurrent).classList.remove('hidden');
         }
 
-        // Auto-Slider Logic (Fading between Before and After)
+        // Auto-Slider Logic
         const b = document.getElementById('slide-before');
         const a = document.getElementById('slide-after');
         setInterval(() => {
@@ -164,7 +164,7 @@
                 a.classList.remove('visible');
                 b.classList.add('visible');
             }
-        }, 3000); // Switches every 3 seconds
+        }, 3000);
     </script>
 </body>
 </html>
