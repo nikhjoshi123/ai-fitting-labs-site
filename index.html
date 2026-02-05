@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI FITTING LABS | Cinematic B2B</title>
+    <title>AI FITTING LABS | Enterprise Solution</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -11,40 +11,39 @@
         body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         .lux-font { font-family: 'Playfair Display', serif; }
         
-        /* Cinematic 2.35:1 Ratio Force */
-        .cinematic-ratio { 
-            position: relative; 
-            width: 100%; 
-            aspect-ratio: 2.35 / 1; 
-            overflow: hidden; 
-            background: #000;
-            border: 1px solid rgba(255,255,255,0.1);
-        }
-
-        /* Video Blur Styling */
-        .hero-video-container { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
-        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(12px) brightness(0.4); }
-        .hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; z-index: 10; pointer-events: none; }
-
-        /* Step Slider Styling */
-        .step-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.5s ease-in-out; }
-        .step-img.active { opacity: 1; }
-
-        /* Before/After Slider */
-        .slider-container { cursor: ew-resize; touch-action: none; }
-        .after-overlay { position: absolute; top: 0; left: 0; height: 100%; width: 50%; border-right: 3px solid white; overflow: hidden; z-index: 2; }
-        .after-overlay img { width: 100vw; height: 100%; object-fit: cover; max-width: none; }
-
         .rainbow-text {
             background: linear-gradient(to right, #ef5350, #7e57c2, #2196f3, #43a047, #f9a825, #ff5722);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;
         }
+
+        /* Video Blur */
+        .hero-video-container { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
+        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(12px) brightness(0.4); }
+        .hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; z-index: 10; pointer-events: none; }
+
+        /* ROI Circle Graph */
+        .roi-circle {
+            width: 220px; height: 220px; border-radius: 50%;
+            background: conic-gradient(#c5a059 60%, #1a1a1a 0);
+            display: flex; align-items: center; justify-content: center; position: relative;
+        }
+        .roi-circle::after { content: "60%"; position: absolute; width: 180px; height: 180px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; }
+
+        /* Phase Slider Cinematic 2.35:1 */
+        .cinematic-container { position: relative; width: 100%; aspect-ratio: 2.35 / 1; background: #000; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+        .phase-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease; visibility: hidden; }
+        .phase-img.active { opacity: 1; visibility: visible; }
+
+        /* Slider */
+        .ba-slider { position: relative; width: 100%; aspect-ratio: 2.35 / 1; cursor: ew-resize; overflow: hidden; }
+        .ba-after { position: absolute; top: 0; left: 0; height: 100%; width: 50%; border-right: 3px solid #fff; overflow: hidden; z-index: 5; }
+        .ba-after img { width: 100vw; height: 100%; object-fit: cover; max-width: none; }
     </style>
 </head>
 <body>
 
     <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/40 backdrop-blur-md">
-        <div class="lux-font text-2xl tracking-tighter rainbow-text uppercase">AI FITTING LABS</div>
+        <div class="lux-font text-2xl rainbow-text uppercase">AI FITTING LABS</div>
         <a href="mailto:nikhjoshi123@gmail.com" class="bg-white text-black text-[10px] tracking-widest px-6 py-2 rounded-full uppercase font-bold hover:bg-gold transition">Book Demo</a>
     </nav>
 
@@ -58,97 +57,93 @@
         </div>
     </section>
 
+    <section class="py-32 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        <div class="roi-circle"></div>
+        <div class="text-left flex-1">
+            <h2 class="lux-font text-4xl md:text-6xl mb-6 italic leading-tight">One Button. <br><span class="text-gold font-bold">60% Fewer Returns.</span></h2>
+            <p class="text-gray-400 font-light leading-relaxed">
+                The future of online shopping solves the return crisis at its root. By empowering customers to visualize the fit on their own body, we eliminate size-uncertainty and massive logistics waste.
+            </p>
+        </div>
+    </section>
+
     <section class="py-24 px-6 bg-[#080808]">
         <div class="max-w-6xl mx-auto">
-            <h2 class="lux-font text-3xl md:text-5xl mb-12 text-center">Implementation Phases</h2>
+            <h2 class="lux-font text-4xl mb-12 text-center">Implementation Journey</h2>
             
-            <div class="cinematic-ratio shadow-2xl mb-8" id="phase-container">
-                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/no%20button%20appears%20in%20anyother%20page.png" class="step-img active" data-step="1">
-                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/appears%20only%20product%26catogry%20page.png" class="step-img" data-step="2">
-                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/after%20click%20our%20guidance%20pop%20up%20appears.png" class="step-img" data-step="3">
-                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/then%20its%20shows%20analyzing%20and%20wokring%20for%2020%20seconds.png" class="step-img" data-step="4">
-                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/final%20outfit.jpeg" class="step-img" data-step="5">
+            <div class="cinematic-container mb-12 shadow-2xl">
+                <img id="p1" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/no%20button%20appears%20in%20anyother%20page.png" class="phase-img active">
+                <img id="p2" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/appears%20only%20product%26catogry%20page.png" class="phase-img">
+                <img id="p3" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/after%20click%20our%20guidance%20pop%20up%20appears.png" class="phase-img">
+                <img id="p4" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/then%20its%20shows%20analyzing%20and%20wokring%20for%2020%20seconds.png" class="phase-img">
+                <img id="p5" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/final%20outfit.jpeg" class="phase-img">
             </div>
 
-            <div class="text-center">
-                <p id="step-desc" class="text-gold text-sm tracking-widest mb-6 uppercase font-bold">Phase 01: Seamless Homepage (No Button)</p>
-                <button onclick="nextPhase()" class="bg-white text-black px-12 py-4 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gold transition shadow-xl">
-                    Next Phase →
-                </button>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-32 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="lux-font text-5xl md:text-7xl mb-12 text-center italic">True to Size.</h2>
-            
-            <div class="cinematic-ratio slider-container" id="ba-slider">
-                <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000" class="w-full h-full object-cover">
-                
-                <div class="after-overlay" id="after-overlay">
-                    <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=2000" id="after-img">
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div id="t1" class="phase-text"><h3 class="lux-font text-2xl">01. Hidden on Home</h3><p class="text-gray-500">Invisible on generic pages to maintain brand luxury.</p></div>
+                    <div id="t2" class="phase-text hidden"><h3 class="lux-font text-2xl">02. PDP Activation</h3><p class="text-gray-500">"See it on me" button appears strictly on product pages.</p></div>
+                    <div id="t3" class="phase-text hidden"><h3 class="lux-font text-2xl">03. Guidance Popup</h3><p class="text-gray-500">Ensuring customer pose and lighting for perfect AI renders.</p></div>
+                    <div id="t4" class="phase-text hidden"><h3 class="lux-font text-2xl">04. Neural Processing</h3><p class="text-gray-500">20 seconds of cloud-based garment fitting analysis.</p></div>
+                    <div id="t5" class="phase-text hidden"><h3 class="lux-font text-2xl">05. Conversion Scarcity</h3><p class="text-gray-500">Trial limits (5/day) to push immediate purchase decisions.</p></div>
+                </div>
+                <div class="text-right">
+                    <button onclick="nextPhase()" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gold transition shadow-xl">
+                        Next Phase →
+                    </button>
                 </div>
             </div>
-            <p class="text-center mt-6 text-[10px] text-gray-500 tracking-[0.4em] uppercase">Drag to witness the transition</p>
         </div>
     </section>
 
-    <section class="py-32 px-6 text-center border-t border-white/5">
+    <section class="py-32 px-6 text-center">
+        <h2 class="lux-font text-5xl md:text-7xl mb-12 italic">True to Size.</h2>
+        <div class="max-w-6xl mx-auto cinematic-container ba-slider" id="ba-parent">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=2000" class="w-full h-full object-cover">
+            <div class="ba-after" id="ba-overlay">
+                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=2000" id="ba-img">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 text-center">
+        <h2 class="lux-font text-4xl mb-6">Client Safety First.</h2>
+        <p class="text-gray-500 max-w-2xl mx-auto mb-24 italic font-light italic">"Safety is the ultimate luxury. Images are analyzed and deleted in real-time. No data storage."</p>
         <h2 class="lux-font text-6xl md:text-[10rem] tracking-tighter uppercase text-white/5 leading-none mb-24 select-none">WE REDUCE RETURNS.</h2>
         <a href="#" class="bg-white text-black px-16 py-6 rounded-full font-bold uppercase tracking-[0.3em] hover:bg-gold transition shadow-2xl">Get Integration Guide</a>
     </section>
 
     <script>
-        // --- PHASE SLIDER LOGIC ---
-        let currentStep = 1;
-        const totalSteps = 5;
-        const descriptions = [
-            "Phase 01: Seamless Homepage (No Button)",
-            "Phase 02: Intelligent PDP Activation",
-            "Phase 03: Branded Guidance Overlay",
-            "Phase 04: Neural Analysis Engine",
-            "Phase 05: Scarcity-Driven Conversion"
-        ];
-
+        // PHASE SWITCHER SCRIPT
+        let current = 1;
         function nextPhase() {
-            // Remove active from current
-            document.querySelector(.step-img[data-step="${currentStep}"]).classList.remove('active');
+            // Hide current
+            document.getElementById('p' + current).classList.remove('active');
+            document.getElementById('t' + current).classList.add('hidden');
             
             // Increment
-            currentStep = (currentStep % totalSteps) + 1;
+            current = (current % 5) + 1;
             
-            // Add active to new
-            document.querySelector(.step-img[data-step="${currentStep}"]).classList.add('active');
-            
-            // Update Text
-            document.getElementById('step-desc').innerText = descriptions[currentStep - 1];
+            // Show next
+            document.getElementById('p' + current).classList.add('active');
+            document.getElementById('t' + current).classList.remove('hidden');
         }
 
-        // --- BEFORE/AFTER SLIDER LOGIC ---
-        const baSlider = document.getElementById('ba-slider');
-        const afterOverlay = document.getElementById('after-overlay');
-        const afterImg = document.getElementById('after-img');
+        // BEFORE/AFTER SLIDER SCRIPT
+        const parent = document.getElementById('ba-parent');
+        const overlay = document.getElementById('ba-overlay');
+        const img = document.getElementById('ba-img');
 
-        // Match overlay image width to container width on resize
-        function syncWidth() {
-            afterImg.style.width = baSlider.offsetWidth + 'px';
+        function sync() { img.style.width = parent.offsetWidth + 'px'; }
+        window.onresize = sync; sync();
+
+        function move(e) {
+            let x = (e.pageX || (e.touches ? e.touches[0].pageX : 0)) - parent.getBoundingClientRect().left;
+            let p = (x / parent.offsetWidth) * 100;
+            if (p >= 0 && p <= 100) overlay.style.width = p + '%';
         }
-        window.addEventListener('resize', syncWidth);
-        syncWidth();
-
-        function handleMove(e) {
-            const rect = baSlider.getBoundingClientRect();
-            const x = (e.pageX || e.touches[0].pageX) - rect.left;
-            const percent = (x / rect.width) * 100;
-            
-            if (percent >= 0 && percent <= 100) {
-                afterOverlay.style.width = percent + '%';
-            }
-        }
-
-        baSlider.addEventListener('mousemove', handleMove);
-        baSlider.addEventListener('touchmove', handleMove);
+        parent.addEventListener('mousemove', move);
+        parent.addEventListener('touchmove', move);
     </script>
 </body>
 </html>
