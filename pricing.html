@@ -8,7 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #c5a059; --dark: #050505; --win-green: #10b981; }
-        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; }
+        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         .lux-font { font-family: 'Playfair Display', serif; }
         .text-gold-gradient { color: var(--gold); background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
@@ -21,12 +21,17 @@
         input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; color: white; width: 100%; margin-top: 5px; outline: none; }
         input:focus { border-color: var(--gold); }
         label { font-size: 10px; text-transform: uppercase; color: #888; letter-spacing: 1px; font-weight: 600; }
+        
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
     </style>
 </head>
 <body>
 
     <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/50 backdrop-blur-lg border-b border-white/5">
-        <div class="lux-font text-xl uppercase tracking-tighter text-white font-bold">AI FITTING LABS</div>
+        <div class="lux-font text-xl uppercase tracking-tighter text-white font-bold text-shadow">AI FITTING LABS</div>
         <div class="hidden md:flex gap-10">
             <a href="index.html" class="nav-link">Home</a>
             <a href="pricing.html" class="nav-link active">Pricing</a>
@@ -44,28 +49,28 @@
             <div class="investment-card p-10 rounded-3xl">
                 <h3 class="lux-font text-2xl mb-4 italic">Standard</h3>
                 <div class="mb-6"><span class="text-4xl font-bold">₹30,000</span></div>
-                <p class="text-gray-500 text-sm mb-8 italic">500 High-Res Generations</p>
+                <p class="text-gray-500 text-sm mb-8 italic font-light">500 High-Res Generations</p>
                 <a href="mailto:nikhjoshi123@gmail.com" class="block bg-white text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition">Secure Spot</a>
             </div>
 
             <div class="investment-card p-10 rounded-3xl border-gold/50 relative scale-105 bg-black shadow-[0_0_50px_rgba(197,160,89,0.1)]">
-                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[8px] font-bold px-4 py-1 rounded-full uppercase">Growth Engine</div>
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[8px] font-bold px-4 py-1 rounded-full uppercase tracking-widest">Growth Engine</div>
                 <h3 class="lux-font text-2xl mb-4 italic text-gold-gradient">Growth</h3>
                 <div class="mb-6"><span class="text-4xl font-bold">₹70,000</span></div>
-                <p class="text-gray-500 text-sm mb-8 italic">1500+ Generations</p>
+                <p class="text-gray-500 text-sm mb-8 italic font-light">1500+ Generations</p>
                 <a href="mailto:nikhjoshi123@gmail.com" class="block bg-gold text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white transition shadow-xl">Secure Spot</a>
             </div>
 
             <div class="investment-card p-10 rounded-3xl">
                 <h3 class="lux-font text-2xl mb-4 italic">Scale</h3>
                 <div class="mb-6"><span class="text-4xl font-bold italic">Custom</span></div>
-                <p class="text-gray-500 text-sm mb-8 italic">Enterprise-level compute</p>
+                <p class="text-gray-500 text-sm mb-8 italic font-light">Enterprise-level compute</p>
                 <a href="mailto:nikhjoshi123@gmail.com" class="block border border-white/20 text-white text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Consult</a>
             </div>
         </div>
 
         <div class="max-w-3xl mx-auto text-center p-8 bg-white/5 rounded-2xl border border-white/10">
-            <p class="text-sm text-gray-300 italic">
+            <p class="text-sm text-gray-300 italic font-light">
                 <span class="text-gold font-bold">A Personal Note:</span> Regardless of the plan you choose, we require a <strong>₹10,000 advance</strong>. This isn't just a fee—it's the fuel that lets us reserve GPU power and start the 2-hour implementation for your specific brand.
             </p>
         </div>
@@ -76,37 +81,45 @@
             <div class="grid md:grid-cols-2 gap-16">
                 <div>
                     <h2 class="lux-font text-4xl mb-8 italic text-gold-gradient">We’re a Startup. <br>We’re Honest with You.</h2>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                        Let’s be real: We aren't a massive, faceless corporation. We are a hungry startup building tech that very few people in the world can execute. For us, <span class="text-white">your trust is everything</span>. For our startup to live, <span class="text-white">money is everything</span>. 
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                        Let’s be real: We aren't a massive, faceless corporation. We are a hungry startup building tech that very few people in the world can execute. For us, <span class="text-white font-semibold">your trust is everything</span>. For our startup to live, <span class="text-white font-semibold">money is everything</span>. 
                     </p>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-8">
-                        Every ₹30k plan requires a <span class="text-white">$100 (₹8,300+) server investment</span> from our side just to keep your renders high-res. We take that risk because we know how useful our system is for your brand's growth.
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8 font-light">
+                        Every ₹30k plan requires a <span class="text-white font-semibold">$100 (₹8,300+) server investment</span> from our side just to keep your renders high-res. We take that risk because we know how useful our system is for your brand's growth.
                     </p>
-                    <div class="space-y-4">
+                    <div class="grid grid-cols-1 gap-6">
                         <div class="flex items-start gap-3">
-                            <span class="text-gold">✔</span>
-                            <p class="text-xs text-gray-300"><strong>Zero Redirect:</strong> They never leave your site. They see themselves in YOUR fabric on YOUR domain.</p>
+                            <span class="text-gold mt-1">✔</span>
+                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Privacy:</strong> Your data is yours. We encrypt every generation and ensure your brand assets remain under your control. We take full responsibility.</p>
                         </div>
                         <div class="flex items-start gap-3">
-                            <span class="text-gold">✔</span>
-                            <p class="text-xs text-gray-300"><strong>Anti-Abuse Logic:</strong> We cap it at 5 trials per person. It prevents bots and ensures only serious buyers use your compute.</p>
+                            <span class="text-gold mt-1">✔</span>
+                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Guaranteed Help:</strong> We give a guaranteed response within 24 hours. No bots, just real humans helping your brand.</p>
                         </div>
                         <div class="flex items-start gap-3">
-                            <span class="text-gold">✔</span>
-                            <p class="text-xs text-gray-300"><strong>Strategic Button:</strong> It only appears on Product and Category pages. No clutter on your beautiful homepage.</p>
+                            <span class="text-gold mt-1">✔</span>
+                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Anti-Crash Pipeline:</strong> Redundant backup pipelines. If an API ever crashes, we trigger a fix within 2 hours to keep your sales moving.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-gold mt-1">✔</span>
+                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Not Just a Button:</strong> We are selling a high-end experience that makes your users fall in love with your site.</p>
                         </div>
                     </div>
                 </div>
                 <div class="bg-black p-10 rounded-3xl border border-white/10 flex flex-col justify-center">
-                    <h3 class="lux-font text-2xl mb-6 italic text-white">Why it’s an Investment.</h3>
+                    <h3 class="lux-font text-2xl mb-6 italic text-white">The Tech Logic.</h3>
                     <ul class="space-y-6">
                         <li class="flex gap-4">
                             <span class="text-gold font-bold">1.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Tech-Proof Your Site:</strong> While others are stuck in 2023, your site becomes a high-tech lab. You aren't just selling clothes; you're selling a "wow" experience.</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Zero Redirect:</strong> They never leave your site. They see themselves in YOUR fabric on YOUR domain.</p>
                         </li>
                         <li class="flex gap-4">
                             <span class="text-gold font-bold">2.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Hand-Built Integration:</strong> We don't use generic templates. We hand-tune the neural engine to understand YOUR specific silhouettes and textures.</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Strategic Placement:</strong> The button only appears on Product and Category pages. High-fashion aesthetics maintained.</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-gold font-bold">3.</span>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Anti-Abuse Cap:</strong> 5 trials per user ensures your compute power is used by genuine buyers, not bots.</p>
                         </li>
                     </ul>
                 </div>
@@ -118,10 +131,10 @@
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="lux-font text-5xl mb-4 italic">The Reality of the Win.</h2>
-                <p class="text-gray-500 text-sm uppercase tracking-widest">Enter your real numbers. See the Profit. Feel the difference.</p>
+                <p class="text-gray-500 text-sm uppercase tracking-widest">Enter your real numbers. See the Profit.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-8 items-start">
+            <div class="grid md:grid-cols-2 gap-8 items-start mb-32">
                 <div class="space-y-6 bg-white/[0.01] p-10 rounded-3xl border border-white/5">
                     <div>
                         <label>Monthly Orders</label>
@@ -158,14 +171,18 @@
                     <div class="p-8 win-box rounded-3xl shadow-[0_0_40px_rgba(16,185,129,0.1)]">
                         <p class="text-[10px] text-emerald-400 uppercase tracking-widest mb-2 font-bold">Your Win (New Revenue + Savings)</p>
                         <div class="text-6xl font-bold text-emerald-500" id="gainAmount">₹40,000+</div>
-                        <p class="text-xs text-gray-400 mt-4 leading-relaxed">
+                        <p class="text-xs text-gray-400 mt-4 leading-relaxed font-light">
                             Stopping <span class="text-emerald-400 font-bold">60% of returns</span> + increasing conversion by <span class="text-emerald-400 font-bold">20%</span>.
                         </p>
-                        <div class="mt-6 pt-6 border-t border-emerald-500/20">
-                            <p class="text-emerald-400 font-bold text-sm italic">"Our plan pays for itself. You aren't losing 30k; you are gaining a partner who reduces your returns for good."</p>
-                        </div>
                     </div>
                 </div>
+            </div>
+
+            <div class="text-center py-20 border-t border-white/5">
+                <h2 class="lux-font text-6xl md:text-[140px] font-bold text-white tracking-tighter opacity-10 uppercase leading-none select-none">
+                    No More Loss
+                </h2>
+                <p class="text-gold font-bold text-[10px] tracking-[0.6em] -mt-10 uppercase">The Future of Fitting is Here</p>
             </div>
         </div>
     </section>
@@ -178,15 +195,19 @@
             const sOut = parseFloat(document.getElementById('shipOut').value) || 0;
             const sReturn = parseFloat(document.getElementById('shipReturn').value) || 0;
 
+            // Current Leak Calculation
             const numReturns = orders * rate;
             const currentLoss = numReturns * (sOut + sReturn);
+            
+            // The Win Logic (Based on 60% Return reduction & 20% Sales Lift)
             const returnSavings = currentLoss * 0.60;
-            const newSalesRevenue = (orders * 0.20) * (aov * 0.30); 
+            const newSalesRevenue = (orders * 0.20) * (aov * 0.30); // Assuming 30% margin
             const totalWin = returnSavings + newSalesRevenue;
 
             document.getElementById('totalLoss').innerText = "₹" + Math.round(currentLoss).toLocaleString();
             document.getElementById('gainAmount').innerText = "₹" + Math.round(totalWin).toLocaleString();
         }
+        // Initialize on load
         window.onload = calculate;
     </script>
 </body>
