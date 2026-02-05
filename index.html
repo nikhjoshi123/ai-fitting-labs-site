@@ -3,23 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI FITTING LABS | 60% LESS RETURNS</title>
+    <title>AI FITTING LABS | Let Customers Try Your Clothes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #c5a059; --dark: #050505; }
         body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         .lux-font { font-family: 'Playfair Display', serif; }
+        .text-gold-gradient { color: var(--gold); background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
         .rainbow-text {
             background: linear-gradient(to right, #ef5350, #7e57c2, #2196f3, #43a047, #f9a825, #ff5722);
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;
         }
 
+        /* Hero */
         .hero-video-container { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
         .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(15px) brightness(0.35); }
         .hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; z-index: 10; }
 
+        /* ROI Circle Graph */
         .roi-circle {
             width: 220px; height: 220px; border-radius: 50%;
             background: conic-gradient(#c5a059 60%, #1a1a1a 0);
@@ -27,42 +30,22 @@
         }
         .roi-circle::after { content: "60%"; position: absolute; width: 180px; height: 180px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; }
 
-        /* Phases */
-        .cinematic-container { position: relative; width: 100%; aspect-ratio: 2.35 / 1; background: #000; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+        /* Implementation Phase Ratio */
+        .cinematic-container { position: relative; width: 100%; aspect-ratio: 2.35 / 1; background: #000; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; }
         .phase-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease; visibility: hidden; }
         .phase-img.active { opacity: 1; visibility: visible; }
 
-        /* THE CUSTOM SLIDER: Cinematic to Post Ratio */
-        .dynamic-slider { 
-            position: relative; 
-            width: 100%; 
-            max-width: 1000px; 
-            aspect-ratio: 2.35 / 1; 
-            margin: 0 auto; 
-            background: #111;
-            cursor: ew-resize;
-            overflow: hidden;
-        }
-        .before-view { width: 100%; height: 100%; object-fit: cover; }
-        .after-wrap { 
-            position: absolute; top: 0; left: 0; height: 100%; width: 50%; 
-            border-right: 4px solid #fff; z-index: 10; overflow: hidden;
-            display: flex; justify-content: flex-start;
-        }
-        .after-view { 
-            height: 100%; 
-            aspect-ratio: 4 / 5; /* Instagram Post Ratio */
-            object-fit: cover; 
-            margin-left: auto;
-            margin-right: auto;
-        }
+        /* Auto-Slider Before/After */
+        .auto-slider-box { position: relative; width: 100%; max-width: 1000px; aspect-ratio: 2.35 / 1; margin: 0 auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
+        .slide-asset { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
+        .slide-asset.visible { opacity: 1; }
+        .after-asset { aspect-ratio: 4/5 !important; object-fit: contain !important; background: #000; }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/40 backdrop-blur-md">
-        <div class="lux-font text-2xl rainbow-text uppercase">AI FITTING LABS</div>
-        <a href="mailto:nikhjoshi123@gmail.com" class="bg-white text-black text-[10px] tracking-widest px-6 py-2 rounded-full uppercase font-bold hover:bg-gold transition">Book Demo</a>
+    <nav class="fixed w-full z-50 px-8 py-6 flex justify-center items-center bg-black/20 backdrop-blur-sm">
+        <div class="lux-font text-2xl rainbow-text uppercase tracking-tighter">AI FITTING LABS</div>
     </nav>
 
     <section class="hero-video-container">
@@ -70,18 +53,25 @@
             <source src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/main/ai-fitting-labs-site.mp4.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay">
-            <span class="text-[10px] tracking-[0.6em] text-gray-400 uppercase font-bold">Stop Burning Your Margin on Logistics</span>
-            <h1 class="lux-font text-6xl md:text-9xl mt-4 italic gold-gradient">60% LESS RETURNS.</h1>
+            <span class="text-[10px] tracking-[0.6em] text-gray-400 uppercase font-bold mb-4 block">Redefining E-Commerce Logic</span>
+            <h1 class="lux-font text-5xl md:text-8xl italic text-gold-gradient">Let Customers Try Your Clothes</h1>
         </div>
     </section>
 
-    <section class="py-32 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
-        <div class="roi-circle"></div>
-        <div class="text-left flex-1">
-            <h2 class="lux-font text-4xl md:text-6xl mb-6 italic leading-tight">Returns are Killing <br><span class="text-gold font-bold">Your Profits.</span></h2>
-            <p class="text-gray-400 font-light leading-relaxed">
-                Most brands treat returns as a "cost of doing business." It's not. It's a failure of visualization. When a buyer can't see themselves in your garment, they "guess-buy" two sizes and return both. We stop the guess-work.
-            </p>
+    <section class="py-32 px-6 max-w-6xl mx-auto">
+        <div class="flex flex-col md:flex-row items-center gap-16 mb-20">
+            <div class="roi-circle"></div>
+            <div class="text-left flex-1">
+                <h2 class="lux-font text-4xl md:text-6xl mb-6 italic leading-tight">60% Less Returns. <br><span class="text-white font-bold text-3xl">By using just one button.</span></h2>
+                <p class="text-gray-400 font-light leading-relaxed">
+                    When a buyer can visualize themselves in your fabric, they don't "guess-buy." They purchase with certainty. Our data shows a 60% reduction in return shipping costs for brands using our neural engine.
+                </p>
+            </div>
+        </div>
+        
+        <div class="flex flex-col md:flex-row justify-center items-center gap-6">
+            <a href="mailto:nikhjoshi123@gmail.com" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-full md:w-auto text-center">Book a Demo</a>
+            <a href="#" class="border border-white/20 text-white px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 w-full md:w-auto text-center">Implementation PDF</a>
         </div>
     </section>
 
@@ -99,16 +89,14 @@
 
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    <div id="t1" class="phase-text"><h3 class="lux-font text-2xl">01. Ghost Integration</h3><p class="text-gray-500">Your homepage stays clean. We only exist where the sale happens.</p></div>
-                    <div id="t2" class="phase-text hidden"><h3 class="lux-font text-2xl">02. Contextual UI</h3><p class="text-gray-500">A "Fit Check" button appears right next to the 'Add to Cart'.</p></div>
-                    <div id="t3" class="phase-text hidden"><h3 class="lux-font text-2xl">03. High-Conversion Guidance</h3><p class="text-gray-500">We help them take the perfect photo so they fall in love with the result.</p></div>
-                    <div id="t4" class="phase-text hidden"><h3 class="lux-font text-2xl">04. Real-Time Confidence</h3><p class="text-gray-500">Processing the drape while they wait, building anticipation.</p></div>
-                    <div id="t5" class="phase-text hidden"><h3 class="lux-font text-2xl">05. The Final Push</h3><p class="text-gray-500">The "buy" button is now the only logical next step.</p></div>
+                    <div id="t1" class="phase-text"><h3 class="lux-font text-2xl">01. Ghost Integration</h3><p class="text-gray-500">Maintain your homepage's visual purity. No clutter, no distractions.</p></div>
+                    <div id="t2" class="phase-text hidden"><h3 class="lux-font text-2xl">02. Strategic Presence</h3><p class="text-gray-500">The "Try It On" button only appears on high-intent product pages.</p></div>
+                    <div id="t3" class="phase-text hidden"><h3 class="lux-font text-2xl">03. User Guidance</h3><p class="text-gray-500">Interactive prompts ensure the customer provides the perfect fit data.</p></div>
+                    <div id="t4" class="phase-text hidden"><h3 class="lux-font text-2xl">04. Neural Drape</h3><p class="text-gray-500">Our engine calculates fabric physics and body metrics in real-time.</p></div>
+                    <div id="t5" class="phase-text hidden"><h3 class="lux-font text-2xl">05. Instant Buy</h3><p class="text-gray-500">Limited trials (5/day) create the psychological urgency to checkout.</p></div>
                 </div>
                 <div class="text-right">
-                    <button onclick="nextPhase()" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gold transition shadow-xl">
-                        Next Phase →
-                    </button>
+                    <button onclick="nextPhase()" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gold transition shadow-xl">Next Phase →</button>
                 </div>
             </div>
         </div>
@@ -116,63 +104,67 @@
 
     <section class="py-32 px-6">
         <div class="max-w-6xl mx-auto text-center">
-            <h2 class="lux-font text-5xl md:text-7xl mb-8 italic italic">Convert Browsers to Buyers.</h2>
+            <h2 class="lux-font text-5xl md:text-7xl mb-8 italic">Convert Browsers to Buyers.</h2>
             
-            <div class="dynamic-slider shadow-2xl" id="slider-root">
-                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/before.jpeg" class="before-view">
-                
-                <div class="after-wrap" id="overlay">
-                    <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/after.png" class="after-view" id="overlay-img">
-                </div>
+            <div class="auto-slider-box mb-12 shadow-2xl">
+                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/before.jpeg" class="slide-asset visible" id="slide-before">
+                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/after.png" class="slide-asset after-asset" id="slide-after">
             </div>
 
-            <div class="mt-16 max-w-3xl mx-auto space-y-8">
-                <p class="text-gold tracking-[0.3em] uppercase text-xs font-bold">Swipe to witness the conversion</p>
-                <div class="bg-white/5 p-12 rounded-3xl border border-white/10 text-left">
-                    <h4 class="lux-font text-3xl mb-4">Why they buy. Why they keep it.</h4>
-                    <p class="text-gray-400 font-light leading-relaxed">
-                        A consumer doesn't return a product because they hate it—they return it because they <span class="text-white font-bold">misunderstood how they look in it</span>. By allowing them to visualize themselves in your fabric, you move the purchase from a "risk" to a "reality." 
-                        <br><br>
-                        They buy because the emotional connection is instant. They keep it because the reality matches the AI preview. 
-                    </p>
-                </div>
+            <div class="mt-16 max-w-4xl mx-auto bg-white/5 p-12 rounded-3xl border border-white/10 text-left">
+                <h4 class="lux-font text-3xl mb-4">The Psychology of the Virtual Fit</h4>
+                <p class="text-gray-400 font-light leading-relaxed">
+                    Buyers return clothes because the "reality" didn't match the "imagination." When they visualize themselves in your clothes through our AI, the uncertainty disappears. High visualization leads to <span class="text-white font-bold">higher purchase intent</span> and significantly <span class="text-white font-bold">lower return rates</span> because they already know exactly how they look.
+                </p>
             </div>
         </div>
     </section>
 
+    <section class="py-32 px-6 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="lux-font text-4xl mb-8">Data Privacy & Brand Integrity</h2>
+            <div class="grid md:grid-cols-2 gap-12 text-left">
+                <div>
+                    <h4 class="text-gold font-bold text-xs uppercase tracking-widest mb-3">Zero-Storage Policy</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Customer photos are processed in encrypted volatile RAM and purged instantly after the render. We store zero personal imagery. Ever.</p>
+                </div>
+                <div>
+                    <h4 class="text-gold font-bold text-xs uppercase tracking-widest mb-3">Enterprise Security</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Our infrastructure is SOC2 compliant, ensuring that your brand's reputation and your customer's data are protected by world-class encryption.</p>
+                </div>
+            </div>
+            <p class="mt-16 text-gray-500 italic text-sm">"Trust is the bridge between a visitor and a loyal customer. We build that bridge."</p>
+        </div>
+    </section>
+
     <section class="py-32 px-6 text-center">
-        <h2 class="lux-font text-4xl mb-6 italic">Secure. Fast. Enterprise-Ready.</h2>
-        <p class="text-gray-500 max-w-2xl mx-auto mb-24 italic">"Stop solving for logistics. Start solving for confidence."</p>
-        <h2 class="lux-font text-6xl md:text-[10rem] tracking-tighter uppercase text-white/5 leading-none mb-24 select-none">WE REDUCE RETURNS.</h2>
-        <a href="#" class="bg-white text-black px-16 py-6 rounded-full font-bold uppercase tracking-[0.3em] hover:bg-gold transition">Get Integration Guide</a>
+        <h2 class="lux-font text-6xl md:text-[10rem] tracking-tighter uppercase text-white/5 leading-none mb-12 select-none">WE REDUCE RETURNS.</h2>
+        <p class="text-gray-500 uppercase tracking-[0.5em] text-[10px] mb-24">Enterprise Grade AI Solutions for Digital Retail</p>
     </section>
 
     <script>
-        // PHASE SCRIPT
-        let current = 1;
+        // Phase Logic
+        let pCurrent = 1;
         function nextPhase() {
-            document.getElementById('p' + current).classList.remove('active');
-            document.getElementById('t' + current).classList.add('hidden');
-            current = (current % 5) + 1;
-            document.getElementById('p' + current).classList.add('active');
-            document.getElementById('t' + current).classList.remove('hidden');
+            document.getElementById('p' + pCurrent).classList.remove('active');
+            document.getElementById('t' + pCurrent).classList.add('hidden');
+            pCurrent = (pCurrent % 5) + 1;
+            document.getElementById('p' + pCurrent).classList.add('active');
+            document.getElementById('t' + pCurrent).classList.remove('hidden');
         }
 
-        // DYNAMIC RATIO SLIDER SCRIPT
-        const slider = document.getElementById('slider-root');
-        const overlay = document.getElementById('overlay');
-        const overlayImg = document.getElementById('overlay-img');
-
-        function moveSlider(e) {
-            const rect = slider.getBoundingClientRect();
-            const x = (e.pageX || e.touches[0].pageX) - rect.left;
-            const percent = (x / rect.width) * 100;
-            if (percent >= 0 && percent <= 100) {
-                overlay.style.width = percent + '%';
+        // Auto-Slider Logic (Fading between Before and After)
+        const b = document.getElementById('slide-before');
+        const a = document.getElementById('slide-after');
+        setInterval(() => {
+            if (b.classList.contains('visible')) {
+                b.classList.remove('visible');
+                a.classList.add('visible');
+            } else {
+                a.classList.remove('visible');
+                b.classList.add('visible');
             }
-        }
-        slider.addEventListener('mousemove', moveSlider);
-        slider.addEventListener('touchmove', moveSlider);
+        }, 3000); // Switches every 3 seconds
     </script>
 </body>
 </html>
