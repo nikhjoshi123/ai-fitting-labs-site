@@ -1,17 +1,4 @@
-[4:00 PM, 2/5/2026] ~ Nik: <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI FITTING LABS | Our System. Your Brand. People Love.</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
-    <style>
-        :root { --gold: #c5a059; --dark: #050505; }
-        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
-        .lux-font { font-family: 'Playfair Display', serif; }
-        .text-gold-gradient { color: var(--gold); background: linear-gradient(to botto…
-[4:02 PM, 2/5/2026] ~ Nik: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -67,7 +54,7 @@
                 <span class="text-sm tracking-[0.3em] text-gold font-light uppercase block">Let customers try your clothes</span>
             </div>
             
-            <h1 class="lux-font text-5xl md:text-8xl italic text-gold-gradient mb-12">Our system, your brand, less return</h1>
+            <h1 class="lux-font text-5xl md:text-8xl italic text-gold-gradient mb-12 uppercase">Our system, your brand, less return</h1>
             
             <div class="flex flex-col md:flex-row justify-center items-center gap-6 pointer-events-auto">
                 <a href="mailto:nikhjoshi123@gmail.com" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-64 text-center">Book a Demo</a>
@@ -79,19 +66,12 @@
     <section class="py-32 px-6 max-w-6xl mx-auto">
         <div class="flex flex-col md:flex-row items-center gap-16">
             <div class="roi-circle"></div>
-            
             <div class="text-left flex-1">
                 <h2 class="lux-font text-4xl md:text-6xl mb-6 italic leading-tight">60% Less Returns. <br><span class="text-white font-bold text-3xl italic">By using just one button.</span></h2>
                 <div class="space-y-4 text-gray-400 font-light leading-relaxed">
-                    <p>
-                        Industry data shows that 30% of all e-commerce returns happen solely because of "Fitting Uncertainty." Customers don't return clothes because they are bad; they return them because they didn't know how the fabric would sit on their specific frame.
-                    </p>
-                    <p>
-                        We eliminate the "Will this fit me?" doubt. When they see it, they know it. When they know it, they keep it. 
-                    </p>
-                    <p class="text-gold font-bold text-xl uppercase tracking-wider">
-                        After VTON integration, fitting-related returns reduce by 60%. That’s all.
-                    </p>
+                    <p>Industry data shows that 30% of all e-commerce returns happen solely because of "Fitting Uncertainty." Customers don't return clothes because they are bad; they return them because they didn't know how the fabric would sit on their specific frame.</p>
+                    <p>We eliminate the "Will this fit me?" doubt. When they see it, they know it. When they know it, they keep it.</p>
+                    <p class="text-gold font-bold text-xl uppercase tracking-wider">After VTON integration, returns reduce by 60%. That’s all.</p>
                 </div>
             </div>
         </div>
@@ -133,6 +113,7 @@
     </section>
 
     <script>
+        // Phase control
         let pCurrent = 1;
         function nextPhase() {
             document.getElementById('p' + pCurrent).classList.remove('active');
@@ -142,6 +123,7 @@
             document.getElementById('t' + pCurrent).classList.remove('hidden');
         }
 
+        // Auto-fade Before/After
         const b = document.getElementById('slide-before');
         const a = document.getElementById('slide-after');
         setInterval(() => {
