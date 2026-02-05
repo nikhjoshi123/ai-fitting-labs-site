@@ -20,10 +20,9 @@
             border: 1px solid rgba(255,255,255,0.05);
             transition: all 0.4s ease;
         }
-        .investment-card:hover { border-color: var(--gold); background: rgba(197, 160, 89, 0.03); }
-
-        input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 8px; border-radius: 8px; color: white; width: 100%; margin-top: 5px; }
-        label { font-size: 11px; text-transform: uppercase; color: #666; letter-spacing: 1px; }
+        input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; color: white; width: 100%; margin-top: 5px; outline: none; }
+        input:focus { border-color: var(--gold); }
+        label { font-size: 10px; text-transform: uppercase; color: #888; letter-spacing: 1px; font-weight: 600; }
     </style>
 </head>
 <body>
@@ -40,77 +39,66 @@
     <section class="pt-48 pb-20 px-6 max-w-6xl mx-auto">
         <div class="text-center mb-16">
             <h1 class="lux-font text-5xl md:text-7xl italic text-gold-gradient mb-4">Investment Tiers</h1>
-            <p class="text-gray-500 uppercase text-[10px] tracking-[0.4em]">Select the scale that matches your brand's ambition</p>
+            <p class="text-gray-500 uppercase text-[10px] tracking-[0.4em]">Scaling your brand's confidence, not just its tech.</p>
         </div>
 
-        <div class="grid md:grid-cols-3 gap-8">
+        <div class="grid md:grid-cols-3 gap-8 mb-16">
             <div class="investment-card p-10 rounded-3xl">
                 <h3 class="lux-font text-2xl mb-4 italic">Standard</h3>
                 <div class="mb-6"><span class="text-4xl font-bold">₹30,000</span></div>
-                <p class="text-gray-500 text-sm mb-8 leading-relaxed italic">Ideal for 500 High-Fidelity Generations</p>
+                <p class="text-gray-500 text-sm mb-8 italic">Perfect for 500 High-Res Generations</p>
                 <a href="mailto:nikhjoshi123@gmail.com" class="block bg-white text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition">Secure Spot</a>
             </div>
 
-            <div class="investment-card p-10 rounded-3xl border-gold/50 relative scale-105 bg-black">
+            <div class="investment-card p-10 rounded-3xl border-gold/50 relative scale-105 bg-black shadow-[0_0_50px_rgba(197,160,89,0.1)]">
                 <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[8px] font-bold px-4 py-1 rounded-full uppercase">High Performance</div>
                 <h3 class="lux-font text-2xl mb-4 italic text-gold-gradient">Growth</h3>
                 <div class="mb-6"><span class="text-4xl font-bold">₹70,000</span></div>
-                <p class="text-gray-500 text-sm mb-8 leading-relaxed italic">Ideal for 1500+ Generations</p>
+                <p class="text-gray-500 text-sm mb-8 italic">Ideal for 1500+ Generations</p>
                 <a href="mailto:nikhjoshi123@gmail.com" class="block bg-gold text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white transition shadow-xl">Secure Spot</a>
             </div>
 
             <div class="investment-card p-10 rounded-3xl">
                 <h3 class="lux-font text-2xl mb-4 italic">Scale</h3>
-                <div class="mb-6"><span class="text-4xl font-bold">Custom</span></div>
-                <p class="text-gray-500 text-sm mb-8 leading-relaxed italic">Unlimited compute for global volume</p>
+                <div class="mb-6"><span class="text-4xl font-bold italic">Custom</span></div>
+                <p class="text-gray-500 text-sm mb-8 italic">Unlimited compute for global volume</p>
                 <a href="mailto:nikhjoshi123@gmail.com" class="block border border-white/20 text-white text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Consult</a>
             </div>
         </div>
-
-        <div class="mt-16 text-center">
-            <p class="text-sm italic text-gray-400">
-                <span class="text-gold font-bold">The Protocol:</span> Pay ₹10,000 advance. Receive your integration code immediately. <br>Your "Try It On" button goes live in <strong>2 hours</strong>.
-            </p>
-        </div>
     </section>
 
-    <section class="py-32 bg-white/[0.02] border-y border-white/5">
+    <section class="py-24 bg-white/[0.02] border-y border-white/5">
         <div class="max-w-5xl mx-auto px-6">
             <div class="grid md:grid-cols-2 gap-20 items-center">
                 <div>
-                    <h2 class="lux-font text-4xl mb-8 italic">Why we charge this.</h2>
+                    <h2 class="lux-font text-4xl mb-8 italic">We aren't just selling a button.</h2>
                     <div class="space-y-6 text-gray-400 text-sm leading-relaxed">
-                        <p>We are a startup building a system very few people on earth are doing. Every generation requires heavy GPU compute. For a <span class="text-white">₹30k plan, we invest $100</span> back into servers. For the <span class="text-white">₹70k plan, we re-invest $250</span> into model training for your specific fabrics.</p>
-                        <p>We aren't just selling a button; we are selling <span class="text-white">Engagement and User Experience</span>. We take full responsibility for privacy and data security.</p>
-                        <ul class="space-y-3 text-xs uppercase tracking-wider text-gold font-bold">
-                            <li>• 24HR Support Response</li>
-                            <li>• Zero-Redirect Integration (Users stay on your site)</li>
-                            <li>• Redundant Backup API Pipelines</li>
-                            <li>• 5-Trial Cap per user to ensure quality</li>
-                        </ul>
+                        <p>We are a boutique startup. When you pay that <span class="text-white">₹10,000 advance</span>, we don't just "turn on" a script. We dedicate a piece of our neural engine specifically to your brand. We spend the first 2 hours hand-tuning the code so that the button sits perfectly on your category pages.</p>
+                        <p>Our costs are real. For the ₹30k plan, <span class="text-white">we spend $100 immediately</span> on GPU infrastructure. We take the risk with you. That advance is the "handshake" of trust that allows us to commit our time and high-cost servers to your site.</p>
+                        <p class="text-gold font-bold italic">You don't get redirected. Your users stay on your site. We protect your privacy like it's our own.</p>
                     </div>
                 </div>
-                <div class="bg-black/40 p-10 rounded-3xl border border-white/10">
-                    <h3 class="lux-font text-2xl mb-6 italic">Our Guarantee.</h3>
-                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">We know the fear of advance payments. But to build a system that upgrades your brand's soul, we need your trust. We are not just connecting a button; we are continually updating the logic to ensure your returns drop every month.</p>
-                    <p class="text-gold italic text-sm">"Trust is the bridge between a startup and a revolution."</p>
+                <div class="bg-black/40 p-10 rounded-3xl border border-white/10 relative overflow-hidden">
+                    <div class="absolute top-0 right-0 p-4 opacity-10 lux-font text-6xl italic">Trust</div>
+                    <h3 class="lux-font text-2xl mb-6 italic">The Reason for the Advance.</h3>
+                    <p class="text-gray-500 text-sm mb-6 leading-relaxed">We know there is fear in paying upfront. But in this industry, trust is the only currency that matters. We give you a 24hr response guarantee and a backup API that never sleeps. If we crash, we have a redundant system ready to catch your users. We aren't just connecting tech; we are upgrading your site's user experience.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="py-32 px-6">
-        <div class="max-w-4xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="lux-font text-4xl mb-4 italic">Calculate Your Monthly Loss.</h2>
-                <p class="text-gray-500 text-sm uppercase tracking-widest">See how much Fitting Uncertainty is costing you.</p>
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="lux-font text-5xl mb-4 italic">The Reality of Your Loss.</h2>
+                <p class="text-gray-500 text-sm uppercase tracking-widest">Input your real numbers. See the bleed. See the cure.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 gap-12 bg-white/[0.02] p-12 rounded-3xl border border-white/5">
-                <div class="space-y-6">
+            <div class="grid md:grid-cols-2 gap-8 items-start">
+                <div class="space-y-6 bg-white/[0.01] p-10 rounded-3xl border border-white/5">
                     <div>
                         <label>Monthly Orders</label>
-                        <input type="number" id="orders" value="1000" oninput="calculate()">
+                        <input type="number" id="orders" value="100" oninput="calculate()">
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
@@ -118,23 +106,42 @@
                             <input type="number" id="rate" value="30" oninput="calculate()">
                         </div>
                         <div>
-                            <label>Shipping/Order</label>
-                            <input type="number" id="ship" value="100" oninput="calculate()">
+                            <label>Avg. Order Value (₹)</label>
+                            <input type="number" id="aov" value="2000" oninput="calculate()">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label>Shipping Out (₹)</label>
+                            <input type="number" id="shipOut" value="300" oninput="calculate()">
+                        </div>
+                        <div>
+                            <label>Return Shipping (₹)</label>
+                            <input type="number" id="shipReturn" value="300" oninput="calculate()">
                         </div>
                     </div>
                     <div>
-                        <label>Inventory/Maintenance Cost per piece</label>
-                        <input type="number" id="maint" value="50" oninput="calculate()">
+                        <label>Inventory Maintenance per piece (₹)</label>
+                        <input type="number" id="maint" value="0" oninput="calculate()">
                     </div>
                 </div>
 
-                <div class="flex flex-col justify-center text-center md:text-left border-t md:border-t-0 md:border-l border-white/10 pt-8 md:pt-0 md:pl-12">
-                    <p class="text-[10px] text-gray-500 uppercase tracking-widest mb-2">Your Current Monthly Loss</p>
-                    <div class="text-5xl font-bold text-red-500 mb-6" id="totalLoss">₹45,000</div>
-                    <p class="text-sm text-gray-400 italic mb-4">Our ₹30k plan saves you from this loss while gaining profit from higher engagement.</p>
-                    <div class="p-4 bg-gold/10 border border-gold/20 rounded-xl">
-                        <p class="text-[10px] text-gold font-bold uppercase mb-1">The Data Says:</p>
-                        <p class="text-xs text-white leading-relaxed">92% of users who try your clothes 5 times buy with certainty. Return rates for these users drop to <span class="text-gold">under 4%</span>.</p>
+                <div class="space-y-6">
+                    <div class="p-8 bg-red-500/5 border border-red-500/20 rounded-3xl">
+                        <p class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">Current Monthly Bleed</p>
+                        <div class="text-5xl font-bold text-red-500" id="totalLoss">₹18,000</div>
+                        <p class="text-[10px] text-gray-500 mt-2 italic">This is what you lose on shipping & returns alone.</p>
+                    </div>
+
+                    <div class="p-8 bg-gold/5 border border-gold/20 rounded-3xl">
+                        <p class="text-[10px] text-gold uppercase tracking-widest mb-2 font-bold">The AI Fitting Labs Effect</p>
+                        <div class="text-5xl font-bold text-white" id="gainAmount">+ ₹42,000</div>
+                        <p class="text-xs text-gray-400 mt-4 leading-relaxed">
+                            Our system converts <span class="text-white">20% more "browsers"</span> into buyers. 
+                            While your return rate for VTON users drops to <span class="text-white">under 5%</span>. 
+                            <br><br>
+                            <span class="text-gold font-bold">Final Verdict:</span> Even if you lose ₹18k now, the <span class="text-white">New Profit</span> from users who were too afraid to buy before pays for the ₹30k plan twice over.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -143,17 +150,30 @@
 
     <script>
         function calculate() {
-            const orders = document.getElementById('orders').value;
-            const rate = document.getElementById('rate').value / 100;
-            const shipping = document.getElementById('ship').value;
-            const maintenance = document.getElementById('maint').value;
+            const orders = parseFloat(document.getElementById('orders').value) || 0;
+            const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+            const aov = parseFloat(document.getElementById('aov').value) || 0;
+            const sOut = parseFloat(document.getElementById('shipOut').value) || 0;
+            const sReturn = parseFloat(document.getElementById('shipReturn').value) || 0;
+            const maint = parseFloat(document.getElementById('maint').value) || 0;
 
-            const totalReturns = orders * rate;
-            const lossPerReturn = parseInt(shipping) + parseInt(maintenance);
-            const finalLoss = totalReturns * lossPerReturn;
+            // Current Loss calculation
+            const numReturns = orders * rate;
+            const lossPerReturn = sOut + sReturn + maint;
+            const currentLoss = numReturns * lossPerReturn;
 
-            document.getElementById('totalLoss').innerText = "₹" + finalLoss.toLocaleString();
+            // Gain calculation (Logic: 20% Conversion lift + 80% Return reduction on those orders)
+            // Even if orders stay same, the conversion of "uncertain" users increases revenue
+            const conversionLiftValue = (orders * 0.20) * (aov * 0.30); // Profit margin on new sales
+            const returnSavings = currentLoss * 0.60; // 60% reduction in return costs
+            const totalGain = conversionLiftValue + returnSavings;
+
+            document.getElementById('totalLoss').innerText = "₹" + Math.round(currentLoss).toLocaleString();
+            document.getElementById('gainAmount').innerText = "+ ₹" + Math.round(totalGain).toLocaleString();
         }
+        
+        // Run once on load
+        window.onload = calculate;
     </script>
 </body>
 </html>
