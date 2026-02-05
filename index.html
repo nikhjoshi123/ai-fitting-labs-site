@@ -3,47 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI FITTING LABS | Enterprise</title>
+    <title>AI FITTING LABS | Reduce Returns by 60%</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #c5a059; --dark: #050505; }
         body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         .lux-font { font-family: 'Playfair Display', serif; }
-        
         .rainbow-text {
-            background: linear-gradient(to right, #ef5350, #f48fb1, #7e57c2, #2196f3, #26c6da, #43a047, #eeff41, #f9a825, #ff5722);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            background: linear-gradient(to right, #ef5350, #7e57c2, #2196f3, #43a047, #f9a825, #ff5722);
+            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
             font-weight: 800;
         }
 
-        /* 1. BLURRED FULL SCREEN VIDEO */
-        .hero-video-container { position: relative; width: 100vw; height: 100vh; background: #000; overflow: hidden; }
-        .hero-video { 
-            position: absolute; top: 0; left: 0; width: 100%; height: 100%; 
-            object-fit: cover; z-index: 1; 
-            filter: blur(8px) brightness(0.4); /* Added Blur and Darken */
-        }
-        .hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; z-index: 2; pointer-events: none; }
+        /* 1. Blurred Video Hero */
+        .hero-video-container { position: relative; width: 100vw; height: 100vh; background: #000; }
+        .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(10px) brightness(0.4); }
+        .hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; z-index: 10; pointer-events: none; }
 
-        .gold-gradient { 
-            background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+        /* 2. ROI Circle Graph */
+        .roi-circle {
+            width: 250px; height: 250px; border-radius: 50%;
+            background: conic-gradient(#c5a059 60%, #1a1a1a 0);
+            display: flex; align-items: center; justify-content: center; position: relative;
         }
+        .roi-circle::after { content: "60%"; position: absolute; width: 210px; height: 210px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; }
 
-        /* 2. WORKING BEFORE/AFTER SLIDER */
-        .comparison-slider { 
-            position: relative; width: 100%; max-width: 1000px; height: 500px; 
-            margin: 0 auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); 
-            touch-action: none; cursor: ew-resize;
-        }
+        /* 3. Before/After Slider Fix */
+        .comparison-slider { position: relative; width: 100%; max-width: 900px; height: 550px; margin: 0 auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); touch-action: none; }
         .image-before, .image-after { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
         .image-after { width: 50%; border-right: 3px solid #fff; z-index: 2; overflow: hidden; }
         
-        /* 3. WORKING STEPPER */
+        /* 4. Steps Fix */
         .step-display { display: none; width: 100%; height: 100%; object-fit: cover; background: #111; }
-        .step-display.active { display: block; animation: fadeIn 0.5s ease; }
+        .step-display.active { display: block; animation: fadeIn 0.4s ease; }
         .hidden-info { display: none; }
         @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
     </style>
@@ -51,7 +44,7 @@
 <body>
 
     <nav class="fixed w-full z-50 px-8 py-6 flex justify-between items-center bg-black/40 backdrop-blur-md">
-        <div class="lux-font text-2xl tracking-tighter rainbow-text">AI FITTING LABS</div>
+        <div class="lux-font text-2xl tracking-tighter rainbow-text uppercase">AI FITTING LABS</div>
         <a href="mailto:nikhjoshi123@gmail.com" class="bg-white text-black text-[10px] tracking-widest px-6 py-2 rounded-full uppercase font-bold transition hover:bg-gold">Book Demo</a>
     </nav>
 
@@ -61,95 +54,91 @@
         </video>
         <div class="hero-overlay">
             <span class="text-[10px] tracking-[0.6em] text-gray-300 uppercase">The Feature of Digital Fashion</span>
-            <h1 class="lux-font text-6xl md:text-9xl mt-4 gold-gradient italic">Try on Virtually.</h1>
+            <h1 class="lux-font text-6xl md:text-9xl mt-4 italic">Try on Virtually.</h1>
         </div>
     </section>
 
-    <section class="py-32 px-6 max-w-5xl mx-auto text-center">
-        <h2 class="lux-font text-5xl md:text-8xl mb-6">True to Size.</h2>
-        <p class="lux-font text-xl italic text-gray-400 mb-16">"You're Perfect, Just the Way You Are"</p>
-
-        <div class="comparison-slider" id="slider">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1000" class="image-before">
-            <div class="image-after" id="after-div">
-                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1000" style="width: 1000px; height: 500px; max-width: none;">
-            </div>
+    <section class="py-32 px-6 max-w-6xl mx-auto flex flex-col md:flex-row items-center gap-16">
+        <div class="roi-circle"></div>
+        <div class="text-left flex-1">
+            <h2 class="lux-font text-4xl md:text-6xl mb-6">One Button. <br><span class="text-gold italic font-bold">60% Fewer Returns.</span></h2>
+            <p class="text-gray-400 font-light leading-relaxed">
+                The future of the online shopping industry isn't just about images; it's about accuracy. Our neural engine solves the 'Size Guesswork' crisis. By allowing customers to visualize garments on their own body, we eliminate the primary cause of returns before they even happen.
+            </p>
         </div>
-        <p class="mt-4 text-[10px] text-gray-400 uppercase tracking-widest">Move Mouse/Finger over image to swipe</p>
     </section>
 
     <section class="py-24 px-6 bg-[#080808]">
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-16 items-center">
             <div class="space-y-8">
-                <h2 class="lux-font text-4xl mb-8">E-commerce Integration</h2>
-                
+                <h2 class="lux-font text-4xl">Seamless Integration</h2>
                 <div id="text-1" class="step-content">
-                    <h3 class="lux-font text-2xl text-white">01. Hidden on Home</h3>
-                    <p class="text-gray-400 mt-2">Maintains your luxury branding by staying invisible until the product level.</p>
+                    <h3 class="lux-font text-2xl text-white">01. Hidden Placement</h3>
+                    <p class="text-gray-400 mt-2">The button stays invisible on homepages. It only appears on Product and Category pages where buyers make decisions.</p>
                 </div>
                 <div id="text-2" class="step-content hidden-info">
-                    <h3 class="lux-font text-2xl text-white">02. PDP Activation</h3>
-                    <p class="text-gray-400 mt-2">The button appears on Product pages to drive high-intent conversions.</p>
+                    <h3 class="lux-font text-2xl text-white">02. The See It On Me Button</h3>
+                    <p class="text-gray-400 mt-2">A clean, customized button appears on your PDP, perfectly matching your brand's existing font and style.</p>
                 </div>
                 <div id="text-3" class="step-content hidden-info">
-                    <h3 class="lux-font text-2xl text-white">03. Real-Time Analysis</h3>
-                    <p class="text-gray-400 mt-2">Privacy-first processing. Images are analyzed in volatile memory and never stored.</p>
+                    <h3 class="lux-font text-2xl text-white">03. Guidance Popup</h3>
+                    <p class="text-gray-400 mt-2">Our AI provides a branded guidance overlay to ensure the customer uploads the perfect pose for processing.</p>
                 </div>
                 <div id="text-4" class="step-content hidden-info">
-                    <h3 class="lux-font text-2xl text-white">04. Neural Output</h3>
-                    <p class="text-gray-400 mt-2">Branded results delivered instantly on your website's UI.</p>
+                    <h3 class="lux-font text-2xl text-white">04. Instant Output</h3>
+                    <p class="text-gray-400 mt-2">The final fitted garment is revealed in a high-end popup. No page reloads. No friction.</p>
                 </div>
-                
-                <button onclick="changeStep()" class="bg-white text-black px-10 py-4 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">Next Phase →</button>
+                <button onclick="changeStep()" id="nextBtn" class="bg-white text-black px-12 py-4 rounded-full text-xs font-bold uppercase tracking-widest shadow-lg">Next Phase →</button>
             </div>
-
             <div class="glass p-2 rounded-2xl bg-white/5 border border-white/10 h-[500px] relative overflow-hidden">
-                <div id="img-1" class="step-display active flex items-center justify-center text-gray-600">Step 1: Homepage</div>
-                <div id="img-2" class="step-display flex items-center justify-center text-gray-600">Step 2: Product Page</div>
-                <div id="img-3" class="step-display flex items-center justify-center text-gray-600">Step 3: Guidance Popup</div>
-                <div id="img-4" class="step-display flex items-center justify-center text-gray-600">Step 4: Result Output</div>
+                <div id="img-1" class="step-display active flex items-center justify-center text-gray-400">Step 1: Homepage (Button Hidden)</div>
+                <div id="img-2" class="step-display flex items-center justify-center text-gray-400">Step 2: Product Page (Button Visible)</div>
+                <div id="img-3" class="step-display flex items-center justify-center text-gray-400">Step 3: Guidance & Analyzing Popup</div>
+                <div id="img-4" class="step-display flex items-center justify-center text-gray-400">Step 4: Final AI Result Window</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 text-center">
+        <h2 class="lux-font text-5xl md:text-7xl mb-6 italic">True to Size.</h2>
+        <p class="text-gray-400 mb-16 max-w-2xl mx-auto italic font-light">"You're Perfect, Just the Way You Are. We preserve your body proportions, muscle tone, and curves with absolute precision."</p>
+        <div class="comparison-slider" id="slider">
+            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?q=80&w=1200" class="image-before">
+            <div class="image-after" id="after-div">
+                <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?q=80&w=1200" style="width: 900px; height: 550px; max-width: none;">
             </div>
         </div>
     </section>
 
     <section class="py-32 px-6 text-center">
         <h2 class="lux-font text-4xl mb-6">Client Safety First.</h2>
-        <p class="text-gray-500 max-w-2xl mx-auto mb-20 italic">"We process try-on data instantly. No images are stored on our servers."</p>
-        <h2 class="lux-font text-8xl md:text-[10rem] gold-gradient opacity-60 leading-none">LESS RETURNS.</h2>
-        <div class="mt-20">
-            <a href="/AI-Fitting-Labs-Apply.pdf" download class="bg-white text-black px-12 py-6 rounded-full font-bold uppercase tracking-widest">Get Integration Guide (PDF)</a>
-        </div>
+        <p class="text-gray-500 max-w-2xl mx-auto mb-20 italic">"Privacy is our core asset. Images are analyzed in volatile RAM and never stored on any persistent server. Your customers remain anonymous."</p>
+        
+        <h2 class="lux-font text-6xl md:text-9xl tracking-tighter uppercase text-white/10 leading-none mb-20">WE REDUCE RETURNS.</h2>
+        
+        <a href="/AI-Fitting-Labs-Integration.pdf" download class="bg-white text-black px-16 py-6 rounded-full font-bold uppercase tracking-[0.3em] hover:bg-gold transition">Get Integration Guide</a>
     </section>
 
     <script>
-        // 1. WORKING SLIDER LOGIC
+        // SLIDER SCRIPT (Works on Mouse & Touch)
         const slider = document.getElementById('slider');
         const afterDiv = document.getElementById('after-div');
-        
-        function moveSlider(e) {
-            const rect = slider.getBoundingClientRect();
-            const x = (e.pageX || (e.touches ? e.touches[0].pageX : 0)) - rect.left;
-            const percentage = (x / rect.width) * 100;
-            if (percentage >= 0 && percentage <= 100) {
-                afterDiv.style.width = ${percentage}%;
-            }
-        }
-        slider.addEventListener('mousemove', moveSlider);
-        slider.addEventListener('touchmove', moveSlider);
+        const move = (e) => {
+            let x = (e.pageX || (e.touches ? e.touches[0].pageX : 0)) - slider.getBoundingClientRect().left;
+            let percent = (x / slider.offsetWidth) * 100;
+            if (percent >= 0 && percent <= 100) afterDiv.style.width = percent + '%';
+        };
+        slider.addEventListener('mousemove', move);
+        slider.addEventListener('touchmove', move);
 
-        // 2. WORKING STEPPER LOGIC
-        let step = 1;
+        // STEPPER SCRIPT (Fixed Next Phase)
+        let current = 1;
         function changeStep() {
-            // Hide current text and image
-            document.getElementById(text-${step}).classList.add('hidden-info');
-            document.getElementById(img-${step}).classList.remove('active');
-            
-            // Increment
-            step = (step % 4) + 1;
-            
-            // Show next
-            document.getElementById(text-${step}).classList.remove('hidden-info');
-            document.getElementById(img-${step}).classList.add('active');
+            document.getElementById(text-${current}).classList.add('hidden-info');
+            document.getElementById(img-${current}).classList.remove('active');
+            current = (current % 4) + 1;
+            document.getElementById(text-${current}).classList.remove('hidden-info');
+            document.getElementById(img-${current}).classList.add('active');
         }
     </script>
 </body>
