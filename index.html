@@ -17,10 +17,12 @@
             -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;
         }
 
+        /* Hero Container */
         .hero-video-container { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
         .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(15px) brightness(0.35); }
-        .hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; z-index: 10; }
+        .hero-overlay { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); text-align: center; width: 100%; z-index: 10; padding: 0 20px; }
 
+        /* ROI Circle Graph */
         .roi-circle {
             width: 220px; height: 220px; border-radius: 50%;
             background: conic-gradient(#c5a059 60%, #1a1a1a 0);
@@ -28,10 +30,12 @@
         }
         .roi-circle::after { content: "60%"; position: absolute; width: 180px; height: 180px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; }
 
+        /* Cinematic Phase Container */
         .cinematic-container { position: relative; width: 100%; aspect-ratio: 2.35 / 1; background: #000; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; }
         .phase-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease; visibility: hidden; }
         .phase-img.active { opacity: 1; visibility: visible; }
 
+        /* Auto-Slider Before/After */
         .auto-slider-box { position: relative; width: 100%; max-width: 1000px; aspect-ratio: 2.35 / 1; margin: 0 auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
         .slide-asset { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
         .slide-asset.visible { opacity: 1; }
@@ -49,16 +53,16 @@
             <source src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/main/ai-fitting-labs-site.mp4.mp4" type="video/mp4">
         </video>
         <div class="hero-overlay">
-            <div class="mb-6">
-                <span class="text-[10px] tracking-[0.6em] text-gray-400 uppercase font-bold block mb-2">Give Uniqueness To Your Brand</span>
-                <span class="text-sm tracking-[0.3em] text-gold font-light uppercase block">Let customers try your clothes</span>
+            <div class="mb-4">
+                <span class="text-[10px] tracking-[0.5em] text-gray-400 uppercase font-bold block mb-1">Give Uniqueness To Your Brand</span>
+                <span class="text-xs tracking-[0.2em] text-gold font-light uppercase block">Let customers try your clothes</span>
             </div>
             
-            <h1 class="lux-font text-5xl md:text-8xl italic text-gold-gradient mb-12 uppercase">Our system, your brand, less return</h1>
+            <h1 class="lux-font text-4xl md:text-7xl italic text-gold-gradient mb-10 leading-tight">Our system, your brand, less return</h1>
             
-            <div class="flex flex-col md:flex-row justify-center items-center gap-6 pointer-events-auto">
-                <a href="mailto:nikhjoshi123@gmail.com" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-64 text-center">Book a Demo</a>
-                <a href="#" class="backdrop-blur-md border border-white/40 text-white px-12 py-5 rounded-full text-xs font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 w-64 text-center">Implementation</a>
+            <div class="flex flex-col md:flex-row justify-center items-center gap-4 pointer-events-auto">
+                <a href="mailto:nikhjoshi123@gmail.com" class="bg-white text-black px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-56 text-center shadow-lg">Book a Demo</a>
+                <a href="#" class="backdrop-blur-md border border-white/40 text-white px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 w-56 text-center">Implementation</a>
             </div>
         </div>
     </section>
@@ -109,11 +113,38 @@
                 <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/before.jpeg" class="slide-asset visible" id="slide-before">
                 <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/after.png" class="slide-asset after-asset" id="slide-after">
             </div>
+
+            <div class="mt-16 max-w-4xl mx-auto bg-white/5 p-12 rounded-3xl border border-white/10 text-left">
+                <h4 class="lux-font text-3xl mb-4">The Psychology of the Virtual Fit</h4>
+                <p class="text-gray-400 font-light leading-relaxed">
+                    Buyers return clothes because the "reality" didn't match the "imagination." When they visualize themselves in your clothes through our AI, the uncertainty disappears. High visualization leads to <span class="text-white font-bold">higher purchase intent</span> and significantly <span class="text-white font-bold">lower return rates</span>.
+                </p>
+            </div>
         </div>
     </section>
 
+    <section class="py-32 px-6 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="lux-font text-4xl mb-8 uppercase tracking-widest">Brand Integrity</h2>
+            <div class="grid md:grid-cols-2 gap-12 text-left">
+                <div>
+                    <h4 class="text-gold font-bold text-xs uppercase tracking-widest mb-3">Zero-Storage Policy</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Customer photos are processed in encrypted volatile RAM and purged instantly. We store zero personal imagery. Ever.</p>
+                </div>
+                <div>
+                    <h4 class="text-gold font-bold text-xs uppercase tracking-widest mb-3">Enterprise Security</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">SOC2 compliant infrastructure, ensuring brand reputation and world-class encryption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 text-center">
+        <h2 class="lux-font text-6xl md:text-[10rem] tracking-tighter uppercase text-white/5 leading-none mb-12 select-none">WE REDUCE RETURNS.</h2>
+        <p class="text-gray-500 uppercase tracking-[0.5em] text-[10px] mb-24">Enterprise Grade AI Solutions for Digital Retail</p>
+    </nav>
+
     <script>
-        // Phase control
         let pCurrent = 1;
         function nextPhase() {
             document.getElementById('p' + pCurrent).classList.remove('active');
@@ -123,7 +154,6 @@
             document.getElementById('t' + pCurrent).classList.remove('hidden');
         }
 
-        // Auto-fade Before/After
         const b = document.getElementById('slide-before');
         const a = document.getElementById('slide-after');
         setInterval(() => {
