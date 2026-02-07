@@ -3,24 +3,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Problem & The Cure | AI FITTING LABS</title>
+    <title>The Mission | AI FITTING LABS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #c5a059; --dark: #050505; --red: #ef4444; --green: #10b981; }
-        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; }
+        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         .lux-font { font-family: 'Playfair Display', serif; }
         .text-gold-gradient { color: var(--gold); background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        .bar-container { background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.1); border-radius: 20px; padding: 40px; }
-        .bar { height: 12px; border-radius: 10px; transition: width 2s ease-in-out; }
+        .bar-container { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.08); padding: 40px; border-radius: 30px; }
+        .bar { height: 8px; border-radius: 10px; transition: width 2s ease; }
         
-        .donut { width: 140px; height: 140px; border-radius: 50%; background: conic-gradient(var(--green) 0% 60%, #222 60% 100%); display: flex; align-items: center; justify-content: center; position: relative; }
-        .donut::after { content: ""; width: 115px; height: 115px; background: var(--dark); border-radius: 50%; position: absolute; }
-        
-        .source-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px; margin-top: 20px; }
-        .source-item { background: #111; padding: 15px; border: 1px solid #222; border-radius: 10px; font-size: 11px; color: #777; line-height: 1.4; }
-        .source-tag { color: var(--gold); font-weight: bold; display: block; margin-bottom: 5px; text-transform: uppercase; letter-spacing: 1px; }
+        .source-card { background: #0a0a0a; padding: 20px; border: 1px solid #1a1a1a; border-radius: 15px; transition: 0.3s; }
+        .source-card:hover { border-color: var(--gold); }
+        .source-link { font-size: 10px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; text-decoration: none; border-bottom: 1px solid transparent; }
+        .source-link:hover { border-bottom: 1px solid var(--gold); }
+
+        .trust-box { background: linear-gradient(145deg, #0a0a0a, #111); border: 1px solid rgba(197, 160, 89, 0.2); }
     </style>
 </head>
 <body>
@@ -34,112 +34,106 @@
         </div>
     </nav>
 
-    <section class="pt-48 pb-20 px-6 max-w-6xl mx-auto text-center">
-        <h2 class="text-gold uppercase text-[10px] tracking-[0.6em] mb-4 font-bold">Deep Dive</h2>
-        <h1 class="lux-font text-5xl md:text-8xl italic mb-10">Understanding the Struggle.</h1>
+    <section class="pt-48 pb-20 px-6 max-w-5xl mx-auto text-center">
+        <h2 class="text-gold uppercase text-[10px] tracking-[0.8em] mb-6 font-bold">The Soul of the Startup</h2>
+        <h1 class="lux-font text-5xl md:text-8xl italic mb-10 leading-tight">Every Body <br>is a Masterpiece.</h1>
+        <p class="text-gray-400 font-light max-w-3xl mx-auto leading-relaxed italic text-lg">
+            "We didn't start this to build software. We started this because we saw a woman close a tab in frustration because she couldn't see herself in a dress. We saw a boutique owner cry over return shipping costs that ate their kids' college fund. We are here to stop the heartbreak."
+        </p>
     </section>
 
-    <section class="py-20 px-6 max-w-5xl mx-auto">
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <div>
-                <h3 class="lux-font text-4xl mb-6 italic text-red-500">01. The Owner’s Invisible Bleeding</h3>
-                <div class="space-y-6 text-gray-400 font-light leading-relaxed text-sm">
-                    <p>For a boutique owner, every order is a celebration—until the return mail arrives. You pay for the shipping, you pay for the packaging, and you pay for the marketing to get that customer. When a dress comes back because of a "fitting issue," you don't just lose the profit; <span class="text-white">you lose the soul of that transaction.</span></p>
-                    <p>Current inventory gets stuck in transit, your cash flow freezes, and your logistics team spends more time processing "failures" than shipping new dreams. Your website is a beautiful window, but without a fitting room, it’s just a guessing game.</p>
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div class="space-y-8">
+                <h3 class="lux-font text-4xl italic text-gold-gradient">The Photography Trap</h3>
+                <p class="text-gray-400 font-light leading-relaxed">
+                    As a boutique owner, you are stuck in a cycle: Hire a model (₹10k+), hire a photographer (₹15k+), rent a studio, edit for weeks. And yet, after spending ₹50k per shoot, the customer still doesn't know if the clothes will fit their unique body.
+                </p>
+                <div class="p-6 bg-white/[0.03] border-l-2 border-gold italic text-sm text-gray-300">
+                    "Why pay for models when your visitors can become the models? Our tech turns every single visitor into the face of your brand. Instantly."
                 </div>
             </div>
             <div class="bar-container">
-                <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-6 font-bold text-center">Industry Reality Check</p>
-                <div class="space-y-8">
+                <p class="text-[10px] uppercase tracking-widest text-gray-500 mb-8 font-bold">The Economic Weight</p>
+                <div class="space-y-10">
                     <div>
-                        <div class="flex justify-between text-[10px] mb-2 uppercase tracking-tighter"><span>Website Owners Losing Profit to Returns</span><span class="text-red-500">82%</span></div>
-                        <div class="w-full bg-white/5 rounded-full h-3"><div class="bar bg-red-500" style="width: 82%;"></div></div>
+                        <div class="flex justify-between text-[10px] mb-3 uppercase"><span>Cost of Traditional Photoshoots</span><span class="text-red-500">Extremely High</span></div>
+                        <div class="w-full bg-white/5 h-2 rounded-full"><div class="bar bg-red-500" style="width: 90%;"></div></div>
                     </div>
                     <div>
-                        <div class="flex justify-between text-[10px] mb-2 uppercase tracking-tighter"><span>Return Rate Due to Fit Uncertainty</span><span class="text-red-500">30% - 40%</span></div>
-                        <div class="w-full bg-white/5 rounded-full h-3"><div class="bar bg-white/40" style="width: 35%;"></div></div>
+                        <div class="flex justify-between text-[10px] mb-3 uppercase"><span>User Confidence (Static Image)</span><span class="text-white">Low</span></div>
+                        <div class="w-full bg-white/5 h-2 rounded-full"><div class="bar bg-white/20" style="width: 20%;"></div></div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-white/[0.02] border-y border-white/5">
-        <div class="max-w-5xl mx-auto px-6 grid md:grid-cols-2 gap-16 items-start">
-            <div class="order-2 md:order-1 flex justify-center">
-                <div class="p-10 border border-white/10 rounded-3xl bg-black">
-                     <p class="lux-font text-2xl italic mb-4">"Will I look like the model?"</p>
-                     <p class="text-xs text-gray-500 leading-relaxed italic uppercase tracking-widest">The question that kills 70% of boutique sales before they happen.</p>
+    <section class="py-24 bg-white/[0.02] border-y border-white/5 px-6">
+        <div class="max-w-4xl mx-auto trust-box p-12 rounded-[40px] text-center">
+            <h3 class="lux-font text-3xl mb-6 italic text-white">"Why should I trust you with ₹10,000?"</h3>
+            <p class="text-gray-400 font-light mb-10 leading-relaxed">
+                We know the internet is full of empty promises. We are a startup, and for us, that ₹10k isn't profit—it's *Survival*. It's the cost of reserving the high-end H100 GPU servers needed to render your clothes in 4K. 
+            </p>
+            <div class="grid md:grid-cols-2 gap-6 text-left">
+                <div class="p-6 bg-black/40 rounded-2xl border border-white/5">
+                    <p class="text-gold font-bold text-xs uppercase mb-2">Transparency First</p>
+                    <p class="text-[11px] text-gray-500">We provide a direct WhatsApp link to the founder. You see the progress in real-time. No dark corners.</p>
                 </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <h3 class="lux-font text-4xl mb-6 italic text-gold-gradient">02. The Visitor’s Silent Fear</h3>
-                <div class="space-y-6 text-gray-400 font-light leading-relaxed text-sm">
-                    <p>Your visitor isn't just looking at a price tag; they are looking at their own insecurities. They see a beautiful model, but they don't see themselves. This <span class="text-white">Visual Gap</span> creates anxiety. They want to buy, they want to feel beautiful, but the fear of "it won't fit me" is stronger than the desire for the clothes.</p>
-                    <p>Shopping should be an escape, not a math problem. When they can't visualize the product on their own body, the emotional connection snaps. They don't leave your site because they don't like the clothes—they leave because <span class="text-white">they don't trust the outcome.</span></p>
+                <div class="p-6 bg-black/40 rounded-2xl border border-white/5">
+                    <p class="text-gold font-bold text-xs uppercase mb-2">Immediate Activation</p>
+                    <p class="text-[11px] text-gray-500">Your advance triggers a 2-hour server setup. Within 24 hours, you see your first product live. We don't hide; we work.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <section class="py-32 px-6 max-w-5xl mx-auto text-center">
-        <h2 class="text-green-500 uppercase text-[10px] tracking-[0.6em] mb-4 font-bold">The Solution</h2>
-        <h3 class="lux-font text-5xl mb-8 italic">We aren't selling a button. <br>We are selling Engagement.</h3>
-        <p class="max-w-3xl mx-auto text-gray-400 font-light mb-16 leading-relaxed italic">
-            "When you add our VTON technology, you aren't just adding a feature. You are giving your customer the permission to dream. You are turning a static image into a personal mirror. That is not tech—that is magic."
+        <h2 class="text-green-500 uppercase text-[10px] tracking-[0.6em] mb-4 font-bold">The Engagement Cure</h2>
+        <h3 class="lux-font text-5xl mb-12 italic leading-tight">We sell the "Yes!" moment.</h3>
+        <p class="text-gray-400 font-light mb-16 max-w-2xl mx-auto">
+            Our data shows that when a visitor sees themselves in your outfit, their heart rate increases. That's engagement. They stay longer, they click more, and they buy with certainty. You aren't buying a button; you are buying <span class="text-white">Emotional Security</span> for your customers.
         </p>
-
-        <div class="grid md:grid-cols-3 gap-10">
-            <div class="p-8 bg-white/[0.03] border border-white/5 rounded-3xl">
-                <div class="donut mx-auto mb-6"><div class="relative z-10 text-2xl font-bold text-green-500">60%</div></div>
-                <h4 class="lux-font text-xl italic mb-2">Confidence Boost</h4>
-                <p class="text-[10px] text-gray-500 uppercase tracking-widest">Returns dropped by 60% as fit-uncertainty vanishes.</p>
+        
+        <div class="grid md:grid-cols-3 gap-8">
+            <div class="p-10 bg-white/[0.02] border border-white/5 rounded-3xl">
+                <p class="text-4xl font-bold text-green-500 mb-4">60%</p>
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">Less Returns</p>
             </div>
-            <div class="p-8 bg-white/[0.03] border border-white/5 rounded-3xl">
-                <div class="text-4xl text-green-500 mb-6 font-bold">3.5x</div>
-                <h4 class="lux-font text-xl italic mb-2">Engagement</h4>
-                <p class="text-[10px] text-gray-500 uppercase tracking-widest">Users spend 350% more time interacting with your fabric.</p>
+            <div class="p-10 bg-white/[0.02] border border-white/5 rounded-3xl">
+                <p class="text-4xl font-bold text-green-500 mb-4">4X</p>
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">More Engagement</p>
             </div>
-            <div class="p-8 bg-white/[0.03] border border-white/5 rounded-3xl">
-                <div class="text-4xl text-green-500 mb-6 font-bold">0%</div>
-                <h4 class="lux-font text-xl italic mb-2">Friction</h4>
-                <p class="text-[10px] text-gray-500 uppercase tracking-widest">No redirects. No apps. Just instant visualization on YOUR site.</p>
+            <div class="p-10 bg-white/[0.02] border border-white/5 rounded-3xl">
+                <p class="text-4xl font-bold text-green-500 mb-4">100%</p>
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">Visual Trust</p>
             </div>
         </div>
     </section>
 
-    <section class="py-20 bg-black/50 border-t border-white/5">
-        <div class="max-w-5xl mx-auto px-6">
-            <h4 class="text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-6 text-center">Verified Industry Research & Data Points</h4>
-            <div class="source-grid">
-                <div class="source-item">
-                    <span class="source-tag">Return Logistics</span>
-                    "Returns cost retailers $166 million for every $1 billion in sales." 
-                    <br><em>Source: National Retail Federation (NRF) 2023 Report.</em>
-                </div>
-                <div class="source-item">
-                    <span class="source-tag">Consumer Behavior</span>
-                    "70% of returns in fashion are due to poor fit or style mismatch."
-                    <br><em>Source: McKinsey & Company - The State of Fashion.</em>
-                </div>
-                <div class="source-item">
-                    <span class="source-tag">VTON Impact</span>
-                    "Virtual try-on technology reduces return rates by 60% and increases conversion by 94%."
-                    <br><em>Source: Deloitte Digital Transformation Study.</em>
-                </div>
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <h4 class="text-center text-[10px] uppercase tracking-[0.4em] text-gray-500 mb-12">Verified Industry Research</h4>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="source-card">
+                <p class="text-xs text-gray-400 mb-4 font-light">"E-commerce return rates hit 16.5%, costing retailers billions in lost logistics."</p>
+                <a href="https://nrf.com/research/2023-retail-returns-survey" target="_blank" class="source-link">Read NRF Report →</a>
+            </div>
+            <div class="source-card">
+                <p class="text-xs text-gray-400 mb-4 font-light">"Virtual try-ons increase conversion rates by up to 94% as buyer hesitation drops."</p>
+                <a href="https://www2.deloitte.com/us/en/pages/technology-media-and-telecommunications/articles/digital-media-trends.html" target="_blank" class="source-link">Deloitte Tech Study →</a>
+            </div>
+            <div class="source-card">
+                <p class="text-xs text-gray-400 mb-4 font-light">"Fitting issues are the #1 reason for fashion returns globally (70% of all cases)."</p>
+                <a href="https://www.mckinsey.com/industries/retail/our-insights/the-state-of-fashion-2024" target="_blank" class="source-link">McKinsey Fashion 2024 →</a>
             </div>
         </div>
     </section>
 
-    <section class="py-32 bg-black text-center">
-        <h2 class="lux-font text-6xl md:text-9xl font-bold text-white tracking-tighter opacity-5 uppercase leading-none mb-10 select-none">REDUCE RETURNS</h2>
-        <p class="text-gold font-bold text-xs tracking-[0.4em] uppercase mb-8">2 Problems. 1 Solution. 100% Peace of Mind.</p>
-        <a href="pricing.html" class="inline-block bg-white text-black px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-gold transition-all">Claim Your Solution</a>
+    <section class="py-40 bg-black text-center">
+        <h2 class="lux-font text-6xl md:text-[120px] font-bold text-white tracking-tighter opacity-5 uppercase leading-none mb-10">THE FUTURE</h2>
+        <p class="text-gold font-bold text-[10px] tracking-[0.5em] uppercase mb-8">Reduce Returns. Increase Love. Build a Brand.</p>
+        <a href="mailto:nikhjoshi123@gmail.com" class="bg-gold text-black px-16 py-6 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-white transition-all shadow-2xl">Partner with Us</a>
     </section>
-
-    <footer class="py-10 text-center border-t border-white/5">
-        <p class="text-[8px] uppercase tracking-widest text-gray-600">AI Fitting Labs | Our Mission is Your Growth</p>
-    </footer>
 
 </body>
 </html>
