@@ -11,95 +11,109 @@
         body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; }
         .lux-font { font-family: 'Playfair Display', serif; }
         
-        .code-box {
-            background: #0a0a0a;
-            border: 1px solid rgba(197, 160, 89, 0.2);
-            padding: 20px;
-            border-radius: 12px;
-            font-family: 'Courier New', Courier, monospace;
-            color: #10b981;
-            position: relative;
-        }
-
-        .step-number {
-            font-size: 10px;
-            font-weight: 800;
-            color: var(--gold);
-            letter-spacing: 0.3em;
-            text-transform: uppercase;
-            margin-bottom: 8px;
-            display: block;
-        }
-
         .rainbow-text {
             background: linear-gradient(to right, #ef5350, #7e57c2, #2196f3, #43a047, #f9a825, #ff5722);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             font-weight: 800;
         }
+
+        .code-container {
+            background: #0d0d0d;
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            padding: 24px;
+            font-family: 'Courier New', Courier, monospace;
+            position: relative;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+        }
+
+        .step-pill {
+            background: rgba(197, 160, 89, 0.1);
+            color: var(--gold);
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            border: 1px solid rgba(197, 160, 89, 0.2);
+        }
+
+        .line-accent {
+            width: 2px;
+            height: 50px;
+            background: linear-gradient(to bottom, var(--gold), transparent);
+            margin-left: 20px;
+        }
     </style>
 </head>
-<body class="bg-[#050505]">
+<body class="selection:bg-gold selection:text-black">
 
-    <nav class="p-10 flex justify-center border-b border-white/5">
+    <nav class="p-8 border-b border-white/5 flex justify-center sticky top-0 bg-black/80 backdrop-blur-md z-50">
         <div class="lux-font text-xl uppercase tracking-tighter font-bold">
             <span class="rainbow-text">AI FITTING LABS</span>
         </div>
     </nav>
 
-    <div class="max-w-4xl mx-auto py-20 px-6">
-        <header class="mb-20">
-            <h1 class="lux-font text-5xl italic text-white mb-4 text-center">Implementation Guide</h1>
-            <p class="text-gray-500 text-[10px] uppercase tracking-[0.5em] text-center">Phase: Deployment v1.0</p>
+    <main class="max-w-3xl mx-auto py-20 px-6">
+        
+        <header class="text-center mb-24">
+            <h1 class="lux-font text-5xl md:text-7xl italic mb-6">Technical <br>Onboarding</h1>
+            <p class="text-gray-500 text-xs uppercase tracking-[0.4em]">v1.0 Deployment Protocol</p>
         </header>
 
-        <div class="mb-20">
-            <span class="step-number">Step 01</span>
-            <h2 class="lux-font text-3xl mb-6">Neural Mapping (2-Hour Window)</h2>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-                Once your ₹10,000 deployment advance is processed, our team activates your dedicated GPU server. We ingest your high-res garment catalog and begin the neural mapping process. This phase takes exactly 120 minutes.
+        <div class="mb-16">
+            <span class="step-pill">Phase 01</span>
+            <h2 class="lux-font text-3xl mt-6 mb-4 italic">Neural Setup (120 Mins)</h2>
+            <p class="text-gray-400 text-sm leading-relaxed font-light mb-6">
+                Upon confirmation of the ₹10,000 deployment advance, our team reserves a dedicated H100 GPU instance for your brand. We map your garment physics, textures, and drape silhouettes into our neural engine.
             </p>
+            <div class="line-accent"></div>
         </div>
 
-        <div class="mb-20">
-            <span class="step-number">Step 02</span>
-            <h2 class="lux-font text-3xl mb-6">Embed the Ghost Script</h2>
-            <p class="text-gray-400 text-sm leading-relaxed mb-8 font-light">
-                Paste your unique integration snippet before the closing <code class="text-gold font-bold">&lt;/body&gt;</code> tag of your website. This script is lightweight and will not affect your page load speed.
+        <div class="mb-16">
+            <span class="step-pill">Phase 02</span>
+            <h2 class="lux-font text-3xl mt-6 mb-4 italic">The Embed Script</h2>
+            <p class="text-gray-400 text-sm leading-relaxed font-light mb-8">
+                Paste this one-line "Ghost Script" into your website's header or right before the closing <code class="text-white font-mono">&lt;/body&gt;</code> tag. This script is asynchronous—it won't slow down your site.
             </p>
             
-            <div class="code-box">
-                <div class="flex justify-between mb-4">
-                    <span class="text-[10px] text-gray-600 uppercase">Universal Integration Snippet</span>
-                    <span class="text-[10px] text-emerald-500 font-bold">LIVE</span>
+            <div class="code-container">
+                <div class="flex gap-2 mb-4">
+                    <div class="w-3 h-3 rounded-full bg-red-500/20"></div>
+                    <div class="w-3 h-3 rounded-full bg-yellow-500/20"></div>
+                    <div class="w-3 h-3 rounded-full bg-green-500/20"></div>
                 </div>
-                <pre class="text-xs overflow-x-auto">
-&lt;!-- AI Fitting Labs | Global Bridge --&gt;
+                <pre class="text-xs md:text-sm text-emerald-500/80 overflow-x-auto leading-relaxed">
+&lt;!-- AI Fitting Labs | Global Integration --&gt;
 &lt;script 
   src="https://cdn.aifittinglabs.store/v1/widget.js" 
-  data-brand-id="AI_BRAND_YOURID_01" 
+  data-brand-id="AI_BRAND_YOUR_UNIQUE_ID" 
   async&gt;
 &lt;/script&gt;</pre>
             </div>
+            <div class="line-accent"></div>
         </div>
 
-        <div class="mb-20">
-            <span class="step-number">Step 03</span>
-            <h2 class="lux-font text-3xl mb-6">Automated Launch</h2>
-            <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-                The button will automatically render on your <strong class="text-white">Product Pages</strong>. No manual placement required. Our AI detects your "Product Container" and injects the "See it on You" button instantly.
+        <div class="mb-16">
+            <span class="step-pill">Phase 03</span>
+            <h2 class="lux-font text-3xl mt-6 mb-4 italic">Smart Detection</h2>
+            <p class="text-gray-400 text-sm leading-relaxed font-light">
+                Once live, our system automatically detects your product images. The <span class="text-white font-bold">"See it on You"</span> button will appear natively on all product pages. No manual design or CSS adjustments needed on your end.
             </p>
         </div>
 
-        <div class="p-12 bg-white/5 border border-white/10 rounded-3xl text-center">
-            <h3 class="lux-font text-2xl mb-4 italic">Ready to Begin?</h3>
-            <p class="text-gray-500 text-xs mb-8">Send your catalog photos to begin Phase 1.</p>
-            <a href="mailto:nikhil@aifittinglabs.store" class="inline-block border border-gold text-gold px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gold hover:text-black transition">Contact Engineering</a>
+        <div class="mt-32 p-12 rounded-3xl border border-gold/20 bg-gradient-to-b from-gold/5 to-transparent text-center">
+            <h3 class="lux-font text-3xl mb-4 italic text-gold">Ready to Deploy?</h3>
+            <p class="text-gray-500 text-xs mb-10 tracking-widest uppercase">Contact Engineering to trigger Phase 01</p>
+            <a href="mailto:nikhjoshi123@gmail.com?subject=Trigger Deployment&body=We are ready to start the 2-hour implementation for our brand." class="bg-gold text-black px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:scale-105 transition-transform inline-block">Start Deployment</a>
         </div>
-    </div>
 
-    <footer class="py-10 text-center opacity-30 text-[8px] uppercase tracking-widest">
-        AI Fitting Labs © 2026 | Technical Documentation
+    </main>
+
+    <footer class="py-20 text-center opacity-20">
+        <p class="text-[8px] uppercase tracking-[0.5em]">AI FITTING LABS | SECURE DEPLOYMENT PORTAL</p>
     </footer>
 
 </body>
