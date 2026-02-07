@@ -26,22 +26,22 @@
         /* DATA VISUALS */
         .chart-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 40px; }
         .donut {
-            width: 200px; height: 200px; border-radius: 50%;
+            width: 180px; height: 180px; border-radius: 50%;
             background: conic-gradient(var(--red) 0% 30%, #1a1a1a 30% 100%);
             display: flex; align-items: center; justify-content: center; position: relative;
         }
-        .donut::after { content: ""; width: 160px; height: 160px; background: var(--dark); border-radius: 50%; position: absolute; }
+        .donut::after { content: ""; width: 140px; height: 140px; background: var(--dark); border-radius: 50%; position: absolute; }
         
         /* THE GOLDEN REVERSE BUTTON */
         .btn-reverse {
             background-color: var(--gold);
             color: #000;
             border: 2px solid var(--gold);
-            padding: 20px 60px;
+            padding: 18px 45px;
             border-radius: 50px;
-            font-size: 14px;
+            font-size: 12px;
             font-weight: 900;
-            letter-spacing: 0.4em;
+            letter-spacing: 0.3em;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             display: inline-block;
             text-transform: uppercase;
@@ -56,15 +56,23 @@
 
         .source-link { background: #111; padding: 12px 20px; border-radius: 12px; border: 1px solid #222; font-size: 11px; display: block; transition: 0.3s; color: #888; }
         .source-link:hover { border-color: var(--gold); color: #fff; }
+
+        /* MOBILE FIXES */
+        @media (max-width: 768px) {
+            .nav-container { padding: 1.5rem 1rem !important; flex-direction: column; gap: 1.5rem; }
+            .nav-links { gap: 1.5rem !important; }
+            .lux-font.text-6xl { font-size: 3rem !important; }
+            .chart-box { padding: 20px; }
+        }
     </style>
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/50 backdrop-blur-lg border-b border-white/5">
+    <nav class="nav-container fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/5">
         <div class="lux-font text-xl uppercase tracking-tighter font-bold">
             <span class="rainbow-text">AI FITTING LABS</span>
         </div>
-        <div class="hidden md:flex gap-10">
+        <div class="nav-links flex gap-6 md:gap-10">
             <a href="index.html" class="text-gray-500 text-[10px] uppercase tracking-widest hover:text-gold transition">Home</a>
             <a href="pricing.html" class="text-gray-500 text-[10px] uppercase tracking-widest hover:text-gold transition">Pricing</a>
             <a href="mission.html" class="nav-mission text-[10px] uppercase tracking-widest">Our Mission</a>
@@ -73,34 +81,33 @@
 
     <section class="pt-48 pb-20 px-6 text-center max-w-5xl mx-auto">
         <h2 class="text-gold uppercase text-[10px] tracking-[0.8em] mb-6 font-bold">The Science of Retention</h2>
-        <h1 class="lux-font text-6xl md:text-8xl italic mb-10 leading-tight">2 Problems. <br>1 Solution.</h1>
-        <p class="text-gray-400 font-light max-w-2xl mx-auto italic text-lg leading-relaxed">
+        <h1 class="lux-font text-5xl md:text-8xl italic mb-10 leading-tight">2 Problems. <br>1 Solution.</h1>
+        <p class="text-gray-400 font-light max-w-2xl mx-auto italic text-base md:text-lg leading-relaxed">
             "Your boutique isn't failing because of your clothes. It's struggling because of the 'Visual Gap' between your website and your customer's reality."
         </p>
     </section>
 
     <section class="py-24 px-6 max-w-6xl mx-auto border-t border-white/5">
-        <div class="grid md:grid-cols-2 gap-20">
-            <div>
-                <h3 class="lux-font text-4xl italic text-red-500 mb-8">Problem 01: The Owner's Drain</h3>
+        <div class="grid md:grid-cols-2 gap-12 md:gap-20">
+            <div class="order-1">
+                <h3 class="lux-font text-3xl md:text-4xl italic text-red-500 mb-8">Problem 01: The Owner's Drain</h3>
                 <div class="space-y-6 text-gray-400 font-light leading-relaxed">
-                    <p>Traditional boutiques are trapped in an expensive cycle of *Model Shoots* and *Inventory Jams*. You spend thousands to create a unique look, but without high-tech engagement, you are just another store in a crowded market.</p>
+                    <p>Traditional boutiques are trapped in an expensive cycle of *Model Shoots* and *Inventory Jams*. You spend thousands to create a unique look, but without high-tech engagement, you are just another store.</p>
                     <ul class="space-y-4 text-sm">
-                        <li class="flex gap-3"><span class="text-red-500">●</span> <strong>Expense Overload:</strong> Studio rent, photographers, and models are costs you can't recover.</li>
-                        <li class="flex gap-3"><span class="text-red-500">●</span> <strong>Logistics Nightmare:</strong> Shipping returns back and forth eats 15-20% of your total revenue.</li>
-                        <li class="flex gap-3"><span class="text-red-500">●</span> <strong>Conversion Loss:</strong> "Add to Cart" means nothing if "Fear of Fit" prevents the final click.</li>
+                        <li class="flex gap-3"><span class="text-red-500">●</span> <strong>Expense Overload:</strong> Studio rent and photographers are sunk costs.</li>
+                        <li class="flex gap-3"><span class="text-red-500">●</span> <strong>Logistics Nightmare:</strong> Shipping returns eats 20% of your revenue.</li>
                     </ul>
                 </div>
             </div>
-            <div class="chart-box flex flex-col items-center justify-center">
+            <div class="order-2 chart-box flex flex-col items-center justify-center">
                 <div class="donut mb-8">
                     <div class="relative z-10 text-center">
-                        <span class="text-4xl font-bold text-red-500">30%</span>
-                        <p class="text-[8px] uppercase tracking-widest text-gray-500">Profit Lost to Returns</p>
+                        <span class="text-3xl font-bold text-red-500">30%</span>
+                        <p class="text-[8px] uppercase tracking-widest text-gray-500">Profit Lost</p>
                     </div>
                 </div>
                 <div class="w-full space-y-4">
-                    <div class="flex justify-between text-[10px] uppercase"><span>Logistics & Model Costs</span><span class="text-red-500">CRITICAL</span></div>
+                    <div class="flex justify-between text-[10px] uppercase"><span>Costs</span><span class="text-red-500">CRITICAL</span></div>
                     <div class="w-full bg-white/5 h-1 rounded-full"><div class="bg-red-500 h-full w-[85%]"></div></div>
                 </div>
             </div>
@@ -108,28 +115,28 @@
     </section>
 
     <section class="py-24 bg-white/[0.02] border-y border-white/5 px-6">
-        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+        <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
             <div class="order-2 md:order-1 chart-box text-center">
                 <p class="lux-font text-xl italic text-gray-500 mb-4">"Will I look like the model?"</p>
                 <div class="p-6 bg-red-500/5 border border-red-500/20 rounded-2xl">
-                    <p class="text-xs uppercase tracking-widest text-red-500 font-bold">The #1 Abandonment Reason</p>
+                    <p class="text-xs uppercase tracking-widest text-red-500 font-bold">Abandonment Reason #1</p>
                 </div>
             </div>
             <div class="order-1 md:order-2">
-                <h3 class="lux-font text-4xl italic text-red-500 mb-8">Problem 02: The Buyer's Anxiety</h3>
+                <h3 class="lux-font text-3xl md:text-4xl italic text-red-500 mb-8">Problem 02: The Buyer's Anxiety</h3>
                 <p class="text-gray-400 font-light leading-relaxed mb-6">
-                    Customers want to buy, but they don't trust the outcome. They ask: <em>"Is it worth the price? Will it look good on ME?"</em> When they can't visualize the cloth on their unique body, they close the tab.
+                    Customers want to buy, but they don't trust the outcome. They ask: <em>"Will it look good on ME?"</em>
                 </p>
-                <p class="text-white italic font-bold">"You aren't selling fabric; you are selling confidence. Without it, you have no sale."</p>
+                <p class="text-white italic font-bold">"You aren't selling fabric; you are selling confidence."</p>
             </div>
         </div>
     </section>
 
     <section class="py-32 px-6 max-w-5xl mx-auto text-center">
         <h2 class="text-green-500 uppercase text-[10px] tracking-[0.6em] mb-4 font-bold">The Solution</h2>
-        <h3 class="lux-font text-5xl md:text-7xl italic mb-12">The "See It On Me" Cure.</h3>
+        <h3 class="lux-font text-4xl md:text-7xl italic mb-12">The "See It On Me" Cure.</h3>
         
-        <div class="grid md:grid-cols-3 gap-10 mb-20">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-20">
             <div class="p-8 bg-white/[0.03] border border-white/5 rounded-3xl">
                 <p class="text-4xl font-bold text-green-500 mb-2">94%</p>
                 <p class="text-[10px] uppercase tracking-widest text-gray-500">Engagement Hike</p>
@@ -147,7 +154,7 @@
 
     <section class="py-24 px-6 max-w-6xl mx-auto border-t border-white/5">
         <h4 class="text-center text-[10px] uppercase tracking-[0.5em] text-gray-600 mb-12 font-bold italic">Global Industry Research</h4>
-        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
             <a href="https://nrf.com/research/2025-retail-returns-landscape" target="_blank" class="source-link">NRF: 2025 Landscape ↗</a>
             <a href="https://www.sayonetech.com/blog/ai-virtual-try-on-cut-returns-ecommerce/" target="_blank" class="source-link">Sayone: Cut Returns ↗</a>
             <a href="https://seeonme.ai/news/how-roi-looks-like-for-businesses-implementing-vton" target="_blank" class="source-link">SeeOnMe: ROI Analysis ↗</a>
@@ -155,9 +162,9 @@
         </div>
     </section>
 
-    <section class="py-40 bg-black text-center">
-        <h2 class="lux-font text-5xl md:text-7xl italic mb-12">2 Problems. 1 Solution.</h2>
-        <p class="text-gray-500 text-xs tracking-[0.5em] uppercase mb-12">Ready to transform your boutique profit?</p>
+    <section class="py-40 bg-black text-center px-4">
+        <h2 class="lux-font text-4xl md:text-7xl italic mb-12">2 Problems. 1 Solution.</h2>
+        <p class="text-gray-500 text-[10px] tracking-[0.4em] uppercase mb-12">Ready to transform your boutique profit?</p>
         <a href="pricing.html" class="btn-reverse">GET STARTED</a>
     </section>
 
