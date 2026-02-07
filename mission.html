@@ -3,26 +3,44 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Problem & The Cure | AI FITTING LABS</title>
+    <title>The Mission | AI FITTING LABS</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #c5a059; --dark: #050505; --red: #ff4d4d; --green: #00ff88; }
-        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; }
+        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         .lux-font { font-family: 'Playfair Display', serif; }
+        
+        /* RAINBOW AI TEXT */
+        .rainbow-text {
+            background: linear-gradient(to right, #ef4444, #f59e0b, #10b981, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow-move 5s linear infinite;
+            background-size: 200% auto;
+        }
+        @keyframes rainbow-move { to { background-position: 200% center; } }
+
         .text-gold-gradient { color: var(--gold); background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        .problem-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); padding: 40px; border-radius: 30px; }
-        .source-link { font-size: 10px; color: var(--gold); text-transform: uppercase; letter-spacing: 1px; text-decoration: underline; margin-top: 15px; display: inline-block; }
-        
-        /* Interactive Loss Tracker */
-        #loss-tracker { background: #000; border: 1px solid #222; padding: 20px; border-radius: 15px; font-family: monospace; color: var(--red); }
+        .nav-link { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: 0.3s; }
+        .nav-link:hover, .nav-link.active { color: var(--gold); }
+
+        /* INTERACTIVE GAME STYLING */
+        #sim-box { background: #0a0a0a; border: 1px solid #1a1a1a; border-radius: 30px; height: 250px; position: relative; overflow: hidden; cursor: pointer; }
+        .sim-item { position: absolute; font-size: 30px; transition: all 1s ease-in-out; }
+        .loss-badge { background: rgba(255, 77, 77, 0.1); color: #ff4d4d; padding: 4px 12px; border-radius: 20px; font-size: 10px; font-weight: bold; border: 1px solid rgba(255,77,77,0.2); }
+
+        .source-card { background: #0a0a0a; border: 1px solid #111; padding: 25px; border-radius: 20px; transition: 0.4s; }
+        .source-card:hover { border-color: var(--gold); transform: translateY(-5px); }
     </style>
 </head>
 <body>
 
     <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/50 backdrop-blur-lg border-b border-white/5">
-        <div class="lux-font text-xl uppercase tracking-tighter text-white font-bold">AI FITTING LABS</div>
+        <div class="lux-font text-xl uppercase tracking-tighter font-bold">
+            <span class="rainbow-text">AI FITTING LABS</span>
+        </div>
         <div class="hidden md:flex gap-10">
             <a href="index.html" class="nav-link">Home</a>
             <a href="pricing.html" class="nav-link">Pricing</a>
@@ -30,100 +48,124 @@
         </div>
     </nav>
 
-    <section class="pt-48 pb-20 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-16">
-            <h2 class="text-red-500 uppercase text-[10px] tracking-[0.6em] mb-4 font-bold">Problem Phase 01</h2>
-            <h1 class="lux-font text-5xl md:text-7xl italic mb-8">The Owner's Invisible Decay.</h1>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-12">
-            <div class="problem-card">
-                <h3 class="lux-font text-2xl text-white mb-6 italic">The Profit Burn</h3>
-                <p class="text-gray-400 text-sm leading-relaxed mb-6">
-                    Boutique owners aren't just losing sales; they are paying to lose them. Between *Forward Shipping (₹300), **Reverse Logistics (₹300), and **Dead Inventory (Clothes stuck in courier trucks)*, a single return can wipe out the profit of 3 successful sales. 
-                </p>
-                <p class="text-gray-400 text-sm leading-relaxed">
-                    Furthermore, the cost of "Model Shoots" is a recurring tax on your growth. You spend lakhs on models that don't even look like your actual customers.
-                </p>
-                <a href="https://nrf.com/research/2023-retail-returns-survey" target="_blank" class="source-link">NRF: The $743 Billion Return Problem ↗</a>
-            </div>
-            <div class="flex flex-col justify-center p-8 bg-red-500/5 border border-red-500/10 rounded-3xl">
-                <p class="text-[10px] uppercase text-red-500 mb-4 tracking-widest">Live Loss Simulation</p>
-                <div id="loss-tracker">₹ <span id="loss-val">0</span> wasted on returns</div>
-                <p class="text-[10px] text-gray-500 mt-4">Calculated based on average boutique return rates (30%).</p>
-            </div>
-        </div>
+    <section class="pt-48 pb-20 px-6 max-w-5xl mx-auto text-center">
+        <h2 class="text-gold uppercase text-[10px] tracking-[0.8em] mb-6 font-bold italic">The Core Belief</h2>
+        <h1 class="lux-font text-5xl md:text-8xl italic mb-10 leading-tight">Beyond Browsing. <br>Seeing is Believing.</h1>
+        <p class="text-gray-400 font-light max-w-3xl mx-auto leading-relaxed italic text-lg">
+            "You don't just sell clothes. You sell identity. We didn't build this to be a 'plugin'—we built it to bridge the gap between a customer's doubt and their confidence."
+        </p>
     </section>
 
-    <section class="py-24 bg-white/[0.01] border-y border-white/5 px-6">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-gold text-center uppercase text-[10px] tracking-[0.6em] mb-12 font-bold">Problem Phase 02: The Buyer</h2>
-            <div class="grid md:grid-cols-3 gap-8">
-                <div class="p-8 border border-white/5 rounded-2xl">
-                    <h4 class="lux-font text-xl italic mb-4">"The Mirror Fear"</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed">70% of shoppers abandon carts because they cannot visualize the garment on their specific body shape.</p>
-                </div>
-                <div class="p-8 border border-white/5 rounded-2xl">
-                    <h4 class="lux-font text-xl italic mb-4">"The Size Guess"</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed">Standard size charts are confusing. Without a 'Virtual Mirror', your customer assumes it won't fit and leaves.</p>
-                </div>
-                <div class="p-8 border border-white/5 rounded-2xl">
-                    <h4 class="lux-font text-xl italic mb-4">"The Return Hassle"</h4>
-                    <p class="text-xs text-gray-500 leading-relaxed">Modern buyers hate returns. If they aren't 100% sure, they won't risk their money. You lose the trust.</p>
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <div class="grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <h3 class="lux-font text-4xl italic text-red-500 mb-6">01. The Silent Profit Killer</h3>
+                <p class="text-gray-400 font-light leading-relaxed mb-8">
+                    Every boutique owner knows the anxiety of the <strong>'Return Cycle.'</strong> An order comes in, you ship it with hope, and 3 days later, it's back on your desk. Shipping costs doubled. Inventory blocked. Profit destroyed. 
+                </p>
+                <div id="sim-box" class="flex items-center justify-center" onclick="runSim()">
+                    <p id="sim-text" class="text-gray-600 text-[10px] uppercase tracking-widest text-center px-10">Tap to see the cycle of a return-heavy boutique</p>
+                    <div id="parcel" class="sim-item opacity-0">📦</div>
+                    <div id="money" class="sim-item opacity-0">💸</div>
                 </div>
             </div>
-            <div class="text-center mt-12">
-                <a href="https://www.mckinsey.com/industries/retail/our-insights/the-state-of-fashion-2024" target="_blank" class="source-link">McKinsey: Solving the Fit Crisis ↗</a>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-32 px-6 max-w-5xl mx-auto">
-        <div class="text-center mb-20">
-            <h2 class="text-green-500 uppercase text-[10px] tracking-[0.6em] mb-4 font-bold">The Solution</h2>
-            <h3 class="lux-font text-5xl italic mb-10">We sell Engagement, not Code.</h3>
-        </div>
-
-        <div class="grid md:grid-cols-2 gap-16 items-start">
-            <div class="space-y-10">
+            <div class="space-y-8">
+                <h3 class="lux-font text-4xl italic text-gold-gradient">02. The Visitor's Heartbreak</h3>
                 <p class="text-gray-400 font-light leading-relaxed">
-                    By implementing AI Fitting Labs, you allow the visitor to become the model. This removes the "Mirror Fear" instantly. 
+                    Your visitor sees a beautiful model. She looks at her own reflection. She loves the dress, but she *fears the mirror.* This uncertainty kills 70% of your potential sales before they even reach the cart.
                 </p>
-                <div class="bg-gold/10 p-8 rounded-2xl border border-gold/20">
-                    <h4 class="text-gold font-bold text-xs uppercase mb-4 tracking-widest">Why the ₹10,000 Advance?</h4>
-                    <p class="text-[11px] text-gray-300 leading-relaxed">
-                        We are a specialized AI Lab. Every new brand requires us to spin up a dedicated *GPU Instance (Nvidia H100)* to process your catalog's physics and textures. This advance ensures your brand gets priority compute power and a 2-hour integration window. *We are transparent because we are partners.*
-                    </p>
-                </div>
-            </div>
-            <div class="space-y-6">
-                <div class="p-6 bg-white/[0.03] rounded-xl border border-white/5">
-                    <p class="text-green-500 font-bold">60% Return Reduction</p>
-                    <p class="text-[10px] text-gray-500 uppercase mt-1">Confirmed by Deloitte Tech Research</p>
-                </div>
-                <div class="p-6 bg-white/[0.03] rounded-xl border border-white/5">
-                    <p class="text-green-500 font-bold">₹0 Model Shooting Cost</p>
-                    <p class="text-[10px] text-gray-500 uppercase mt-1">Your visitors are now your models.</p>
-                </div>
-                <div class="p-6 bg-white/[0.03] rounded-xl border border-white/5">
-                    <p class="text-green-500 font-bold">4x Higher Engagement</p>
-                    <p class="text-[10px] text-gray-500 uppercase mt-1">Visitors stay to 'Play' with your fashion.</p>
+                <div class="p-8 bg-white/[0.02] border border-white/5 rounded-3xl">
+                    <p class="text-xs text-gray-500 uppercase tracking-widest mb-4">The Solution we provide:</p>
+                    <p class="lux-font text-2xl italic">We don't sell a button. We sell the "Yes, I look amazing" moment.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="py-32 bg-black text-center border-t border-white/5">
-        <p class="text-gold font-bold text-[10px] tracking-[0.5em] uppercase mb-8">Ready to evolve?</p>
-        <a href="mailto:nikhil@aifittinglabs.store" class="bg-white text-black px-12 py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.3em] hover:bg-gold transition-all">Contact the Founder</a>
+    <section class="py-32 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-5xl mx-auto px-6 text-center">
+            <h2 class="text-green-500 uppercase text-[10px] tracking-[0.6em] mb-4 font-bold italic">The VTON Cure</h2>
+            <h3 class="lux-font text-5xl mb-16 italic">2 Problems. 1 Solution. 100% Engagement.</h3>
+            
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-10 bg-black border border-white/5 rounded-3xl">
+                    <p class="text-4xl font-bold text-green-500 mb-2">60%</p>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-500 italic">Reduction in Returns</p>
+                </div>
+                <div class="p-10 bg-black border border-white/5 rounded-3xl">
+                    <p class="text-4xl font-bold text-green-500 mb-2">3.5X</p>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-500 italic">User Engagement</p>
+                </div>
+                <div class="p-10 bg-black border border-white/5 rounded-3xl">
+                    <p class="text-4xl font-bold text-green-500 mb-2">₹0</p>
+                    <p class="text-[10px] uppercase tracking-widest text-gray-500 italic">Traditional Photo Costs</p>
+                </div>
+            </div>
+        </div>
     </section>
+
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+        <h4 class="text-center text-xs uppercase tracking-[0.4em] text-gray-600 mb-12 italic">Industry-Verified Claims</h4>
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="source-card">
+                <p class="text-xs text-gray-500 mb-6 italic leading-relaxed">"70% of e-commerce returns are due to poor fit or style mismatch—costing retailers billions annually."</p>
+                <a href="https://www.mckinsey.com/industries/retail/our-insights/the-state-of-fashion-2024" target="_blank" class="text-gold text-[10px] uppercase font-bold tracking-widest">McKinsey Research ↗</a>
+            </div>
+            <div class="source-card">
+                <p class="text-xs text-gray-500 mb-6 italic leading-relaxed">"Virtual try-on tech increases conversion rates by 94% as it bridges the 'Imagination Gap'."</p>
+                <a href="https://www.deloitte.com/global/en/services/consulting/perspectives/digital-transformation-in-retail.html" target="_blank" class="text-gold text-[10px] uppercase font-bold tracking-widest">Deloitte Case Study ↗</a>
+            </div>
+            <div class="source-card">
+                <p class="text-xs text-gray-500 mb-6 italic leading-relaxed">"Returns cost the industry $166M for every $1B in sales. AI fitting is the only logical cure."</p>
+                <a href="https://nrf.com/research/2023-retail-returns-survey" target="_blank" class="text-gold text-[10px] uppercase font-bold tracking-widest">NRF Data ↗</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-40 bg-black text-center relative overflow-hidden">
+        <div class="relative z-10">
+            <h2 class="lux-font text-5xl md:text-8xl italic mb-10">Ready to Join <br>the Mission?</h2>
+            <p class="text-gray-500 text-xs tracking-[0.5em] uppercase mb-12">Stop the cycle. Start the Engagement.</p>
+            <a href="pricing.html" class="inline-block bg-white text-black px-16 py-6 rounded-full text-[11px] font-bold uppercase tracking-[0.4em] hover:bg-gold hover:text-white transition-all transform hover:scale-110 shadow-2xl">See Our Pricing Plans</a>
+        </div>
+        <div class="absolute inset-0 flex items-center justify-center opacity-[0.03] select-none">
+            <h2 class="text-[20vw] font-bold">ENGAGE</h2>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5">
+        <p class="text-[8px] uppercase tracking-widest text-gray-600">AI Fitting Labs © 2026 | nikhil@aifittinglabs.store</p>
+    </footer>
 
     <script>
-        let loss = 0;
-        setInterval(() => {
-            loss += 142; // Simulated loss growth
-            document.getElementById('loss-val').innerText = loss.toLocaleString();
-        }, 2000);
+        function runSim() {
+            const text = document.getElementById('sim-text');
+            const parcel = document.getElementById('parcel');
+            const money = document.getElementById('money');
+            
+            text.style.opacity = '0';
+            parcel.style.opacity = '1';
+            
+            // Phase 1: Shipping
+            parcel.style.left = '20%'; parcel.style.top = '50%';
+            setTimeout(() => {
+                parcel.style.left = '70%';
+                setTimeout(() => {
+                    // Phase 2: Returning
+                    parcel.innerText = '↩️📦';
+                    parcel.style.left = '20%';
+                    // Phase 3: Money flying away
+                    money.style.opacity = '1';
+                    money.style.left = '50%'; money.style.top = '50%';
+                    setTimeout(() => {
+                        money.style.top = '-100px';
+                        money.style.opacity = '0';
+                        text.innerHTML = "<span class='text-red-500'>RETURNED!</span><br>Loss: Shipping Fees + Packging + Time";
+                        text.style.opacity = '1';
+                    }, 500);
+                }, 1000);
+            }, 500);
+        }
     </script>
 
 </body>
