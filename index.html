@@ -14,8 +14,15 @@
         
         .rainbow-text {
             background: linear-gradient(to right, #ef5350, #7e57c2, #2196f3, #43a047, #f9a825, #ff5722);
-            -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-weight: 800;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent; font-weight: 800;
+            animation: rainbow-move 5s linear infinite;
+            background-size: 200% auto;
         }
+        @keyframes rainbow-move { to { background-position: 200% center; } }
+
+        .nav-link { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
+        .nav-link:hover, .nav-active { color: var(--gold) !important; }
 
         /* Hero Container */
         .hero-video-container { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
@@ -44,16 +51,16 @@
 </head>
 <body>
 
-  <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/20 backdrop-blur-sm">
-    <div class="lux-font text-xl uppercase tracking-tighter text-white font-bold">
-        AI FITTING LABS
-    </div>
-    <div class="hidden md:flex gap-10">
-        <a href="index.html" class="nav-link active" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #c5a059;">Home</a>
-        <a href="pricing.html" class="nav-link" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888;">Pricing</a>
-        <a href="mission.html" class="nav-link" style="font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888;">Our Mission</a>
-    </div>
-</nav>
+    <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/20 backdrop-blur-sm">
+        <div class="lux-font text-xl uppercase tracking-tighter font-bold">
+            <span class="rainbow-text">AI FITTING LABS</span>
+        </div>
+        <div class="hidden md:flex gap-10">
+            <a href="index.html" class="nav-link nav-active">Home</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="mission.html" class="nav-link">Our Mission</a>
+        </div>
+    </nav>
 
     <section class="hero-video-container">
         <video autoplay muted loop playsinline class="hero-video">
@@ -68,8 +75,8 @@
             <h1 class="lux-font text-4xl md:text-7xl italic text-gold-gradient mb-10 leading-tight">Our system, your brand, less return</h1>
             
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 pointer-events-auto">
-                <a href="mailto:nikhjoshi123@gmail.com" class="bg-white text-black px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-56 text-center shadow-lg">Book a Demo</a>
-                <a href="#" class="backdrop-blur-md border border-white/40 text-white px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 w-56 text-center">Implementation</a>
+                <a href="mailto:nikhjoshi123@gmail.com?subject=Demo Inquiry&body=Hey, I'm interested. I want to try your 'See it on Me' button demo for my brand." class="bg-white text-black px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-56 text-center shadow-lg">Book a Demo</a>
+                <a href="implementation.html" target="_blank" class="backdrop-blur-md border border-white/40 text-white px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 w-56 text-center">Implementation</a>
             </div>
         </div>
     </section>
@@ -149,7 +156,7 @@
     <section class="py-32 px-6 text-center">
         <h2 class="lux-font text-6xl md:text-[10rem] tracking-tighter uppercase text-white/5 leading-none mb-12 select-none">WE REDUCE RETURNS.</h2>
         <p class="text-gray-500 uppercase tracking-[0.5em] text-[10px] mb-24">Enterprise Grade AI Solutions for Digital Retail</p>
-    </nav>
+    </section>
 
     <script>
         let pCurrent = 1;
