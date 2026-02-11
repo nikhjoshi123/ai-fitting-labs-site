@@ -26,7 +26,7 @@
         .nav-link:hover { color: white; }
         .nav-active { color: var(--gold) !important; font-weight: bold; }
 
-        /* NEW ANIMATION CLASSES FOR FADE NAV */
+        /* NAVIGATION ANIMATIONS */
         .menu-visible { opacity: 1 !important; pointer-events: auto !important; }
         .rotate-line1 { transform: translateY(8px) rotate(45deg); background-color: #c5a059 !important; }
         .hide-line2 { opacity: 0; }
@@ -59,7 +59,7 @@
 </head>
 <body>
 
- <nav id="main-nav" class="fixed w-full z-[100] px-6 md:px-10 py-6 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5">
+ <nav id="main-nav" class="fixed w-full z-[100] px-6 md:px-10 py-8 flex justify-between items-center bg-black/60 backdrop-blur-xl border-b border-white/5">
     <div class="lux-font text-xl uppercase tracking-tighter font-bold">
         <span class="rainbow-text">AI FITTING LABS</span>
     </div>
@@ -76,10 +76,12 @@
         <div id="line3" class="w-6 h-0.5 bg-white transition-all duration-300"></div>
     </button>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out flex flex-col items-center justify-center gap-8 z-[105]">
-        <a href="index.html" class="lux-font text-xl uppercase tracking-widest text-[#c5a059]">Home</a>
-        <a href="pricing.html" class="lux-font text-xl uppercase tracking-widest text-white">Pricing</a>
-        <a href="mission.html" class="lux-font text-xl uppercase tracking-widest text-white">Our Mission</a>
+    <div id="mobile-menu" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out flex flex-col items-center justify-center z-[105]">
+        <div class="flex flex-col items-center gap-10 pt-10">
+            <a href="index.html" class="lux-font text-xl uppercase tracking-widest text-[#c5a059]">Home</a>
+            <a href="pricing.html" class="lux-font text-xl uppercase tracking-widest text-white">Pricing</a>
+            <a href="mission.html" class="lux-font text-xl uppercase tracking-widest text-white">Our Mission</a>
+        </div>
     </div>
 </nav>
 
