@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/jpeg" href="https://github.com/nikhjoshi123/ai-fitting-labs-site/blob/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Investment | AI FITTING LABS</title>
@@ -23,15 +23,15 @@
         }
         @keyframes rainbow-move { to { background-position: 200% center; } }
 
-        .nav-link { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
-        .nav-link:hover { color: var(--gold); }
-        /* ACTIVE STATE GOLD */
-        .nav-active { color: var(--gold) !important; font-weight: bold; border-bottom: 2px solid var(--gold); }
+        .nav-link { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; cursor: pointer; }
+        .nav-link:hover { color: white; }
+        
+        /* ACTIVE PAGE STATE */
+        .nav-active { color: var(--gold) !important; font-weight: bold; }
 
         .investment-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s ease; }
         .win-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); }
         
-        /* GROWTH BUTTON REVERSE LOGIC */
         .btn-growth-reverse {
             background-color: var(--gold);
             color: #000;
@@ -48,11 +48,11 @@
         input:focus { border-color: var(--gold); }
         label { font-size: 10px; text-transform: uppercase; color: #888; letter-spacing: 1px; font-weight: 600; }
         
-        /* MOBILE NAV FIXES */
-        @media (max-width: 768px) {
-            .nav-container { padding: 1.5rem 1rem !important; flex-direction: column; gap: 1.5rem; }
-            .nav-links { gap: 1.5rem !important; }
-        }
+        /* ANIMATION CLASSES FOR MOBILE NAV */
+        .rotate-line1 { transform: translateY(8px) rotate(45deg); background-color: #c5a059 !important; }
+        .hide-line2 { opacity: 0; }
+        .rotate-line3 { transform: translateY(-8px) rotate(-45deg); background-color: #c5a059 !important; }
+        .menu-open { transform: translateX(0) !important; }
 
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: var(--dark); }
@@ -61,15 +61,15 @@
 </head>
 <body>
 
- <nav id="main-nav" class="fixed w-full z-[100] px-6 md:px-10 py-6 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5 transition-all duration-500">
+ <nav id="main-nav" class="fixed w-full z-[100] px-6 md:px-10 py-6 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5">
     <div class="lux-font text-xl uppercase tracking-tighter font-bold">
         <span class="rainbow-text">AI FITTING LABS</span>
     </div>
 
     <div class="hidden md:flex gap-10">
-        <a href="index.html" class="nav-link text-[10px] tracking-[0.2em] uppercase transition-colors duration-200 active:text-[#c5a059] focus:text-[#c5a059]">Home</a>
-        <a href="pricing.html" class="nav-link text-[10px] tracking-[0.2em] uppercase transition-colors duration-200 active:text-[#c5a059] focus:text-[#c5a059]">Pricing</a>
-        <a href="mission.html" class="nav-link text-[10px] tracking-[0.2em] uppercase transition-colors duration-200 active:text-[#c5a059] focus:text-[#c5a059]">Our Mission</a>
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="pricing.html" class="nav-link nav-active">Pricing</a>
+        <a href="mission.html" class="nav-link">Our Mission</a>
     </div>
 
     <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 z-[110] focus:outline-none p-2">
@@ -79,23 +79,11 @@
     </button>
 
     <div id="mobile-menu" class="fixed inset-0 bg-black translate-x-full transition-transform duration-500 ease-in-out flex flex-col items-center justify-center gap-12 z-[105]">
-        <a href="index.html" onclick="setGold(this)" class="lux-font text-3xl uppercase tracking-widest text-white hover:text-[#c5a059] active:text-[#c5a059]">Home</a>
-        <a href="pricing.html" onclick="setGold(this)" class="lux-font text-3xl uppercase tracking-widest text-white hover:text-[#c5a059] active:text-[#c5a059]">Pricing</a>
-        <a href="mission.html" onclick="setGold(this)" class="lux-font text-3xl uppercase tracking-widest text-white hover:text-[#c5a059] active:text-[#c5a059]">Our Mission</a>
+        <a href="index.html" onclick="setGold(this)" class="lux-font text-3xl uppercase tracking-widest text-white">Home</a>
+        <a href="pricing.html" onclick="setGold(this)" class="lux-font text-3xl uppercase tracking-widest text-[#c5a059]">Pricing</a>
+        <a href="mission.html" onclick="setGold(this)" class="lux-font text-3xl uppercase tracking-widest text-white">Our Mission</a>
     </div>
 </nav>
-
-<style>
-    /* Navigation Link Colors */
-    .nav-link { color: #888; }
-    .nav-link:hover { color: white; }
-    
-    /* Animation Classes */
-    .rotate-line1 { transform: translateY(8px) rotate(45deg); background-color: #c5a059 !important; }
-    .hide-line2 { opacity: 0; }
-    .rotate-line3 { transform: translateY(-8px) rotate(-45deg); background-color: #c5a059 !important; }
-    .menu-open { transform: translateX(0) !important; }
-</style>
 
     <section class="pt-48 pb-20 px-6 max-w-6xl mx-auto">
         <div class="text-center mb-16">
@@ -253,6 +241,7 @@
     </footer>
 
     <script>
+        // Calculator Logic
         function calculate() {
             const orders = parseFloat(document.getElementById('orders').value) || 0;
             const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
@@ -271,45 +260,44 @@
             document.getElementById('gainAmount').innerText = "₹" + Math.round(totalWin).toLocaleString();
         }
         window.onload = calculate;
+
+        // Navigation Logic
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const l1 = document.getElementById('line1');
+        const l2 = document.getElementById('line2');
+        const l3 = document.getElementById('line3');
+
+        function toggleMenu() {
+            menu.classList.toggle('menu-open');
+            l1.classList.toggle('rotate-line1');
+            l2.classList.toggle('hide-line2');
+            l3.classList.toggle('rotate-line3');
+        }
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        // Close when clicking a link
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => toggleMenu());
+        });
+
+        // Auto-rotate and close on Scroll Up
+        let lastScroll = 0;
+        window.addEventListener('scroll', () => {
+            const currentScroll = window.pageYOffset;
+            if (currentScroll < lastScroll && menu.classList.contains('menu-open')) {
+                toggleMenu(); 
+            }
+            lastScroll = currentScroll;
+        });
+
+        function setGold(element) {
+            element.style.color = '#c5a059';
+        }
     </script>
-    <script>
- <script>
-    const btn = document.getElementById('mobile-menu-btn');
-    const menu = document.getElementById('mobile-menu');
-    const l1 = document.getElementById('line1');
-    const l2 = document.getElementById('line2');
-    const l3 = document.getElementById('line3');
-
-    function toggleMenu() {
-        menu.classList.toggle('menu-open');
-        l1.classList.toggle('rotate-line1');
-        l2.classList.toggle('hide-line2');
-        l3.classList.toggle('rotate-line3');
-    }
-
-    btn.addEventListener('click', toggleMenu);
-
-    // Auto-rotate and close on Scroll Up
-    let lastScroll = 0;
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        if (currentScroll < lastScroll && menu.classList.contains('menu-open')) {
-            toggleMenu(); // Auto-closes when you slide up
-        }
-        lastScroll = currentScroll;
-    });
-
-    // Instant Gold effect on click
-    function setGold(element) {
-        element.style.color = '#c5a059';
-    }
-
-    // Mark current page as Gold automatically
-    document.querySelectorAll('.nav-link, #mobile-menu a').forEach(link => {
-        if(link.href === window.location.href) {
-            link.style.color = '#c5a059';
-        }
-    });
-</script>
 </body>
 </html>
