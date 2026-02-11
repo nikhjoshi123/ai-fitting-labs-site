@@ -48,11 +48,11 @@
         input:focus { border-color: var(--gold); }
         label { font-size: 10px; text-transform: uppercase; color: #888; letter-spacing: 1px; font-weight: 600; }
         
-        /* ANIMATION CLASSES FOR MOBILE NAV */
+        /* NEW FADE ANIMATION CLASSES */
+        .menu-visible { opacity: 1 !important; pointer-events: auto !important; }
         .rotate-line1 { transform: translateY(8px) rotate(45deg); background-color: #c5a059 !important; }
         .hide-line2 { opacity: 0; }
         .rotate-line3 { transform: translateY(-8px) rotate(-45deg); background-color: #c5a059 !important; }
-        .menu-open { transform: translateX(0) !important; }
 
         ::-webkit-scrollbar { width: 5px; }
         ::-webkit-scrollbar-track { background: var(--dark); }
@@ -78,10 +78,10 @@
         <div id="line3" class="w-6 h-0.5 bg-white transition-all duration-300"></div>
     </button>
 
-    <div id="mobile-menu" class="fixed inset-0 bg-black translate-x-full transition-transform duration-500 ease-in-out flex flex-col items-center justify-center gap-12 z-[105]">
-        <a href="index.html" onclick="setGold(this)" class="lux-font text-3xl uppercase tracking-widest text-white">Home</a>
-        <a href="pricing.html" onclick="setGold(this)" class="lux-font text-3xl uppercase tracking-widest text-[#c5a059]">Pricing</a>
-        <a href="mission.html" onclick="setGold(this)" class="lux-font text-3xl uppercase tracking-widest text-white">Our Mission</a>
+    <div id="mobile-menu" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out flex flex-col items-center justify-center gap-8 z-[105]">
+        <a href="index.html" class="lux-font text-xl uppercase tracking-widest text-white">Home</a>
+        <a href="pricing.html" class="lux-font text-xl uppercase tracking-widest text-[#c5a059]">Pricing</a>
+        <a href="mission.html" class="lux-font text-xl uppercase tracking-widest text-white">Our Mission</a>
     </div>
 </nav>
 
@@ -241,7 +241,7 @@
     </footer>
 
     <script>
-        // Calculator Logic
+        // CALCULATOR LOGIC (Untouched)
         function calculate() {
             const orders = parseFloat(document.getElementById('orders').value) || 0;
             const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
@@ -261,7 +261,7 @@
         }
         window.onload = calculate;
 
-        // Navigation Logic
+        // NEW NAVIGATION LOGIC (Fade + Auto-Close)
         const btn = document.getElementById('mobile-menu-btn');
         const menu = document.getElementById('mobile-menu');
         const l1 = document.getElementById('line1');
@@ -269,7 +269,7 @@
         const l3 = document.getElementById('line3');
 
         function toggleMenu() {
-            menu.classList.toggle('menu-open');
+            menu.classList.toggle('menu-visible');
             l1.classList.toggle('rotate-line1');
             l2.classList.toggle('hide-line2');
             l3.classList.toggle('rotate-line3');
@@ -282,14 +282,19 @@
 
         // Close when clicking a link
         document.querySelectorAll('#mobile-menu a').forEach(link => {
-            link.addEventListener('click', () => toggleMenu());
+            link.addEventListener('click', () => {
+                menu.classList.remove('menu-visible');
+                l1.classList.remove('rotate-line1');
+                l2.classList.remove('hide-line2');
+                l3.classList.remove('rotate-line3');
+            });
         });
 
-        // Auto-rotate and close on Scroll Up
+        // Auto-close on Scroll Up
         let lastScroll = 0;
         window.addEventListener('scroll', () => {
             const currentScroll = window.pageYOffset;
-            if (currentScroll < lastScroll && menu.classList.contains('menu-open')) {
+            if (currentScroll < lastScroll && menu.classList.contains('menu-visible')) {
                 toggleMenu(); 
             }
             lastScroll = currentScroll;
