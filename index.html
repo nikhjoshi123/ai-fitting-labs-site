@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="icon" type="image/jpeg" href="https://github.com/nikhjoshi123/ai-fitting-labs-site/blob/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI FITTING LABS | Our system, your brand, less return</title>
@@ -22,8 +22,15 @@
         }
         @keyframes rainbow-move { to { background-position: 200% center; } }
 
-        .nav-link { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
-        .nav-link:hover, .nav-active { color: var(--gold) !important; }
+        .nav-link { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; cursor: pointer; }
+        .nav-link:hover { color: white; }
+        .nav-active { color: var(--gold) !important; font-weight: bold; }
+
+        /* NEW ANIMATION CLASSES FOR FADE NAV */
+        .menu-visible { opacity: 1 !important; pointer-events: auto !important; }
+        .rotate-line1 { transform: translateY(8px) rotate(45deg); background-color: #c5a059 !important; }
+        .hide-line2 { opacity: 0; }
+        .rotate-line3 { transform: translateY(-8px) rotate(-45deg); background-color: #c5a059 !important; }
 
         /* Hero Container */
         .hero-video-container { position: relative; width: 100vw; height: 100vh; overflow: hidden; }
@@ -52,16 +59,29 @@
 </head>
 <body>
 
-    <nav class="fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/20 backdrop-blur-sm">
-        <div class="lux-font text-xl uppercase tracking-tighter font-bold">
-            <span class="rainbow-text">AI FITTING LABS</span>
-        </div>
-        <div class="hidden md:flex gap-10">
-            <a href="index.html" class="nav-link nav-active">Home</a>
-            <a href="pricing.html" class="nav-link">Pricing</a>
-            <a href="mission.html" class="nav-link">Our Mission</a>
-        </div>
-    </nav>
+ <nav id="main-nav" class="fixed w-full z-[100] px-6 md:px-10 py-6 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5">
+    <div class="lux-font text-xl uppercase tracking-tighter font-bold">
+        <span class="rainbow-text">AI FITTING LABS</span>
+    </div>
+
+    <div class="hidden md:flex gap-10">
+        <a href="index.html" class="nav-link nav-active">Home</a>
+        <a href="pricing.html" class="nav-link">Pricing</a>
+        <a href="mission.html" class="nav-link">Our Mission</a>
+    </div>
+
+    <button id="mobile-menu-btn" class="md:hidden flex flex-col gap-1.5 z-[110] focus:outline-none p-2">
+        <div id="line1" class="w-6 h-0.5 bg-white transition-all duration-300"></div>
+        <div id="line2" class="w-6 h-0.5 bg-white transition-all duration-300"></div>
+        <div id="line3" class="w-6 h-0.5 bg-white transition-all duration-300"></div>
+    </button>
+
+    <div id="mobile-menu" class="fixed inset-0 bg-black opacity-0 pointer-events-none transition-opacity duration-500 ease-in-out flex flex-col items-center justify-center gap-8 z-[105]">
+        <a href="index.html" class="lux-font text-xl uppercase tracking-widest text-[#c5a059]">Home</a>
+        <a href="pricing.html" class="lux-font text-xl uppercase tracking-widest text-white">Pricing</a>
+        <a href="mission.html" class="lux-font text-xl uppercase tracking-widest text-white">Our Mission</a>
+    </div>
+</nav>
 
     <section class="hero-video-container">
         <video autoplay muted loop playsinline class="hero-video">
@@ -160,6 +180,35 @@
     </section>
 
     <script>
+        // NAVIGATION LOGIC
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        const l1 = document.getElementById('line1');
+        const l2 = document.getElementById('line2');
+        const l3 = document.getElementById('line3');
+
+        function toggleMenu() {
+            menu.classList.toggle('menu-visible');
+            l1.classList.toggle('rotate-line1');
+            l2.classList.toggle('hide-line2');
+            l3.classList.toggle('rotate-line3');
+        }
+
+        btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMenu();
+        });
+
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                menu.classList.remove('menu-visible');
+                l1.classList.remove('rotate-line1');
+                l2.classList.remove('hide-line2');
+                l3.classList.remove('rotate-line3');
+            });
+        });
+
+        // CONTENT LOGIC
         let pCurrent = 1;
         function nextPhase() {
             document.getElementById('p' + pCurrent).classList.remove('active');
@@ -172,12 +221,14 @@
         const b = document.getElementById('slide-before');
         const a = document.getElementById('slide-after');
         setInterval(() => {
-            if (b.classList.contains('visible')) {
-                b.classList.remove('visible');
-                a.classList.add('visible');
-            } else {
-                a.classList.remove('visible');
-                b.classList.add('visible');
+            if (b && a) {
+                if (b.classList.contains('visible')) {
+                    b.classList.remove('visible');
+                    a.classList.add('visible');
+                } else {
+                    a.classList.remove('visible');
+                    b.classList.add('visible');
+                }
             }
         }, 3000);
     </script>
