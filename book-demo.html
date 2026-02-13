@@ -11,30 +11,36 @@
         :root { --gold: #c5a059; --dark: #050505; }
         body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         .lux-font { font-family: 'Playfair Display', serif; }
+        
+        /* RAINBOW LOGO */
+        .rainbow-text {
+            background: linear-gradient(to right, #ef4444, #f59e0b, #10b981, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow-move 5s linear infinite;
+            background-size: 200% auto;
+        }
+        @keyframes rainbow-move { to { background-position: 200% center; } }
+
         .text-gold-gradient { color: var(--gold); background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Glass Card for the Calendar */
         .booking-container {
             background: rgba(255, 255, 255, 0.02);
             border: 1px solid rgba(255, 255, 255, 0.05);
             border-radius: 40px;
             backdrop-filter: blur(20px);
-            padding: 20px;
+            min-height: 700px;
         }
 
         .nav-link { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
         .nav-link:hover { color: white; }
-
-        ::-webkit-scrollbar { width: 5px; }
-        ::-webkit-scrollbar-track { background: var(--dark); }
-        ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
     </style>
 </head>
 <body>
 
     <nav class="fixed w-full z-[100] px-10 py-8 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5">
-        <div class="lux-font text-xl uppercase tracking-tighter font-bold text-white">
-            AI FITTING LABS
+        <div class="lux-font text-xl uppercase tracking-tighter font-bold">
+            <span class="rainbow-text">AI FITTING LABS</span>
         </div>
         <div class="hidden md:flex gap-10">
             <a href="index.html" class="nav-link">Home</a>
@@ -48,7 +54,7 @@
             <span class="text-gold font-bold text-[10px] tracking-[0.6em] uppercase block mb-4">Request Access</span>
             <h1 class="lux-font text-5xl md:text-6xl italic text-gold-gradient mb-4">Architectural Sync</h1>
             <p class="text-gray-500 uppercase text-[9px] tracking-[0.4em] max-w-md mx-auto leading-relaxed">
-                Connect with our tech team to verify your brand's AI compatibility. 
+                Connect with our tech team to verify your brand's AI compatibility.
             </p>
         </div>
 
@@ -58,21 +64,6 @@
                  style="min-width:320px;height:700px;">
             </div>
             <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
-            </div>
-
-        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center opacity-60">
-            <div>
-                <p class="text-white font-bold text-xs uppercase tracking-widest mb-2">01. Live Demo</p>
-                <p class="text-[10px] text-gray-400">Experience your garments in the render environment.</p>
-            </div>
-            <div>
-                <p class="text-white font-bold text-xs uppercase tracking-widest mb-2">02. Deployment</p>
-                <p class="text-[10px] text-gray-400">Finalize the ₹10,000 deployment advance.</p>
-            </div>
-            <div>
-                <p class="text-white font-bold text-xs uppercase tracking-widest mb-2">03. Integration</p>
-                <p class="text-[10px] text-gray-400">Receive your custom API keys and dashboard access.</p>
-            </div>
         </div>
     </section>
 
