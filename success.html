@@ -31,30 +31,26 @@
 </head>
 <body>
 
-    <div class="max-w-xl w-full text-center px-6">
-        <div class="lux-font text-2xl uppercase tracking-tighter font-bold mb-12">
-            <span class="rainbow-text">AI FITTING LABS</span>
+  <div class="confirmation-card p-10 md:p-16 shadow-2xl">
+    <div class="mb-8">
+        <div class="w-20 h-20 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+            <span class="text-emerald-500 text-4xl">🔑</span>
+        </div>
+        <h1 class="lux-font text-3xl italic text-[#c5a059] mb-4">Access Granted.</h1>
+        <p class="text-gray-400 text-sm leading-relaxed font-light">
+            Your Session ID has been generated and synchronized with your email.
+        </p>
+    </div>
+
+    <div class="bg-white/5 border border-white/10 p-4 rounded-xl mb-6">
+        <p class="text-[9px] uppercase tracking-widest text-gray-500 mb-1">Reference ID</p>
+        <p class="text-xl font-mono text-white">AIFL-SYNC-{{random_number}}</p> 
         </div>
 
-        <div class="confirmation-card p-10 md:p-16 shadow-2xl">
-            <div class="mb-8">
-                <div class="w-20 h-20 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-                    <span class="text-emerald-500 text-4xl">📨</span>
-                </div>
-                <h1 class="lux-font text-4xl italic text-[#c5a059] mb-4">Booking Confirmed</h1>
-                <p class="text-gray-400 text-sm leading-relaxed font-light">
-                    Your Architectural Sync is locked in. We've sent a confirmation and the Zoom access link to your inbox.
-                </p>
-            </div>
-
-            <div class="space-y-4 pt-6 border-t border-white/5">
-                <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500">Check your Gmail for:</p>
-                <div class="flex flex-col gap-2 text-xs text-gray-300 italic">
-                    <span>• Encrypted Zoom Meeting Link</span>
-                    <span>• Session ID & Calendar Invite</span>
-                </div>
-            </div>
-        </div>
+    <p class="text-emerald-500 text-[10px] font-bold uppercase tracking-widest animate-pulse">
+        📩 Check your Gmail now
+    </p>
+</div>
 
         <div class="mt-12">
             <a href="index.html" class="text-[10px] uppercase tracking-[0.5em] text-gray-600 hover:text-white transition duration-500">
