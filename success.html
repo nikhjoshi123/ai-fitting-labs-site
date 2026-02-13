@@ -1,42 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Scan Complete | AI FITTING LABS</title>
+    <title>Booking Confirmed | AI FITTING LABS</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;600&display=swap" rel="stylesheet">
     <style>
-        body { background: #050505; color: white; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; min-height: screen; }
-        .scanner { width: 300px; height: 2px; background: #c5a059; position: absolute; box-shadow: 0 0 20px #c5a059; animation: scan 2s infinite; }
-        @keyframes scan { 0% { top: 30%; } 50% { top: 70%; } 100% { top: 30%; } }
-        .hidden-content { opacity: 0; animation: fadeIn 1s forwards 2.5s; }
-        @keyframes fadeIn { to { opacity: 1; } }
+        :root { --gold: #c5a059; --dark: #050505; }
+        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+        .lux-font { font-family: 'Playfair Display', serif; }
+        
+        .rainbow-text {
+            background: linear-gradient(to right, #ef4444, #f59e0b, #10b981, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow-move 5s linear infinite;
+            background-size: 200% auto;
+        }
+        @keyframes rainbow-move { to { background-position: 200% center; } }
+
+        .confirmation-card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 40px;
+            backdrop-filter: blur(20px);
+        }
     </style>
 </head>
-<body class="h-screen overflow-hidden">
+<body>
 
-    <div id="loader" class="flex flex-col items-center">
-        <div class="scanner"></div>
-        <p class="mt-10 text-xs tracking-[0.5em] uppercase text-gray-500 animate-pulse">Analyzing Brand Assets...</p>
-    </div>
-
-    <div class="hidden-content text-center px-6">
-        <h1 class="text-4xl italic font-serif mb-4 text-[#c5a059]">Sync Reserved.</h1>
-        <div class="bg-white/5 border border-white/10 p-8 rounded-3xl mb-6">
-            <p class="text-[10px] uppercase tracking-widest text-gray-400 mb-2">Unique Session ID</p>
-            <h2 class="text-3xl font-mono font-bold tracking-tighter text-white">AIFL-4092-B</h2>
+    <div class="max-w-xl w-full text-center px-6">
+        <div class="lux-font text-2xl uppercase tracking-tighter font-bold mb-12">
+            <span class="rainbow-text">AI FITTING LABS</span>
         </div>
-        <p class="text-gray-500 text-sm max-w-xs mx-auto mb-8">
-            Your environment is being prepared. Check your inbox for the encrypted Zoom link.
-        </p>
-        <a href="index.html" class="text-[10px] border-b border-gold text-gold uppercase tracking-widest">Back to Lab</a>
+
+        <div class="confirmation-card p-10 md:p-16 shadow-2xl">
+            <div class="mb-8">
+                <div class="w-20 h-20 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="text-emerald-500 text-4xl">📨</span>
+                </div>
+                <h1 class="lux-font text-4xl italic text-[#c5a059] mb-4">Booking Confirmed</h1>
+                <p class="text-gray-400 text-sm leading-relaxed font-light">
+                    Your Architectural Sync is locked in. We've sent a confirmation and the Zoom access link to your inbox.
+                </p>
+            </div>
+
+            <div class="space-y-4 pt-6 border-t border-white/5">
+                <p class="text-[10px] uppercase tracking-[0.3em] text-gray-500">Check your Gmail for:</p>
+                <div class="flex flex-col gap-2 text-xs text-gray-300 italic">
+                    <span>• Encrypted Zoom Meeting Link</span>
+                    <span>• Session ID & Calendar Invite</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-12">
+            <a href="index.html" class="text-[10px] uppercase tracking-[0.5em] text-gray-600 hover:text-white transition duration-500">
+                ← Return to Lab
+            </a>
+        </div>
     </div>
 
-    <script>
-        // Hide loader after 2.5 seconds
-        setTimeout(() => {
-            document.getElementById('loader').style.display = 'none';
-        }, 2500);
-    </script>
 </body>
 </html>
