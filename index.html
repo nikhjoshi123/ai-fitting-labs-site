@@ -22,7 +22,7 @@
         }
         @keyframes rainbow-move { to { background-position: 200% center; } }
 
-        /* MISSION.HTML NAV LOGIC (NO BURGER) */
+        /* MISSION.HTML NAV STYLE */
         .nav-links a { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
         .nav-links a:hover { color: var(--gold); }
         .nav-active { color: var(--gold) !important; font-weight: bold; border-bottom: 2px solid var(--gold); }
@@ -49,12 +49,9 @@
             width: 100%; 
             z-index: 10; 
             padding: 0 20px; 
-            display: flex;
-            flex-direction: column;
-            align-items: center;
         }
 
-        /* ROI Section */
+        /* ROI Circle Graph */
         .roi-circle {
             width: 220px; height: 220px; border-radius: 50%;
             background: conic-gradient(#c5a059 60%, #1a1a1a 0);
@@ -96,9 +93,11 @@
                 <span class="text-[10px] tracking-[0.5em] text-gray-400 uppercase font-bold block mb-1">Give Uniqueness To Your Brand</span>
                 <span class="text-xs tracking-[0.2em] text-gold font-light uppercase block">Let customers try your clothes</span>
             </div>
+            
             <h1 class="lux-font text-4xl md:text-7xl italic text-gold-gradient mb-10 leading-tight">Our system, your brand, less return</h1>
+            
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 pointer-events-auto">
-                <a href="mailto:nikhil@aifittinglabs.store?subject=Demo Inquiry" class="bg-white text-black px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-56 text-center shadow-lg">Book a Demo</a>
+                <a href="mailto:nikhil@aifittinglabs.store?subject=Demo Inquiry&body=Hey, I'm interested. I want to try your 'See it on Me' button demo for my brand." class="bg-white text-black px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-56 text-center shadow-lg">Book a Demo</a>
                 <a href="implementation.html" target="_blank" class="backdrop-blur-md border border-white/40 text-white px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 w-56 text-center">Implementation</a>
             </div>
         </div>
@@ -110,7 +109,8 @@
             <div class="text-left flex-1">
                 <h2 class="lux-font text-4xl md:text-6xl mb-6 italic leading-tight">60% Less Returns. <br><span class="text-white font-bold text-3xl italic">By using just one button.</span></h2>
                 <div class="space-y-4 text-gray-400 font-light leading-relaxed">
-                    <p>Industry data shows that 30% of all e-commerce returns happen solely because of "Fitting Uncertainty."</p>
+                    <p>Industry data shows that 30% of all e-commerce returns happen solely because of "Fitting Uncertainty." Customers don't return clothes because they are bad; they return them because they didn't know how the fabric would sit on their specific frame.</p>
+                    <p>We eliminate the "Will this fit me?" doubt. When they see it, they know it. When they know it, they keep it.</p>
                     <p class="text-gold font-bold text-xl uppercase tracking-wider">After VTON integration, returns reduce by 60%. That’s all.</p>
                 </div>
             </div>
@@ -129,11 +129,11 @@
             </div>
             <div class="grid md:grid-cols-2 gap-12 items-center">
                 <div class="space-y-6">
-                    <div id="t1" class="phase-text"><h3 class="lux-font text-2xl">01. Ghost Integration</h3><p class="text-gray-500">Only appears on product pages.</p></div>
-                    <div id="t2" class="phase-text hidden"><h3 class="lux-font text-2xl">02. Strategic Presence</h3><p class="text-gray-500">The button only appears where needed.</p></div>
-                    <div id="t3" class="phase-text hidden"><h3 class="lux-font text-2xl">03. User Guidance</h3><p class="text-gray-500">Perfect fit data capture.</p></div>
-                    <div id="t4" class="phase-text hidden"><h3 class="lux-font text-2xl">04. Neural Drape</h3><p class="text-gray-500">Real-time fabric physics.</p></div>
-                    <div id="t5" class="phase-text hidden"><h3 class="lux-font text-2xl">05. Instant Buy</h3><p class="text-gray-500">Final results drive conversion.</p></div>
+                    <div id="t1" class="phase-text"><h3 class="lux-font text-2xl">01. Ghost Integration</h3><p class="text-gray-500">No Our See it on You Popup Appears on Home and other pages except catogry/products page.</p></div>
+                    <div id="t2" class="phase-text hidden"><h3 class="lux-font text-2xl">02. Strategic Presence</h3><p class="text-gray-500">The "See it on You" button only appears where it's needed.</p></div>
+                    <div id="t3" class="phase-text hidden"><h3 class="lux-font text-2xl">03. User Guidance</h3><p class="text-gray-500">Ensuring the perfect fit data capture Pop is All Ratio Freindly In Mobile/Dekstop.</p></div>
+                    <div id="t4" class="phase-text hidden"><h3 class="lux-font text-2xl">04. Neural Drape</h3><p class="text-gray-500">Fabric physics calculated in real-time.</p></div>
+                    <div id="t5" class="phase-text hidden"><h3 class="lux-font text-2xl">05. Instant Buy</h3><p class="text-gray-500">Psychological urgency to checkout Final Result Make Them To Buy As We Give Only 5 credit To Spend In A Day For One User.</p></div>
                 </div>
                 <div class="text-right">
                     <button onclick="nextPhase()" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gold transition shadow-xl">Next Phase →</button>
@@ -149,7 +149,35 @@
                 <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/before.jpeg" class="slide-asset visible" id="slide-before">
                 <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/after.png" class="slide-asset after-asset" id="slide-after">
             </div>
+
+            <div class="mt-16 max-w-4xl mx-auto bg-white/5 p-12 rounded-3xl border border-white/10 text-left">
+                <h4 class="lux-font text-3xl mb-4">The Psychology of the Virtual Fit</h4>
+                <p class="text-gray-400 font-light leading-relaxed">
+                    Buyers return clothes because the "reality" didn't match the "imagination." When they visualize themselves in your clothes through our AI, the uncertainty disappears. High visualization leads to <span class="text-white font-bold">higher purchase intent</span> and significantly <span class="text-white font-bold">lower return rates</span>.
+                </p>
+            </div>
         </div>
+    </section>
+
+    <section class="py-32 px-6 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-4xl mx-auto text-center">
+            <h2 class="lux-font text-4xl mb-8 uppercase tracking-widest">Brand Integrity</h2>
+            <div class="grid md:grid-cols-2 gap-12 text-left">
+                <div>
+                    <h4 class="text-gold font-bold text-xs uppercase tracking-widest mb-3">Zero-Storage Policy</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">Customer photos are processed in encrypted volatile RAM and purged instantly. We store zero personal imagery. Ever.</p>
+                </div>
+                <div>
+                    <h4 class="text-gold font-bold text-xs uppercase tracking-widest mb-3">Enterprise Security</h4>
+                    <p class="text-gray-500 text-sm leading-relaxed">SOC2 compliant infrastructure, ensuring brand reputation and world-class encryption.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 text-center">
+        <h2 class="lux-font text-6xl md:text-[10rem] tracking-tighter uppercase text-white/5 leading-none mb-12 select-none">WE REDUCE RETURNS.</h2>
+        <p class="text-gray-500 uppercase tracking-[0.5em] text-[10px] mb-24">Enterprise Grade AI Solutions for Digital Retail</p>
     </section>
 
     <footer class="py-20 text-center border-t border-white/5">
