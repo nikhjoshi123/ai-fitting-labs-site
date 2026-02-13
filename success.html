@@ -31,33 +31,38 @@
 </head>
 <body>
 
-  <div class="confirmation-card p-10 md:p-16 shadow-2xl">
+  <div class="confirmation-card p-10 md:p-16 shadow-2xl border border-white/10">
     <div class="mb-8">
         <div class="w-20 h-20 bg-emerald-500/10 border border-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6">
-            <span class="text-emerald-500 text-4xl">🔑</span>
+            <span class="text-emerald-500 text-3xl">✓</span>
         </div>
-        <h1 class="lux-font text-3xl italic text-[#c5a059] mb-4">Access Granted.</h1>
-        <p class="text-gray-400 text-sm leading-relaxed font-light">
-            Your Session ID has been generated and synchronized with your email.
+        <h1 class="lux-font text-3xl italic text-[#c5a059] mb-4">Verification Successful</h1>
+        <p class="text-gray-400 text-sm leading-relaxed font-light mb-6">
+            Your brand synchronization request has been processed.
         </p>
     </div>
 
-    <div class="bg-white/5 border border-white/10 p-4 rounded-xl mb-6">
-        <p class="text-[9px] uppercase tracking-widest text-gray-500 mb-1">Reference ID</p>
-        <p class="text-xl font-mono text-white">AIFL-SYNC-{{random_number}}</p> 
-        </div>
-
-    <p class="text-emerald-500 text-[10px] font-bold uppercase tracking-widest animate-pulse">
-        📩 Check your Gmail now
-    </p>
-</div>
-
-        <div class="mt-12">
-            <a href="index.html" class="text-[10px] uppercase tracking-[0.5em] text-gray-600 hover:text-white transition duration-500">
-                ← Return to Lab
-            </a>
-        </div>
+    <div class="bg-white/5 border border-white/10 p-6 rounded-2xl mb-8">
+        <p class="text-[9px] uppercase tracking-[0.3em] text-gray-500 mb-2">Unique Session Access Key</p>
+        <h2 id="session-id" class="text-2xl font-mono font-bold tracking-widest text-white">AFL-</h2>
     </div>
 
+    <div class="space-y-4">
+        <p class="text-emerald-500 text-[10px] font-bold uppercase tracking-[0.2em] animate-pulse">
+            📩 Confirmation Sent to Inbox
+        </p>
+        <p class="text-gray-500 text-[10px] uppercase tracking-widest leading-loose">
+            Check your Gmail for the <br> <span class="text-white italic">Encrypted Zoom Entrance Link</span>
+        </p>
+    </div>
+</div>
+
+<script>
+    // Logic to generate a realistic ID (e.g., AFL-482)
+    const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    const randomLetters = "AFL"; // Keeping your brand prefix
+    const randomDigits = Math.floor(100 + Math.random() * 900);
+    document.getElementById('session-id').innerText = randomLetters + "-" + randomDigits;
+</script>
 </body>
 </html>
