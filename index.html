@@ -22,17 +22,17 @@
         }
         @keyframes rainbow-move { to { background-position: 200% center; } }
 
-        /* EXACT NAVIGATION FROM MISSION.HTML */
+        /* MISSION.HTML NAV LOGIC (NO BURGER) */
         .nav-links a { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
         .nav-links a:hover { color: var(--gold); }
         .nav-active { color: var(--gold) !important; font-weight: bold; border-bottom: 2px solid var(--gold); }
 
         @media (max-width: 768px) {
-            .nav-container { padding: 1.5rem 1rem !important; flex-direction: column; gap: 1.5rem; }
-            .nav-links { gap: 1.5rem !important; display: flex; }
+            .nav-container { padding: 1.5rem 1rem !important; flex-direction: column; gap: 1.5rem; text-align: center; }
+            .nav-links { gap: 1.5rem !important; display: flex; justify-content: center; }
         }
 
-        /* HERO FIX - PERFECT CENTERING */
+        /* HERO CENTERING FIX */
         .hero-video-container { 
             position: relative; 
             width: 100vw; 
@@ -43,17 +43,18 @@
             justify-content: center; 
         }
         .hero-video { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; filter: blur(15px) brightness(0.35); }
-        
-        /* Removed transform: translate to avoid conflict with flex centering */
         .hero-overlay { 
             position: relative; 
             text-align: center; 
             width: 100%; 
             z-index: 10; 
             padding: 0 20px; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* ROI and Sliders */
+        /* ROI Section */
         .roi-circle {
             width: 220px; height: 220px; border-radius: 50%;
             background: conic-gradient(#c5a059 60%, #1a1a1a 0);
@@ -61,10 +62,12 @@
         }
         .roi-circle::after { content: "60%"; position: absolute; width: 180px; height: 180px; background: var(--dark); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; font-weight: bold; }
 
+        /* Cinematic Phase Container */
         .cinematic-container { position: relative; width: 100%; aspect-ratio: 2.35 / 1; background: #000; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); border-radius: 4px; }
         .phase-img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.4s ease; visibility: hidden; }
         .phase-img.active { opacity: 1; visibility: visible; }
 
+        /* Auto-Slider Before/After */
         .auto-slider-box { position: relative; width: 100%; max-width: 1000px; aspect-ratio: 2.35 / 1; margin: 0 auto; overflow: hidden; border: 1px solid rgba(255,255,255,0.1); }
         .slide-asset { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 1.5s ease-in-out; }
         .slide-asset.visible { opacity: 1; }
@@ -93,9 +96,7 @@
                 <span class="text-[10px] tracking-[0.5em] text-gray-400 uppercase font-bold block mb-1">Give Uniqueness To Your Brand</span>
                 <span class="text-xs tracking-[0.2em] text-gold font-light uppercase block">Let customers try your clothes</span>
             </div>
-            
             <h1 class="lux-font text-4xl md:text-7xl italic text-gold-gradient mb-10 leading-tight">Our system, your brand, less return</h1>
-            
             <div class="flex flex-col md:flex-row justify-center items-center gap-4 pointer-events-auto">
                 <a href="mailto:nikhil@aifittinglabs.store?subject=Demo Inquiry" class="bg-white text-black px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-56 text-center shadow-lg">Book a Demo</a>
                 <a href="implementation.html" target="_blank" class="backdrop-blur-md border border-white/40 text-white px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 w-56 text-center">Implementation</a>
@@ -116,22 +117,67 @@
         </div>
     </section>
 
+    <section class="py-24 px-6 bg-[#080808]">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="lux-font text-4xl mb-12 text-center">How it Looks on Your Website</h2>
+            <div class="cinematic-container mb-12 shadow-2xl">
+                <img id="p1" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/no%20button%20appears%20in%20anyother%20page.png" class="phase-img active">
+                <img id="p2" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/appears%20only%20product%26catogry%20page.png" class="phase-img">
+                <img id="p3" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/after%20click%20our%20guidance%20pop%20up%20appears.png" class="phase-img">
+                <img id="p4" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/29a5d3d817b522ca1a28eb8f5c0c032b042c2b63/then%20its%20shows%20analyzing%20and%20wokring%20for%2020%20seconds.png" class="phase-img">
+                <img id="p5" src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/9f3d4eb2da32c27f3f8be41f1aae1e37b91c18f4/final-output.png" class="phase-img">
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <div id="t1" class="phase-text"><h3 class="lux-font text-2xl">01. Ghost Integration</h3><p class="text-gray-500">Only appears on product pages.</p></div>
+                    <div id="t2" class="phase-text hidden"><h3 class="lux-font text-2xl">02. Strategic Presence</h3><p class="text-gray-500">The button only appears where needed.</p></div>
+                    <div id="t3" class="phase-text hidden"><h3 class="lux-font text-2xl">03. User Guidance</h3><p class="text-gray-500">Perfect fit data capture.</p></div>
+                    <div id="t4" class="phase-text hidden"><h3 class="lux-font text-2xl">04. Neural Drape</h3><p class="text-gray-500">Real-time fabric physics.</p></div>
+                    <div id="t5" class="phase-text hidden"><h3 class="lux-font text-2xl">05. Instant Buy</h3><p class="text-gray-500">Final results drive conversion.</p></div>
+                </div>
+                <div class="text-right">
+                    <button onclick="nextPhase()" class="bg-white text-black px-12 py-5 rounded-full text-xs font-bold uppercase tracking-widest hover:bg-gold transition shadow-xl">Next Phase →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6">
+        <div class="max-w-6xl mx-auto text-center">
+            <h2 class="lux-font text-5xl md:text-7xl mb-8 italic">Convert Browsers to Buyers.</h2>
+            <div class="auto-slider-box mb-12 shadow-2xl">
+                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/before.jpeg" class="slide-asset visible" id="slide-before">
+                <img src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/after.png" class="slide-asset after-asset" id="slide-after">
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-20 text-center border-t border-white/5">
+        <p class="text-[8px] uppercase tracking-widest text-gray-600">AI Fitting Labs | nikhil@aifittinglabs.store</p>
+    </footer>
+
     <script>
+        // PHASE SLIDER LOGIC
         let pCurrent = 1;
         function nextPhase() {
             document.getElementById('p' + pCurrent).classList.remove('active');
+            document.getElementById('t' + pCurrent).classList.add('hidden');
             pCurrent = (pCurrent % 5) + 1;
             document.getElementById('p' + pCurrent).classList.add('active');
+            document.getElementById('t' + pCurrent).classList.remove('hidden');
         }
 
+        // AUTO SLIDER LOGIC
         const b = document.getElementById('slide-before');
         const a = document.getElementById('slide-after');
         setInterval(() => {
             if (b && a) {
                 if (b.classList.contains('visible')) {
-                    b.classList.remove('visible'); a.classList.add('visible');
+                    b.classList.remove('visible');
+                    a.classList.add('visible');
                 } else {
-                    a.classList.remove('visible'); b.classList.add('visible');
+                    a.classList.remove('visible');
+                    b.classList.add('visible');
                 }
             }
         }, 3000);
