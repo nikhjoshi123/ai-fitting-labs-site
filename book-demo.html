@@ -1,65 +1,83 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reserve Session | AI FITTING LABS</title>
+    <title>Sync | AI FITTING LABS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital@1&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root { --gold: #c5a059; --dark: #050505; }
-        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; overflow-x: hidden; }
+        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
         .lux-font { font-family: 'Playfair Display', serif; }
-        .gold-gradient { background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .booking-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); border-radius: 40px; }
+        .text-gold-gradient { color: var(--gold); background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         
-        /* Premium Slot Look */
-        .slot-demo { background: white; color: black; padding: 10px 20px; border-radius: 8px; font-weight: bold; font-size: 12px; }
-        .slot-booked { background: #1a1a1a; color: #444; padding: 10px 20px; border-radius: 8px; font-size: 12px; text-decoration: line-through; border: 1px solid #333; }
+        /* Glass Card for the Calendar */
+        .booking-container {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 40px;
+            backdrop-filter: blur(20px);
+            padding: 20px;
+        }
+
+        .nav-link { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
+        .nav-link:hover { color: white; }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
     </style>
 </head>
-<body class="min-h-screen flex flex-col items-center justify-center p-6">
+<body>
 
-    <div class="max-w-3xl w-full text-center">
-        <span class="text-[10px] tracking-[0.8em] text-gold uppercase block mb-6">Exclusive Onboarding</span>
-        <h1 class="lux-font text-5xl md:text-7xl italic gold-gradient mb-8">Architectural Sync</h1>
-        
-        <p class="text-gray-400 text-sm md:text-base font-light mb-12 max-w-xl mx-auto leading-relaxed">
-            This is a 1-on-1 private session. We will integrate your garment data live and discuss the <span class="text-white font-bold">₹10,000 deployment advance</span> for your brand.
-        </p>
+    <nav class="fixed w-full z-[100] px-10 py-8 flex justify-between items-center bg-black/40 backdrop-blur-xl border-b border-white/5">
+        <div class="lux-font text-xl uppercase tracking-tighter font-bold text-white">
+            AI FITTING LABS
+        </div>
+        <div class="hidden md:flex gap-10">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="pricing.html" class="nav-link">Pricing</a>
+            <a href="mission.html" class="nav-link">Mission</a>
+        </div>
+    </nav>
 
-        <div class="booking-card p-8 md:p-12 mb-8">
-            <div class="flex flex-col md:flex-row gap-12 items-center">
-                <div class="flex-1 text-left">
-                    <h3 class="text-white font-bold text-xl mb-4 italic">What happens next?</h3>
-                    <ul class="space-y-4 text-xs text-gray-500 uppercase tracking-widest">
-                        <li><span class="text-gold mr-2">01.</span> Pick your available slot</li>
-                        <li><span class="text-gold mr-2">02.</span> Receive Session ID & Zoom Link</li>
-                        <li><span class="text-gold mr-2">03.</span> Live "Smart-Detect" Integration</li>
-                    </ul>
-                </div>
-
-                <div class="flex-1 w-full">
-                    <div class="mb-4 text-[10px] text-gray-600 uppercase tracking-widest">Available Slots (Today)</div>
-                    <div class="grid grid-cols-2 gap-3">
-                        <div class="slot-booked">09:00 AM</div>
-                        <div class="slot-demo">11:30 AM</div>
-                        <div class="slot-booked">02:00 PM</div>
-                        <div class="slot-demo">04:30 PM</div>
-                    </div>
-                    
-                    <a href="YOUR_CALENDLY_LINK_HERE" class="mt-8 block w-full bg-white text-black py-5 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300">
-                        Open Secure Calendar
-                    </a>
-                </div>
-            </div>
+    <section class="pt-40 pb-20 px-6 max-w-5xl mx-auto">
+        <div class="text-center mb-12">
+            <span class="text-gold font-bold text-[10px] tracking-[0.6em] uppercase block mb-4">Request Access</span>
+            <h1 class="lux-font text-5xl md:text-6xl italic text-gold-gradient mb-4">Architectural Sync</h1>
+            <p class="text-gray-500 uppercase text-[9px] tracking-[0.4em] max-w-md mx-auto leading-relaxed">
+                Connect with our tech team to verify your brand's AI compatibility. 
+            </p>
         </div>
 
-        <a href="index.html" class="text-[10px] uppercase tracking-widest text-gray-600 hover:text-gold transition">← Return to Gallery</a>
-    </div>
+        <div class="booking-container shadow-2xl">
+            <div class="calendly-inline-widget" 
+                 data-url="https://calendly.com/nhjoshi436/15min?hide_event_type_details=1&hide_gdpr_banner=1&background_color=050505&text_color=ffffff&primary_color=c5a059" 
+                 style="min-width:320px;height:700px;">
+            </div>
+            <script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+            </div>
 
-    <footer class="mt-20 opacity-30">
-        <p class="text-[8px] uppercase tracking-widest">AI FITTING LABS | nikhil@aifittinglabs.store</p>
+        <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8 text-center opacity-60">
+            <div>
+                <p class="text-white font-bold text-xs uppercase tracking-widest mb-2">01. Live Demo</p>
+                <p class="text-[10px] text-gray-400">Experience your garments in the render environment.</p>
+            </div>
+            <div>
+                <p class="text-white font-bold text-xs uppercase tracking-widest mb-2">02. Deployment</p>
+                <p class="text-[10px] text-gray-400">Finalize the ₹10,000 deployment advance.</p>
+            </div>
+            <div>
+                <p class="text-white font-bold text-xs uppercase tracking-widest mb-2">03. Integration</p>
+                <p class="text-[10px] text-gray-400">Receive your custom API keys and dashboard access.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5 opacity-50">
+        <p class="text-[8px] uppercase tracking-widest text-gray-500">AI FITTING LABS | Secure Server Sync</p>
     </footer>
 
 </body>
