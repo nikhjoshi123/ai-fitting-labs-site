@@ -229,25 +229,37 @@
         <p class="text-[8px] uppercase tracking-widest">AI Fitting Labs | nikhil@aifittinglabs.store</p>
     </footer>
 
-    <script>
-        function calculate() {
-            const orders = parseFloat(document.getElementById('orders').value) || 0;
-            const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-            const aov = parseFloat(document.getElementById('aov').value) || 0;
-            const sOut = parseFloat(document.getElementById('shipOut').value) || 0;
-            const sReturn = parseFloat(document.getElementById('shipReturn').value) || 0;
+   <script>
+    function calculate() {
+        const orders = parseFloat(document.getElementById('orders').value) || 0;
+        const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+        const aov = parseFloat(document.getElementById('aov').value) || 0;
+        const sOut = parseFloat(document.getElementById('shipOut').value) || 0;
+        const sReturn = parseFloat(document.getElementById('shipReturn').value) || 0;
 
-            const numReturns = orders * rate;
-            const currentLoss = numReturns * (sOut + sReturn);
-            
-            const returnSavings = currentLoss * 0.60;
-            const newSalesRevenue = (orders * 0.20) * (aov * 0.30);
-            const totalWin = returnSavings + newSalesRevenue;
+        const numReturns = orders * rate;
+        const currentLoss = numReturns * (sOut + sReturn);
+        
+        const returnSavings = currentLoss * 0.60;
+        const newSalesRevenue = (orders * 0.20) * (aov * 0.30); // 20% conversion boost on 30% margin
+        const totalWin = returnSavings + newSalesRevenue;
 
-            document.getElementById('totalLoss').innerText = "₹" + Math.round(currentLoss).toLocaleString();
-            document.getElementById('gainAmount').innerText = "₹" + Math.round(totalWin).toLocaleString();
-        }
-        window.onload = calculate;
-    </script>
+        // Update Numbers
+        document.getElementById('totalLoss').innerText = "₹" + Math.round(currentLoss).toLocaleString();
+        document.getElementById('gainAmount').innerText = "₹" + Math.round(totalWin).toLocaleString();
+
+        // Dynamic Explanation
+        const dynamicText = `You are currently losing *₹${Math.round(currentLoss).toLocaleString()}* to fit-uncertainty and returns. 
+        Our VTON technology stops this leakage by giving customers "Visual Certainty" before they buy. 
+        By slashing your returns by 60% and boosting conversions by 20%, we convert those losses into 
+        *₹${Math.round(totalWin).toLocaleString()}* of pure retained revenue. 
+        We don't just add a button; we fix your margins and turn browsers into permanent buyers.`;
+
+        document.getElementById('calcExplanation').innerHTML = dynamicText;
+    }
+    window.onload = calculate;
+</script>
+    <div id="calcExplanation" style="margin-top: 20px; font-style: italic; color: #333;">
+    </div>
 </body>
 </html>
