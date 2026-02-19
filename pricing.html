@@ -229,63 +229,25 @@
         <p class="text-[8px] uppercase tracking-widest">AI Fitting Labs | nikhil@aifittinglabs.store</p>
     </footer>
 
-  <div id="calculator-results" style="margin-top: 25px; padding: 25px; border-radius: 15px; background: #ffffff; border: 2px solid #f0f0f0; box-shadow: 0 4px 15px rgba(0,0,0,0.05); font-family: 'Inter', sans-serif;">
-    
-    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-        <div style="flex: 1;">
-            <span style="display: block; font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Current Yearly Loss</span>
-            <span id="totalLoss" style="font-size: 28px; font-weight: 800; color: #e74c3c;">₹0</span>
-        </div>
-        <div style="flex: 1; text-align: right;">
-            <span style="display: block; font-size: 13px; color: #888; text-transform: uppercase; letter-spacing: 1px; font-weight: 600;">Retained Revenue (VTON)</span>
-            <span id="gainAmount" style="font-size: 28px; font-weight: 800; color: #2ecc71;">₹0</span>
-        </div>
-    </div>
+ <script>
+        function calculate() {
+            const orders = parseFloat(document.getElementById('orders').value) || 0;
+            const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+            const aov = parseFloat(document.getElementById('aov').value) || 0;
+            const sOut = parseFloat(document.getElementById('shipOut').value) || 0;
+            const sReturn = parseFloat(document.getElementById('shipReturn').value) || 0;
 
-    <div id="calcExplanation" style="font-size: 16px; line-height: 1.6; color: #333; border-top: 2px solid #f8f8f8; padding-top: 20px;">
-        </div>
-</div>
+            const numReturns = orders * rate;
+            const currentLoss = numReturns * (sOut + sReturn);
+            
+            const returnSavings = currentLoss * 0.60;
+            const newSalesRevenue = (orders * 0.20) * (aov * 0.30);
+            const totalWin = returnSavings + newSalesRevenue;
 
-<script>
-    function calculate() {
-        // Pulling inputs
-        const orders = parseFloat(document.getElementById('orders').value) || 0;
-        const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
-        const aov = parseFloat(document.getElementById('aov').value) || 0;
-        const sOut = parseFloat(document.getElementById('shipOut').value) || 0;
-        const sReturn = parseFloat(document.getElementById('shipReturn').value) || 0;
-
-        // The Math
-        const numReturns = orders * rate;
-        const currentLoss = numReturns * (sOut + sReturn);
-        
-        const returnSavings = currentLoss * 0.60; // 60% reduction in returns
-        const newSalesRevenue = (orders * 0.20) * (aov * 0.30); // 20% conversion boost @ 30% margin
-        const totalWin = returnSavings + newSalesRevenue;
-
-        // Updating the Numbers (Indian Rupee Formatting)
-        document.getElementById('totalLoss').innerText = "₹" + Math.round(currentLoss).toLocaleString('en-IN');
-        document.getElementById('gainAmount').innerText = "₹" + Math.round(totalWin).toLocaleString('en-IN');
-
-        // Updating the Explanation Text
-        const explanationBox = document.getElementById('calcExplanation');
-        explanationBox.innerHTML = `
-            <strong>The Problem:</strong> You are currently losing roughly <strong>₹${Math.round(currentLoss).toLocaleString('en-IN')}</strong> to fit-uncertainty and return logistics. <br>
-            <strong>The Solution:</strong> Our VTON technology closes the imagination gap by giving customers instant "Visual Certainty" before they buy. <br>
-            By slashing returns by 60% and boosting conversions by 20%, we convert those existing losses into 
-            <strong>₹${Math.round(totalWin).toLocaleString('en-IN')}</strong> of pure retained revenue. <br>
-            We don't just add a button; we fix your margins and turn hesitant browsers into permanent buyers.
-        `;
-    }
-
-    // Attach to all inputs so it updates as they type
-    window.addEventListener('DOMContentLoaded', () => {
-        calculate(); // Run once on load
-        const allInputs = document.querySelectorAll('input');
-        allInputs.forEach(input => {
-            input.addEventListener('input', calculate);
-        });
-    });
-</script>
+            document.getElementById('totalLoss').innerText = "₹" + Math.round(currentLoss).toLocaleString();
+            document.getElementById('gainAmount').innerText = "₹" + Math.round(totalWin).toLocaleString();
+        }
+        window.onload = calculate;
+    </script>
 </body>
 </html>
