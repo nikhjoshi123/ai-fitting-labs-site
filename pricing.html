@@ -49,9 +49,9 @@
         }
 
         /* CURRENCY TOGGLE STYLE */
-        .currency-toggle { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; }
-        .toggle-btn { padding: 8px 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; background: transparent; color: #888; }
-        .toggle-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(197, 160, 89, 0.1); }
+        .toggle-container { display: flex; justify-content: center; gap: 20px; margin-top: 25px; }
+        .toggle-link { font-size: 10px; text-transform: uppercase; letter-spacing: 2px; padding: 8px 16px; border-radius: 50px; border: 1px solid rgba(255,255,255,0.1); transition: 0.3s; color: #666; }
+        .toggle-link.active { border-color: var(--gold); color: var(--gold); background: rgba(197, 160, 89, 0.05); font-weight: bold; }
 
         input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; color: white; width: 100%; margin-top: 5px; outline: none; }
         input:focus { border-color: var(--gold); }
@@ -76,31 +76,31 @@
     </nav>
 
     <section class="pt-48 pb-20 px-6 max-w-6xl mx-auto">
-        <div class="text-center mb-10">
+        <div class="text-center mb-16">
             <h1 class="lux-font text-5xl md:text-7xl italic text-gold-gradient mb-4">The Investment</h1>
-            <p class="text-gray-500 uppercase text-[10px] tracking-[0.4em] mb-12">Scaling your brand's confidence, not just its tech.</p>
+            <p class="text-gray-500 uppercase text-[10px] tracking-[0.4em]">Scaling your brand's confidence, not just its tech.</p>
             
-            <div class="currency-toggle">
-                <button id="btn-inr" class="toggle-btn active" onclick="setCurrency('INR')">India (INR)</button>
-                <button id="btn-usd" class="toggle-btn" onclick="setCurrency('USD')">Global (USD)</button>
+            <div class="toggle-container">
+                <a href="#" class="toggle-link active">India (INR)</a>
+                <a href="pricingusd.html" class="toggle-link">Global (USD)</a>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
             <div class="investment-card p-10 rounded-3xl">
                 <h3 class="lux-font text-2xl mb-4 italic">Standard</h3>
-                <div class="mb-6"><span class="text-4xl font-bold" id="price-standard">₹30,000</span></div>
+                <div class="mb-6"><span class="text-4xl font-bold">₹30,000</span></div>
                 <p class="text-gray-500 text-sm mb-8 italic font-light">1000 High-Res Try on Credit</p>
-                <a id="link-standard" href="mailto:nikhil@aifittinglabs.store?subject=Interested in Standard Plan&body=Hi Nikhil, I am interested in the Standard Plan (₹30,000). I am ready to pay the ₹10,000 advance to start the 2-hour implementation for my brand." 
+                <a href="mailto:nikhil@aifittinglabs.store?subject=Interested in Standard Plan&body=Hi Nikhil, I am interested in the Standard Plan (₹30,000). I am ready to pay the ₹10,000 advance to start the 2-hour implementation for my brand." 
                    class="block bg-white text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition">Secure Spot</a>
             </div>
 
             <div class="investment-card p-10 rounded-3xl border-gold/50 relative md:scale-105 bg-black shadow-[0_0_50px_rgba(197,160,89,0.1)]">
                 <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[8px] font-bold px-4 py-1 rounded-full uppercase tracking-widest">Growth Engine</div>
                 <h3 class="lux-font text-2xl mb-4 italic text-gold-gradient">Growth</h3>
-                <div class="mb-6"><span class="text-4xl font-bold" id="price-growth">₹70,000</span></div>
+                <div class="mb-6"><span class="text-4xl font-bold">₹70,000</span></div>
                 <p class="text-gray-500 text-sm mb-8 italic font-light">2500 High-Res Try on Credit</p>
-                <a id="link-growth" href="mailto:nikhil@aifittinglabs.store?subject=Interested in Growth Plan&body=Hi Nikhil, I want to secure the Growth Engine Plan (₹70,000). I understand the ₹10,000 advance requirement to reserve GPU power." 
+                <a href="mailto:nikhil@aifittinglabs.store?subject=Interested in Growth Plan&body=Hi Nikhil, I want to secure the Growth Engine Plan (₹70,000). I understand the ₹10,000 advance requirement to reserve GPU power." 
                    class="block btn-growth-reverse text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-xl">Secure Spot</a>
             </div>
 
@@ -115,7 +115,7 @@
 
         <div class="max-w-3xl mx-auto text-center p-8 bg-white/5 rounded-2xl border border-white/10">
             <p class="text-sm text-gray-300 italic font-light">
-                <span class="text-gold font-bold">A Personal Note:</span> Regardless of the plan you choose, we require a <strong id="note-advance">₹10,000 advance</strong>. This isn't just a fee—it's the fuel that lets us reserve GPU power and start the 2-hour implementation for your specific brand.
+                <span class="text-gold font-bold">A Personal Note:</span> Regardless of the plan you choose, we require a <strong>₹10,000 advance</strong>. This isn't just a fee—it's the fuel that lets us reserve GPU power and start the 2-hour implementation for your specific brand.
             </p>
         </div>
     </section>
@@ -127,6 +127,9 @@
                     <h2 class="lux-font text-4xl mb-8 italic text-gold-gradient">We’re a Startup. <br>We’re Honest with You.</h2>
                     <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
                         Let’s be real: We aren't a massive, faceless corporation. We are a hungry startup building tech that requires precision and high-end infrastructure. <span class="text-white font-semibold"> For us, your trust is the foundation.</span>. Your investment isn't just a fee— <span class="text-white font-semibold">it is the fuel that allows us to maintain the high-performance servers and dedicated R&D that keep your brand at the cutting edge.</span>. 
+                    </p>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-8 font-light">
+                       Dedicated Resource Allocation <span class="text-white font-semibold">To ensure your Virtual Try-On is high-resolution and lag-free, we prioritize dedicated compute bandwidth for your brand from Day 1</span>  This infrastructure ensures a premium, high-speed experience for your customers, even during your highest traffic sales events.
                     </p>
                     <div class="grid grid-cols-1 gap-6">
                         <div class="flex items-start gap-3">
@@ -141,6 +144,10 @@
                             <span class="text-gold mt-1">✔</span>
                             <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Anti-Crash Pipeline:</strong> Redundant backup pipelines. If an API ever crashes, we trigger a fix within 2 hours to keep your sales moving.</p>
                         </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-gold mt-1">✔</span>
+                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Not Just a Button:</strong> We are selling a high-end experience that makes your users fall in love with your site.</p>
+                        </div>
                     </div>
                 </div>
                 <div class="bg-black p-10 rounded-3xl border border-white/10 flex flex-col justify-center">
@@ -148,11 +155,19 @@
                     <ul class="space-y-6">
                         <li class="flex gap-4">
                             <span class="text-gold font-bold">1.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Zero Redirect:</strong> They never leave your site.</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Zero Redirect:</strong> They never leave your site. They see themselves in YOUR fabric on YOUR domain.</p>
                         </li>
                         <li class="flex gap-4">
                             <span class="text-gold font-bold">2.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Strategic Placement:</strong> Button only appears on Product pages.</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Strategic Placement:</strong> The button only appears on Product and Category pages. High-fashion aesthetics maintained.</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-gold font-bold">3.</span>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Anti-Abuse Cap:</strong> 5 trials per user ensures your compute power is used by genuine buyers, not bots.</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-gold font-bold">4.</span>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Auto Detection:</strong>You Don't Have To Personally Upload Catalog or Product, Our Ai Is Smart Enough That Detect Your Clothes Automatically.</p>
                         </li>
                     </ul>
                 </div>
@@ -164,7 +179,7 @@
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="lux-font text-5xl mb-4 italic">The Reality of the Win.</h2>
-                <p class="text-gray-500 text-sm uppercase tracking-widest" id="calc-helper">Enter your real numbers (INR). See the Profit.</p>
+                <p class="text-gray-500 text-sm uppercase tracking-widest">Enter your real numbers. See the Profit.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 items-start mb-32">
@@ -179,17 +194,17 @@
                             <input type="number" id="rate" value="30" oninput="calculate()">
                         </div>
                         <div>
-                            <label id="label-aov">Avg. Order Value (₹)</label>
+                            <label>Avg. Order Value (₹)</label>
                             <input type="number" id="aov" value="2000" oninput="calculate()">
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label id="label-shipout">Shipping Out (₹)</label>
+                            <label>Shipping Out (₹)</label>
                             <input type="number" id="shipOut" value="300" oninput="calculate()">
                         </div>
                         <div>
-                            <label id="label-shipreturn">Return Shipping (₹)</label>
+                            <label>Return Shipping (₹)</label>
                             <input type="number" id="shipReturn" value="300" oninput="calculate()">
                         </div>
                     </div>
@@ -204,6 +219,9 @@
                     <div class="p-8 win-box rounded-3xl shadow-[0_0_40px_rgba(16,185,129,0.1)]">
                         <p class="text-[10px] text-emerald-400 uppercase tracking-widest mb-2 font-bold">Your Win (New Revenue + Savings)</p>
                         <div class="text-6xl font-bold text-emerald-500" id="gainAmount">₹40,000+</div>
+                        <p class="text-xs text-gray-400 mt-4 leading-relaxed font-light">
+                            Stopping <span class="text-emerald-400 font-bold">60% of returns</span> + increasing conversion by <span class="text-emerald-400 font-bold">20%</span>.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -221,51 +239,7 @@
         <p class="text-[8px] uppercase tracking-widest">AI Fitting Labs | nikhil@aifittinglabs.store</p>
     </footer>
 
-    <script>
-        let currentCurrency = 'INR';
-
-        function setCurrency(curr) {
-            currentCurrency = curr;
-            const isUSD = curr === 'USD';
-            
-            // Toggle Button Styles
-            document.getElementById('btn-inr').classList.toggle('active', !isUSD);
-            document.getElementById('btn-usd').classList.toggle('active', isUSD);
-
-            // Update Pricing Text
-            document.getElementById('price-standard').innerText = isUSD ? '$360' : '₹30,000';
-            document.getElementById('price-growth').innerText = isUSD ? '$840' : '₹70,000';
-            document.getElementById('note-advance').innerText = isUSD ? '$120 advance' : '₹10,000 advance';
-
-            // Update Email Links
-            const stdPrice = isUSD ? '$360' : '₹30,000';
-            const groPrice = isUSD ? '$840' : '₹70,000';
-            const advPrice = isUSD ? '$120' : '₹10,000';
-
-            document.getElementById('link-standard').href = mailto:nikhil@aifittinglabs.store?subject=Interested in Standard Plan&body=Hi Nikhil, I am interested in the Standard Plan (${stdPrice}). I am ready to pay the ${advPrice} advance to start.;
-            document.getElementById('link-growth').href = mailto:nikhil@aifittinglabs.store?subject=Interested in Growth Plan&body=Hi Nikhil, I want to secure the Growth Engine Plan (${groPrice}). I understand the ${advPrice} advance requirement.;
-
-            // Update Calculator Labels
-            const symbol = isUSD ? '$' : '₹';
-            document.getElementById('calc-helper').innerText = Enter your real numbers (${curr}). See the Profit.;
-            document.getElementById('label-aov').innerText = Avg. Order Value (${symbol});
-            document.getElementById('label-shipout').innerText = Shipping Out (${symbol});
-            document.getElementById('label-shipreturn').innerText = Return Shipping (${symbol});
-
-            // Update Calculator Defaults for USD if just switched
-            if(isUSD) {
-                document.getElementById('aov').value = 40;
-                document.getElementById('shipOut').value = 5;
-                document.getElementById('shipReturn').value = 5;
-            } else {
-                document.getElementById('aov').value = 2000;
-                document.getElementById('shipOut').value = 300;
-                document.getElementById('shipReturn').value = 300;
-            }
-
-            calculate();
-        }
-
+ <script>
         function calculate() {
             const orders = parseFloat(document.getElementById('orders').value) || 0;
             const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
@@ -280,11 +254,9 @@
             const newSalesRevenue = (orders * 0.20) * (aov * 0.30);
             const totalWin = returnSavings + newSalesRevenue;
 
-            const sym = currentCurrency === 'USD' ? '$' : '₹';
-            document.getElementById('totalLoss').innerText = sym + Math.round(currentLoss).toLocaleString();
-            document.getElementById('gainAmount').innerText = sym + Math.round(totalWin).toLocaleString();
+            document.getElementById('totalLoss').innerText = "₹" + Math.round(currentLoss).toLocaleString();
+            document.getElementById('gainAmount').innerText = "₹" + Math.round(totalWin).toLocaleString();
         }
-
         window.onload = calculate;
     </script>
 </body>
