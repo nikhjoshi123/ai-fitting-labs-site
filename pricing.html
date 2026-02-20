@@ -23,7 +23,7 @@
         }
         @keyframes rainbow-move { to { background-position: 200% center; } }
 
-        /* NAV STYLE */
+        /* MISSION.HTML NAV STYLE */
         .nav-links a { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
         .nav-links a:hover { color: var(--gold); }
         .nav-active { color: var(--gold) !important; font-weight: bold; border-bottom: 2px solid var(--gold); }
@@ -33,16 +33,25 @@
             .nav-links { gap: 1.5rem !important; display: flex; justify-content: center; }
         }
 
-        /* TOGGLE BUTTONS */
-        .currency-toggle { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; position: relative; z-index: 101; }
-        .toggle-btn { padding: 10px 25px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; cursor: pointer; transition: 0.3s; background: rgba(255,255,255,0.03); color: #666; }
-        .toggle-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(197,160,89,0.1); }
-
         .investment-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s ease; }
         .win-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); }
         
-        .btn-growth-reverse { background-color: var(--gold); color: #000; border: 2px solid var(--gold); transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); }
-        .btn-growth-reverse:hover { background-color: transparent; color: var(--gold); transform: scale(1.05); }
+        .btn-growth-reverse {
+            background-color: var(--gold);
+            color: #000;
+            border: 2px solid var(--gold);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-growth-reverse:hover {
+            background-color: transparent;
+            color: var(--gold);
+            transform: scale(1.05);
+        }
+
+        /* CURRENCY TOGGLE STYLE */
+        .currency-toggle { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; }
+        .toggle-btn { padding: 8px 20px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; cursor: pointer; transition: 0.3s; background: transparent; color: #888; }
+        .toggle-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(197, 160, 89, 0.1); }
 
         input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; color: white; width: 100%; margin-top: 5px; outline: none; }
         input:focus { border-color: var(--gold); }
@@ -72,17 +81,17 @@
             <p class="text-gray-500 uppercase text-[10px] tracking-[0.4em] mb-12">Scaling your brand's confidence, not just its tech.</p>
             
             <div class="currency-toggle">
-                <button id="btn-inr" class="toggle-btn active" onclick="updateCurrency('INR')">India (INR)</button>
-                <button id="btn-usd" class="toggle-btn" onclick="updateCurrency('USD')">Global (USD)</button>
+                <button id="btn-inr" class="toggle-btn active" onclick="setCurrency('INR')">India (INR)</button>
+                <button id="btn-usd" class="toggle-btn" onclick="setCurrency('USD')">Global (USD)</button>
             </div>
         </div>
 
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
             <div class="investment-card p-10 rounded-3xl">
                 <h3 class="lux-font text-2xl mb-4 italic">Standard</h3>
-                <div class="mb-6"><span class="text-4xl font-bold" id="price-std">₹30,000</span></div>
+                <div class="mb-6"><span class="text-4xl font-bold" id="price-standard">₹30,000</span></div>
                 <p class="text-gray-500 text-sm mb-8 italic font-light">1000 High-Res Try on Credit</p>
-                <a id="link-std" href="mailto:nikhil@aifittinglabs.store?subject=Interested in Standard Plan&body=Hi Nikhil, I am interested in the Standard Plan (₹30,000). I am ready to pay the ₹10,000 advance to start the 2-hour implementation for my brand." 
+                <a id="link-standard" href="mailto:nikhil@aifittinglabs.store?subject=Interested in Standard Plan&body=Hi Nikhil, I am interested in the Standard Plan (₹30,000). I am ready to pay the ₹10,000 advance to start the 2-hour implementation for my brand." 
                    class="block bg-white text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition">Secure Spot</a>
             </div>
 
@@ -106,7 +115,7 @@
 
         <div class="max-w-3xl mx-auto text-center p-8 bg-white/5 rounded-2xl border border-white/10">
             <p class="text-sm text-gray-300 italic font-light">
-                <span class="text-gold font-bold">A Personal Note:</span> Regardless of the plan you choose, we require a <strong id="note-adv">₹10,000 advance</strong>. This isn't just a fee—it's the fuel that lets us reserve GPU power and start the 2-hour implementation for your specific brand.
+                <span class="text-gold font-bold">A Personal Note:</span> Regardless of the plan you choose, we require a <strong id="note-advance">₹10,000 advance</strong>. This isn't just a fee—it's the fuel that lets us reserve GPU power and start the 2-hour implementation for your specific brand.
             </p>
         </div>
     </section>
@@ -132,10 +141,6 @@
                             <span class="text-gold mt-1">✔</span>
                             <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Anti-Crash Pipeline:</strong> Redundant backup pipelines. If an API ever crashes, we trigger a fix within 2 hours to keep your sales moving.</p>
                         </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-gold mt-1">✔</span>
-                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Not Just a Button:</strong> We are selling a high-end experience that makes your users fall in love with your site.</p>
-                        </div>
                     </div>
                 </div>
                 <div class="bg-black p-10 rounded-3xl border border-white/10 flex flex-col justify-center">
@@ -143,19 +148,11 @@
                     <ul class="space-y-6">
                         <li class="flex gap-4">
                             <span class="text-gold font-bold">1.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Zero Redirect:</strong> They never leave your site. They see themselves in YOUR fabric on YOUR domain.</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Zero Redirect:</strong> They never leave your site.</p>
                         </li>
                         <li class="flex gap-4">
                             <span class="text-gold font-bold">2.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Strategic Placement:</strong> The button only appears on Product and Category pages. High-fashion aesthetics maintained.</p>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="text-gold font-bold">3.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Anti-Abuse Cap:</strong> 5 trials per user ensures your compute power is used by genuine buyers, not bots.</p>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="text-gold font-bold">4.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Auto Detection:</strong>You Don't Have To Personally Upload Catalog or Product, Our Ai Is Smart Enough That Detect Your Clothes Automatically.</p>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Strategic Placement:</strong> Button only appears on Product pages.</p>
                         </li>
                     </ul>
                 </div>
@@ -167,7 +164,7 @@
         <div class="max-w-5xl mx-auto">
             <div class="text-center mb-16">
                 <h2 class="lux-font text-5xl mb-4 italic">The Reality of the Win.</h2>
-                <p class="text-gray-500 text-sm uppercase tracking-widest" id="calc-sub">Enter your real numbers (INR). See the Profit.</p>
+                <p class="text-gray-500 text-sm uppercase tracking-widest" id="calc-helper">Enter your real numbers (INR). See the Profit.</p>
             </div>
 
             <div class="grid md:grid-cols-2 gap-8 items-start mb-32">
@@ -182,17 +179,17 @@
                             <input type="number" id="rate" value="30" oninput="calculate()">
                         </div>
                         <div>
-                            <label id="lbl-aov">Avg. Order Value (₹)</label>
+                            <label id="label-aov">Avg. Order Value (₹)</label>
                             <input type="number" id="aov" value="2000" oninput="calculate()">
                         </div>
                     </div>
                     <div class="grid grid-cols-2 gap-4">
                         <div>
-                            <label id="lbl-shipout">Shipping Out (₹)</label>
+                            <label id="label-shipout">Shipping Out (₹)</label>
                             <input type="number" id="shipOut" value="300" oninput="calculate()">
                         </div>
                         <div>
-                            <label id="lbl-shipreturn">Return Shipping (₹)</label>
+                            <label id="label-shipreturn">Return Shipping (₹)</label>
                             <input type="number" id="shipReturn" value="300" oninput="calculate()">
                         </div>
                     </div>
@@ -210,7 +207,14 @@
                     </div>
                 </div>
             </div>
+
+            <div class="text-center py-20 border-t border-white/5">
+                <h2 class="lux-font text-6xl md:text-[140px] font-bold text-white tracking-tighter opacity-10 uppercase leading-none select-none">
+                    No More Loss
+                </h2>
+                <p class="text-gold font-bold text-[10px] tracking-[0.6em] -mt-10 uppercase">The Future of Fitting is Here</p>
             </div>
+        </div>
     </section>
 
     <footer class="py-10 text-center border-t border-white/5 opacity-50">
@@ -218,36 +222,37 @@
     </footer>
 
     <script>
-        let mode = 'INR';
+        let currentCurrency = 'INR';
 
-        function updateCurrency(curr) {
-            mode = curr;
+        function setCurrency(curr) {
+            currentCurrency = curr;
             const isUSD = curr === 'USD';
-            const sym = isUSD ? '$' : '₹';
-
-            // Toggle active class
+            
+            // Toggle Button Styles
             document.getElementById('btn-inr').classList.toggle('active', !isUSD);
             document.getElementById('btn-usd').classList.toggle('active', isUSD);
 
-            // Update Price Cards
-            document.getElementById('price-std').innerText = isUSD ? '$360' : '₹30,000';
+            // Update Pricing Text
+            document.getElementById('price-standard').innerText = isUSD ? '$360' : '₹30,000';
             document.getElementById('price-growth').innerText = isUSD ? '$840' : '₹70,000';
-            document.getElementById('note-adv').innerText = isUSD ? '$120 advance' : '₹10,000 advance';
+            document.getElementById('note-advance').innerText = isUSD ? '$120 advance' : '₹10,000 advance';
 
             // Update Email Links
-            const adv = isUSD ? '$120' : '₹10,000';
-            const std = isUSD ? '$360' : '₹30,000';
-            const gro = isUSD ? '$840' : '₹70,000';
-            
-            document.getElementById('link-std').href = mailto:nikhil@aifittinglabs.store?subject=Interested in Standard Plan&body=Hi Nikhil, I am interested in the Standard Plan (${std}). I am ready to pay the ${adv} advance to start.;
-            document.getElementById('link-growth').href = mailto:nikhil@aifittinglabs.store?subject=Interested in Growth Plan&body=Hi Nikhil, I want to secure the Growth Engine Plan (${gro}). I understand the ${adv} advance requirement.;
+            const stdPrice = isUSD ? '$360' : '₹30,000';
+            const groPrice = isUSD ? '$840' : '₹70,000';
+            const advPrice = isUSD ? '$120' : '₹10,000';
 
-            // Update Calculator Labels & Defaults
-            document.getElementById('calc-sub').innerText = Enter your real numbers (${curr}). See the Profit.;
-            document.getElementById('lbl-aov').innerText = Avg. Order Value (${sym});
-            document.getElementById('lbl-shipout').innerText = Shipping Out (${sym});
-            document.getElementById('lbl-shipreturn').innerText = Return Shipping (${sym});
+            document.getElementById('link-standard').href = mailto:nikhil@aifittinglabs.store?subject=Interested in Standard Plan&body=Hi Nikhil, I am interested in the Standard Plan (${stdPrice}). I am ready to pay the ${advPrice} advance to start.;
+            document.getElementById('link-growth').href = mailto:nikhil@aifittinglabs.store?subject=Interested in Growth Plan&body=Hi Nikhil, I want to secure the Growth Engine Plan (${groPrice}). I understand the ${advPrice} advance requirement.;
 
+            // Update Calculator Labels
+            const symbol = isUSD ? '$' : '₹';
+            document.getElementById('calc-helper').innerText = Enter your real numbers (${curr}). See the Profit.;
+            document.getElementById('label-aov').innerText = Avg. Order Value (${symbol});
+            document.getElementById('label-shipout').innerText = Shipping Out (${symbol});
+            document.getElementById('label-shipreturn').innerText = Return Shipping (${symbol});
+
+            // Update Calculator Defaults for USD if just switched
             if(isUSD) {
                 document.getElementById('aov').value = 40;
                 document.getElementById('shipOut').value = 5;
@@ -262,7 +267,6 @@
         }
 
         function calculate() {
-            const sym = mode === 'USD' ? '$' : '₹';
             const orders = parseFloat(document.getElementById('orders').value) || 0;
             const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
             const aov = parseFloat(document.getElementById('aov').value) || 0;
@@ -271,8 +275,12 @@
 
             const numReturns = orders * rate;
             const currentLoss = numReturns * (sOut + sReturn);
-            const totalWin = (currentLoss * 0.60) + ((orders * 0.20) * (aov * 0.30));
+            
+            const returnSavings = currentLoss * 0.60;
+            const newSalesRevenue = (orders * 0.20) * (aov * 0.30);
+            const totalWin = returnSavings + newSalesRevenue;
 
+            const sym = currentCurrency === 'USD' ? '$' : '₹';
             document.getElementById('totalLoss').innerText = sym + Math.round(currentLoss).toLocaleString();
             document.getElementById('gainAmount').innerText = sym + Math.round(totalWin).toLocaleString();
         }
