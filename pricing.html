@@ -26,10 +26,11 @@
         .nav-links a:hover { color: var(--gold); }
         .nav-active { color: var(--gold) !important; font-weight: bold; border-bottom: 2px solid var(--gold); }
 
-        /* TOGGLE STYLING */
-        .currency-toggle { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; }
-        .toggle-btn { padding: 8px 24px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-size: 10px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; cursor: pointer; background: rgba(255,255,255,0.02); color: #888; }
-        .toggle-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(197, 160, 89, 0.1); }
+        /* FIXED TOGGLE STYLING */
+        .currency-toggle { display: flex; justify-content: center; gap: 10px; margin-bottom: 40px; position: relative; z-index: 50; }
+        .toggle-btn { padding: 12px 30px; border: 1px solid rgba(255,255,255,0.1); border-radius: 50px; font-size: 11px; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; transition: all 0.3s; cursor: pointer; background: rgba(255,255,255,0.05); color: #888; pointer-events: auto !important; }
+        .toggle-btn:hover { border-color: var(--gold); }
+        .toggle-btn.active { border-color: var(--gold); color: var(--gold); background: rgba(197, 160, 89, 0.15); box-shadow: 0 0 20px rgba(197, 160, 89, 0.1); }
 
         .investment-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s ease; }
         .win-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); }
@@ -73,8 +74,7 @@
                 <h3 class="lux-font text-2xl mb-4 italic">Standard</h3>
                 <div class="mb-6"><span class="text-4xl font-bold" id="price-standard">₹30,000</span></div>
                 <p class="text-gray-500 text-sm mb-8 italic font-light">1000 High-Res Try on Credit</p>
-                <a id="btn-standard" href="mailto:nikhil@aifittinglabs.store?subject=Interested in Standard Plan&body=Hi Nikhil, I am interested in the Standard Plan (₹30,000). I am ready to pay the ₹10,000 advance to start the 2-hour implementation for my brand." 
-                   class="block bg-white text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition">Secure Spot</a>
+                <a id="btn-standard" href="#" class="block bg-white text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition">Secure Spot</a>
             </div>
 
             <div class="investment-card p-10 rounded-3xl border-gold/50 relative md:scale-105 bg-black shadow-[0_0_50px_rgba(197,160,89,0.1)]">
@@ -82,75 +82,21 @@
                 <h3 class="lux-font text-2xl mb-4 italic text-gold-gradient">Growth</h3>
                 <div class="mb-6"><span class="text-4xl font-bold" id="price-growth">₹70,000</span></div>
                 <p class="text-gray-500 text-sm mb-8 italic font-light">2500 High-Res Try on Credit</p>
-                <a id="btn-growth" href="mailto:nikhil@aifittinglabs.store?subject=Interested in Growth Plan&body=Hi Nikhil, I want to secure the Growth Engine Plan (₹70,000). I understand the ₹10,000 advance requirement to reserve GPU power." 
-                   class="block btn-growth-reverse text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-xl">Secure Spot</a>
+                <a id="btn-growth" href="#" class="block btn-growth-reverse text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-xl">Secure Spot</a>
             </div>
 
             <div class="investment-card p-10 rounded-3xl">
                 <h3 class="lux-font text-2xl mb-4 italic">Scale</h3>
                 <div class="mb-6"><span class="text-4xl font-bold italic">Custom</span></div>
                 <p class="text-gray-500 text-sm mb-8 italic font-light">Enterprise-level compute</p>
-                <a href="mailto:nikhil@aifittinglabs.store?subject=Custom Scale Inquiry&body=Hi Nikhil, we are looking for a Custom Enterprise solution." 
-                   class="block border border-white/20 text-white text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Consult</a>
+                <a href="mailto:nikhil@aifittinglabs.store?subject=Custom Scale Inquiry" class="block border border-white/20 text-white text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Consult</a>
             </div>
         </div>
 
         <div class="max-w-3xl mx-auto text-center p-8 bg-white/5 rounded-2xl border border-white/10">
             <p class="text-sm text-gray-300 italic font-light">
-                <span class="text-gold font-bold">A Personal Note:</span> Regardless of the plan you choose, we require a <strong id="note-advance">₹10,000 advance</strong>. This isn't just a fee—it's the fuel that lets us reserve GPU power and start the 2-hour implementation for your specific brand.
+                <span class="text-gold font-bold">A Personal Note:</span> Regardless of the plan you choose, we require a <strong id="note-advance">₹10,000 advance</strong>. This isn't just a fee—it's the fuel that lets us reserve GPU power.
             </p>
-        </div>
-    </section>
-
-    <section class="py-32 bg-white/[0.02] border-y border-white/5">
-        <div class="max-w-5xl mx-auto px-6">
-            <div class="grid md:grid-cols-2 gap-16">
-                <div>
-                    <h2 class="lux-font text-4xl mb-8 italic text-gold-gradient">We’re a Startup. <br>We’re Honest with You.</h2>
-                    <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
-                        Let’s be real: We aren't a massive, faceless corporation. We are a hungry startup building tech that requires precision and high-end infrastructure. <span class="text-white font-semibold"> For us, your trust is the foundation.</span>. Your investment isn't just a fee— <span class="text-white font-semibold">it is the fuel that allows us to maintain the high-performance servers and dedicated R&D that keep your brand at the cutting edge.</span>. 
-                    </p>
-                    <div class="grid grid-cols-1 gap-6">
-                        <div class="flex items-start gap-3">
-                            <span class="text-gold mt-1">✔</span>
-                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Privacy:</strong> Your data is yours. We encrypt every generation and ensure your brand assets remain under your control. We take full responsibility.</p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-gold mt-1">✔</span>
-                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Guaranteed Help:</strong> We give a guaranteed response within 24 hours. No bots, just real humans helping your brand.</p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-gold mt-1">✔</span>
-                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Anti-Crash Pipeline:</strong> Redundant backup pipelines. If an API ever crashes, we trigger a fix within 2 hours to keep your sales moving.</p>
-                        </div>
-                        <div class="flex items-start gap-3">
-                            <span class="text-gold mt-1">✔</span>
-                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Not Just a Button:</strong> We are selling a high-end experience that makes your users fall in love with your site.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="bg-black p-10 rounded-3xl border border-white/10 flex flex-col justify-center">
-                    <h3 class="lux-font text-2xl mb-6 italic text-white">The Tech Logic.</h3>
-                    <ul class="space-y-6">
-                        <li class="flex gap-4">
-                            <span class="text-gold font-bold">1.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Zero Redirect:</strong> They never leave your site. They see themselves in YOUR fabric on YOUR domain.</p>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="text-gold font-bold">2.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Strategic Placement:</strong> The button only appears on Product and Category pages. High-fashion aesthetics maintained.</p>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="text-gold font-bold">3.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Anti-Abuse Cap:</strong> 5 trials per user ensures your compute power is used by genuine buyers, not bots.</p>
-                        </li>
-                        <li class="flex gap-4">
-                            <span class="text-gold font-bold">4.</span>
-                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed"><strong>Auto Detection:</strong>You Don't Have To Personally Upload Catalog or Product, Our Ai Is Smart Enough That Detect Your Clothes Automatically.</p>
-                        </li>
-                    </ul>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -201,10 +147,6 @@
                     </div>
                 </div>
             </div>
-            <div class="text-center py-20 border-t border-white/5">
-                <h2 class="lux-font text-6xl md:text-[140px] font-bold text-white tracking-tighter opacity-10 uppercase leading-none select-none">No More Loss</h2>
-                <p class="text-gold font-bold text-[10px] tracking-[0.6em] -mt-10 uppercase">The Future of Fitting is Here</p>
-            </div>
         </div>
     </section>
 
@@ -220,30 +162,41 @@
             const isUSD = type === 'USD';
             const symbol = isUSD ? '$' : '₹';
 
-            // Update UI State
+            // UI Buttons
             document.getElementById('inr-btn').classList.toggle('active', !isUSD);
             document.getElementById('usd-btn').classList.toggle('active', isUSD);
 
-            // Update Plan Prices
+            // Price Cards & Advance Note
             document.getElementById('price-standard').innerText = isUSD ? '$360' : '₹30,000';
             document.getElementById('price-growth').innerText = isUSD ? '$840' : '₹70,000';
             document.getElementById('note-advance').innerText = isUSD ? '$120 advance' : '₹10,000 advance';
 
-            // Update Calculator Labels
+            // Update Input Labels
             document.getElementById('calc-subtitle').innerText = Enter your real numbers (${type}). See the Profit.;
             document.getElementById('label-aov').innerText = Avg. Order Value (${symbol});
             document.getElementById('label-shipout').innerText = Shipping Out (${symbol});
             document.getElementById('label-shipreturn').innerText = Return Shipping (${symbol});
 
-            // Update Button Links
-            const stdVal = isUSD ? '$360' : '₹30,000';
-            const growVal = isUSD ? '$840' : '₹70,000';
-            const advVal = isUSD ? '$120' : '₹10,000';
+            // AUTO-ADJUST CALCULATOR VALUES FOR USD
+            if(isUSD) {
+                document.getElementById('aov').value = 25;
+                document.getElementById('shipOut').value = 5;
+                document.getElementById('shipReturn').value = 5;
+            } else {
+                document.getElementById('aov').value = 2000;
+                document.getElementById('shipOut').value = 300;
+                document.getElementById('shipReturn').value = 300;
+            }
 
-            document.getElementById('btn-standard').href = mailto:nikhil@aifittinglabs.store?subject=Interested in Standard Plan&body=Hi Nikhil, I am interested in the Standard Plan (${stdVal}). I am ready to pay the ${advVal} advance.;
-            document.getElementById('btn-growth').href = mailto:nikhil@aifittinglabs.store?subject=Interested in Growth Plan&body=Hi Nikhil, I want to secure the Growth Engine Plan (${growVal}). I understand the ${advVal} advance requirement.;
+            // Update Email Links
+            const adv = isUSD ? '$120' : '₹10,000';
+            const std = isUSD ? '$360' : '₹30,000';
+            const gro = isUSD ? '$840' : '₹70,000';
 
-            calculate(); // Refresh calculator
+            document.getElementById('btn-standard').href = mailto:nikhil@aifittinglabs.store?subject=Standard Plan (${std})&body=I want to pay the ${adv} advance to start.;
+            document.getElementById('btn-growth').href = mailto:nikhil@aifittinglabs.store?subject=Growth Plan (${gro})&body=I want to pay the ${adv} advance to start.;
+
+            calculate();
         }
 
         function calculate() {
@@ -256,15 +209,13 @@
 
             const numReturns = orders * rate;
             const currentLoss = numReturns * (sOut + sReturn);
-            const returnSavings = currentLoss * 0.60;
-            const newSalesRevenue = (orders * 0.20) * (aov * 0.30);
-            const totalWin = returnSavings + newSalesRevenue;
+            const totalWin = (currentLoss * 0.60) + ((orders * 0.20) * (aov * 0.30));
 
             document.getElementById('totalLoss').innerText = symbol + Math.round(currentLoss).toLocaleString();
             document.getElementById('gainAmount').innerText = symbol + Math.round(totalWin).toLocaleString();
         }
 
-        window.onload = () => { calculate(); };
+        window.onload = () => { setCurrency('INR'); };
     </script>
 </body>
 </html>
