@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Investment | AI FITTING LABS</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        :root { --gold: #c5a059; --dark: #050505; --win-green: #10b981; }
+        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; overflow-x: hidden; }
+        .lux-font { font-family: 'Playfair Display', serif; }
+        .text-gold-gradient { color: var(--gold); background: linear-gradient(to bottom, #f1d18a, #c5a059); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        
+        .rainbow-text {
+            background: linear-gradient(to right, #ef4444, #f59e0b, #10b981, #3b82f6, #8b5cf6, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: rainbow-move 5s linear infinite;
+            background-size: 200% auto;
+        }
+        @keyframes rainbow-move { to { background-position: 200% center; } }
+
+        .nav-links a { font-size: 10px; text-transform: uppercase; letter-spacing: 0.2em; color: #888; transition: all 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
+        .nav-active { color: var(--gold) !important; font-weight: bold; border-bottom: 2px solid var(--gold); }
+
+        .currency-switch {
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 5px 15px;
+            border-radius: 50px;
+            font-size: 9px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+        .currency-switch:hover { background: var(--gold); color: black; }
+
+        @media (max-width: 768px) {
+            .nav-container { padding: 1.5rem 1rem !important; flex-direction: column; gap: 1.5rem; text-align: center; }
+            .nav-links { gap: 1.5rem !important; display: flex; justify-content: center; }
+        }
+
+        .investment-card { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.05); transition: all 0.4s ease; }
+        .win-box { background: rgba(16, 185, 129, 0.05); border: 1px solid rgba(16, 185, 129, 0.2); }
+        
+        .btn-growth-reverse {
+            background-color: var(--gold);
+            color: #000;
+            border: 2px solid var(--gold);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .btn-growth-reverse:hover { background-color: transparent; color: var(--gold); transform: scale(1.05); }
+
+        input { background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); padding: 12px; border-radius: 8px; color: white; width: 100%; margin-top: 5px; outline: none; }
+        input:focus { border-color: var(--gold); }
+        label { font-size: 10px; text-transform: uppercase; color: #888; letter-spacing: 1px; font-weight: 600; }
+
+        ::-webkit-scrollbar { width: 5px; }
+        ::-webkit-scrollbar-track { background: var(--dark); }
+        ::-webkit-scrollbar-thumb { background: #222; border-radius: 10px; }
+    </style>
+</head>
+<body>
+
+    <nav class="nav-container fixed w-full z-[100] px-10 py-8 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/5">
+        <div class="lux-font text-xl uppercase tracking-tighter font-bold">
+            <span class="rainbow-text">AI FITTING LABS</span>
+        </div>
+        <div class="flex items-center gap-8">
+            <div class="nav-links flex gap-6 md:gap-10">
+                <a href="index.html">Home</a>
+                <a href="pricing.html" class="nav-active">Pricing</a>
+                <a href="mission.html">Our Mission</a>
+            </div>
+            <a href="pricing.html" class="currency-switch">India (INR)</a>
+        </div>
+    </nav>
+
+    <section class="pt-48 pb-20 px-6 max-w-6xl mx-auto">
+        <div class="text-center mb-16">
+            <h1 class="lux-font text-5xl md:text-7xl italic text-gold-gradient mb-4">The Investment</h1>
+            <p class="text-gray-500 uppercase text-[10px] tracking-[0.4em]">Global Enterprise Solutions</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+            <div class="investment-card p-10 rounded-3xl">
+                <h3 class="lux-font text-2xl mb-4 italic">Standard</h3>
+                <div class="mb-6"><span class="text-4xl font-bold">$375</span></div>
+                <p class="text-gray-500 text-sm mb-8 italic font-light">1000 High-Res Try on Credit</p>
+                <a href="mailto:nikhil@aifittinglabs.store?subject=Interested in Standard Plan (USD)&body=Hi Nikhil, I am interested in the Standard Plan ($375). I am ready to pay the $125 advance to start the 2-hour implementation for my brand." 
+                   class="block bg-white text-black text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-gold transition">Secure Spot</a>
+            </div>
+
+            <div class="investment-card p-10 rounded-3xl border-gold/50 relative md:scale-105 bg-black shadow-[0_0_50px_rgba(197,160,89,0.1)]">
+                <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gold text-black text-[8px] font-bold px-4 py-1 rounded-full uppercase tracking-widest">Growth Engine</div>
+                <h3 class="lux-font text-2xl mb-4 italic text-gold-gradient">Growth</h3>
+                <div class="mb-6"><span class="text-4xl font-bold">$875</span></div>
+                <p class="text-gray-500 text-sm mb-8 italic font-light">2500 High-Res Try on Credit</p>
+                <a href="mailto:nikhil@aifittinglabs.store?subject=Interested in Growth Plan (USD)&body=Hi Nikhil, I want to secure the Growth Engine Plan ($875). I understand the $125 advance requirement to reserve GPU power." 
+                   class="block btn-growth-reverse text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest shadow-xl">Secure Spot</a>
+            </div>
+
+            <div class="investment-card p-10 rounded-3xl">
+                <h3 class="lux-font text-2xl mb-4 italic">Scale</h3>
+                <div class="mb-6"><span class="text-4xl font-bold italic">Custom</span></div>
+                <p class="text-gray-500 text-sm mb-8 italic font-light">Enterprise-level compute</p>
+                <a href="mailto:nikhil@aifittinglabs.store?subject=Custom Scale Inquiry&body=Hi Nikhil, we are looking for a Custom Enterprise solution ($USD). Please let us know the next steps." 
+                   class="block border border-white/20 text-white text-center py-4 rounded-full text-[10px] font-bold uppercase tracking-widest hover:bg-white hover:text-black transition">Consult</a>
+            </div>
+        </div>
+
+        <div class="max-w-3xl mx-auto text-center p-8 bg-white/5 rounded-2xl border border-white/10">
+            <p class="text-sm text-gray-300 italic font-light">
+                <span class="text-gold font-bold">A Personal Note:</span> Regardless of the plan you choose, we require a <strong>$125 advance</strong>. This isn't just a fee—it's the fuel that lets us reserve GPU power and start the 2-hour implementation for your specific brand.
+            </p>
+        </div>
+    </section>
+
+    <section class="py-32 bg-white/[0.02] border-y border-white/5">
+        <div class="max-w-5xl mx-auto px-6">
+            <div class="grid md:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="lux-font text-4xl mb-8 italic text-gold-gradient">Global Tech. <br>Honest Results.</h2>
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6 font-light">
+                        We provide high-end infrastructure for brands worldwide. <span class="text-white font-semibold">Your investment fuels dedicated R&D</span> and ensures your Virtual Try-On remains high-resolution and lag-free, regardless of traffic.
+                    </p>
+                    <div class="grid grid-cols-1 gap-6">
+                        <div class="flex items-start gap-3">
+                            <span class="text-gold mt-1">✔</span>
+                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">Privacy:</strong> Encrypted generations and secure brand assets.</p>
+                        </div>
+                        <div class="flex items-start gap-3">
+                            <span class="text-gold mt-1">✔</span>
+                            <p class="text-xs text-gray-300 leading-relaxed font-light"><strong class="text-white">24h Support:</strong> Guaranteed human response within 24 hours.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-black p-10 rounded-3xl border border-white/10 flex flex-col justify-center">
+                    <h3 class="lux-font text-2xl mb-6 italic text-white">The Tech Logic.</h3>
+                    <ul class="space-y-6">
+                        <li class="flex gap-4">
+                            <span class="text-gold font-bold">1.</span>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed">Zero Redirect: Stay on your domain.</p>
+                        </li>
+                        <li class="flex gap-4">
+                            <span class="text-gold font-bold">2.</span>
+                            <p class="text-xs text-gray-500 uppercase tracking-widest leading-relaxed">Strategic Placement: Clean UI integration.</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="lux-font text-5xl mb-4 italic">The ROI Reality.</h2>
+                <p class="text-gray-500 text-sm uppercase tracking-widest">Global Market Metrics ($)</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 items-start mb-32">
+                <div class="space-y-6 bg-white/[0.01] p-10 rounded-3xl border border-white/5">
+                    <div>
+                        <label>Monthly Orders</label>
+                        <input type="number" id="orders" value="100" oninput="calculate()">
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label>Return Rate (%)</label>
+                            <input type="number" id="rate" value="30" oninput="calculate()">
+                        </div>
+                        <div>
+                            <label>Avg. Order Value ($)</label>
+                            <input type="number" id="aov" value="45" oninput="calculate()">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-4">
+                        <div>
+                            <label>Shipping Out ($)</label>
+                            <input type="number" id="shipOut" value="8" oninput="calculate()">
+                        </div>
+                        <div>
+                            <label>Return Shipping ($)</label>
+                            <input type="number" id="shipReturn" value="8" oninput="calculate()">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="p-8 bg-red-500/5 border border-red-500/20 rounded-3xl">
+                        <p class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">Current Monthly Leak</p>
+                        <div class="text-5xl font-bold text-red-500" id="totalLoss">$480</div>
+                    </div>
+
+                    <div class="p-8 win-box rounded-3xl shadow-[0_0_40px_rgba(16,185,129,0.1)]">
+                        <p class="text-[10px] text-emerald-400 uppercase tracking-widest mb-2 font-bold">Your Win (Revenue + Savings)</p>
+                        <div class="text-6xl font-bold text-emerald-500" id="gainAmount">$750+</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-10 text-center border-t border-white/5 opacity-50">
+        <p class="text-[8px] uppercase tracking-widest">AI Fitting Labs | nikhil@aifittinglabs.store</p>
+    </footer>
+
+    <script>
+        function calculate() {
+            const orders = parseFloat(document.getElementById('orders').value) || 0;
+            const rate = (parseFloat(document.getElementById('rate').value) || 0) / 100;
+            const aov = parseFloat(document.getElementById('aov').value) || 0;
+            const sOut = parseFloat(document.getElementById('shipOut').value) || 0;
+            const sReturn = parseFloat(document.getElementById('shipReturn').value) || 0;
+
+            const numReturns = orders * rate;
+            const currentLoss = numReturns * (sOut + sReturn);
+            const totalWin = (currentLoss * 0.60) + ((orders * 0.20) * (aov * 0.30));
+
+            document.getElementById('totalLoss').innerText = "$" + Math.round(currentLoss).toLocaleString();
+            document.getElementById('gainAmount').innerText = "$" + Math.round(totalWin).toLocaleString();
+        }
+        window.onload = calculate;
+    </script>
+</body>
+</html>
