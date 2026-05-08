@@ -1,375 +1,556 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <link rel="icon" type="image/jpeg" href="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AI FITTING LABS | Our system, your brand, less return</title><script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>AI FITTING LABS | Our system, your brand, less return</title>
 
-<style>
-    :root {
-        --gold: #c5a059;
-        --dark: #050505;
-    }
+    <link rel="icon" type="image/jpeg"
+        href="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
 
-    body {
-        background-color: var(--dark);
-        color: #fff;
-        font-family: 'Inter', sans-serif;
-        margin: 0;
-        overflow-x: hidden;
-    }
+    <script src="https://cdn.tailwindcss.com"></script>
 
-    .lux-font {
-        font-family: 'Playfair Display', serif;
-    }
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
 
-    .text-gold-gradient {
-        color: var(--gold);
-        background: linear-gradient(to bottom, #f1d18a, #c5a059);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-    }
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
-    .rainbow-text {
-        background: linear-gradient(to right, #ef5350, #7e57c2, #2196f3, #43a047, #f9a825, #ff5722);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-weight: 800;
-        animation: rainbow-move 5s linear infinite;
-        background-size: 200% auto;
-    }
-
-    @keyframes rainbow-move {
-        to {
-            background-position: 200% center;
-        }
-    }
-
-    .nav-links a {
-        font-size: 10px;
-        text-transform: uppercase;
-        letter-spacing: 0.2em;
-        color: #888;
-        transition: all 0.3s;
-    }
-
-    .nav-links a:hover {
-        color: var(--gold);
-    }
-
-    .nav-active {
-        color: var(--gold) !important;
-        font-weight: bold;
-        border-bottom: 2px solid var(--gold);
-    }
-
-    @media (max-width: 768px) {
-        .nav-container {
-            padding: 1.5rem 1rem !important;
-            flex-direction: column;
-            gap: 1.5rem;
-            text-align: center;
+    <style>
+        :root {
+            --gold: #c5a059;
+            --dark: #050505;
         }
 
-        .nav-links {
-            gap: 1.5rem !important;
+        html,
+        body {
+            overflow-x: hidden;
+            width: 100%;
+            background: #000;
+        }
+
+        body {
+            color: white;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+        }
+
+        .lux-font {
+            font-family: 'Playfair Display', serif;
+        }
+
+        .text-gold-gradient {
+            background: linear-gradient(to bottom, #f1d18a, #c5a059);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .rainbow-text {
+            background: linear-gradient(to right, #ef5350, #7e57c2, #2196f3, #43a047, #f9a825, #ff5722);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            animation: rainbow 5s linear infinite;
+        }
+
+        @keyframes rainbow {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .hero-video-container {
+            position: relative;
+            width: 100%;
+            min-height: 100vh;
+            overflow: hidden;
             display: flex;
+            align-items: center;
             justify-content: center;
         }
-    }
 
-    .hero-video-container {
-        position: relative;
-        width: 100vw;
-        height: 100vh;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
+        .hero-video {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: blur(15px) brightness(0.35);
+        }
 
-    .hero-video {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        filter: blur(15px) brightness(0.35);
-    }
+        .hero-overlay {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            width: 100%;
+            max-width: 1200px;
+            margin: auto;
+            padding: 0 20px;
+        }
 
-    .hero-overlay {
-        position: relative;
-        text-align: center;
-        width: 100%;
-        z-index: 10;
-        padding: 0 20px;
-    }
+        .roi-circle {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: conic-gradient(#c5a059 40%, #1a1a1a 0);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            flex-shrink: 0;
+        }
 
-    .roi-circle {
-        width: 220px;
-        height: 220px;
-        border-radius: 50%;
-        background: conic-gradient(#c5a059 40%, #1a1a1a 0);
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        flex-shrink: 0;
-    }
+        .roi-circle::after {
+            content: "40%";
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            background: black;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            font-weight: bold;
+        }
 
-    .roi-circle::after {
-        content: "40%";
-        position: absolute;
-        width: 180px;
-        height: 180px;
-        background: var(--dark);
-        border-radius: 50%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        font-size: 3rem;
-        font-weight: bold;
-    }
-</style>
+        @media(max-width:768px) {
+            .roi-circle {
+                width: 180px;
+                height: 180px;
+            }
 
+            .roi-circle::after {
+                width: 140px;
+                height: 140px;
+                font-size: 2.5rem;
+            }
+        }
+    </style>
 </head>
-<body><nav class="nav-container fixed w-full z-[100] px-10 py-8 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/5">
-    <div class="lux-font text-xl uppercase tracking-tighter font-bold">
-        <span class="rainbow-text">AI FITTING LABS</span>
-    </div><div class="nav-links flex gap-6 md:gap-10">
-    <a href="index.html" class="nav-active">Home</a>
-    <a href="pricing.html">Pricing</a>
-    <a href="mission.html">Our Mission</a>
-</div>
 
-</nav><section class="hero-video-container">
-    <video autoplay muted loop playsinline class="hero-video">
-        <source src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/main/ai-fitting-labs-site.mp4.mp4" type="video/mp4">
-    </video><div class="hero-overlay">
-    <div class="mb-4">
-        <span class="text-[10px] tracking-[0.5em] text-gray-400 uppercase font-bold block mb-1">
-            Give Uniqueness To Your Brand
-        </span>
+<body>
 
-        <span class="text-xs tracking-[0.2em] text-gold font-light uppercase block">
-            Let customers try your clothes
-        </span>
-    </div>
+    <!-- NAV -->
 
-    <h1 class="lux-font text-4xl md:text-7xl italic text-gold-gradient mb-10 leading-tight">
-        Our system, your brand, less return
-    </h1>
+    <nav
+        class="fixed top-0 left-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/5 px-6 md:px-10 py-6">
 
-    <div class="flex flex-col md:flex-row justify-center items-center gap-4 pointer-events-auto">
-        <a href="book-demo.html" class="bg-white text-black px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-gold transition-all duration-300 w-56 text-center shadow-lg">
-            Book a Demo
-        </a>
+        <div class="flex flex-col md:flex-row justify-between items-center gap-6">
 
-        <a href="implementation.html" target="_blank" class="backdrop-blur-md border border-white/40 text-white px-10 py-4 rounded-full text-[10px] font-bold uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 w-56 text-center">
-            Implementation
-        </a>
-    </div>
-</div>
+            <div class="lux-font text-2xl font-bold uppercase tracking-tight rainbow-text">
+                AI FITTING LABS
+            </div>
 
-</section><section class="py-32 px-6 max-w-6xl mx-auto">
-    <div class="flex flex-col md:flex-row items-center gap-16"><div class="roi-circle"></div>
+            <div class="flex gap-6 md:gap-10 text-[10px] uppercase tracking-[0.25em]">
 
-    <div class="text-left flex-1">
-        <h2 class="lux-font text-4xl md:text-6xl mb-6 italic leading-tight">
-            40% Lower Return Potential.
-            <br>
-            <span class="text-white font-bold text-3xl italic">
-                Powered by visual confidence.
-            </span>
+                <a href="index.html"
+                    class="text-[#c5a059] border-b-2 border-[#c5a059] pb-1">
+                    Home
+                </a>
+
+                <a href="pricing.html" class="text-gray-500 hover:text-[#c5a059] transition">
+                    Pricing
+                </a>
+
+                <a href="mission.html" class="text-gray-500 hover:text-[#c5a059] transition">
+                    Our Mission
+                </a>
+
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero-video-container">
+
+        <video autoplay muted loop playsinline class="hero-video">
+            <source
+                src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/main/ai-fitting-labs-site.mp4.mp4"
+                type="video/mp4">
+        </video>
+
+        <div class="hero-overlay">
+
+            <div class="mb-6">
+
+                <span
+                    class="block text-[10px] md:text-xs tracking-[0.45em] uppercase text-gray-400 font-bold mb-3">
+                    Give Uniqueness To Your Brand
+                </span>
+
+                <span class="block text-sm tracking-[0.2em] uppercase text-gray-300">
+                    Let customers try your clothes
+                </span>
+
+            </div>
+
+            <h1
+                class="lux-font text-5xl md:text-7xl italic text-gold-gradient leading-[1.05] mb-12 px-2">
+                Our system, your brand, less return
+            </h1>
+
+            <div class="flex flex-col md:flex-row justify-center items-center gap-5">
+
+                <a href="book-demo.html"
+                    class="bg-white text-black px-12 py-5 rounded-full text-[11px] uppercase tracking-[0.25em] font-bold w-72 text-center hover:bg-[#c5a059] transition-all duration-300">
+                    Book a Demo
+                </a>
+
+                <a href="implementation.html"
+                    class="border border-white/30 backdrop-blur-md text-white px-12 py-5 rounded-full text-[11px] uppercase tracking-[0.25em] font-bold w-72 text-center hover:bg-white hover:text-black transition-all duration-300">
+                    Implementation
+                </a>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ROI -->
+
+    <section class="py-24 px-6 max-w-6xl mx-auto">
+
+        <div class="flex flex-col md:flex-row items-center gap-16">
+
+            <div class="roi-circle"></div>
+
+            <div class="flex-1 text-center md:text-left">
+
+                <h2 class="lux-font text-4xl md:text-6xl italic mb-6 leading-tight">
+                    40% Lower Return Potential.
+                    <br>
+                    <span class="text-white text-3xl">
+                        Powered by visual confidence.
+                    </span>
+                </h2>
+
+                <div class="space-y-5 text-gray-400 leading-relaxed">
+
+                    <p>
+                        Industry research suggests nearly 30% of fashion e-commerce returns are driven by fitting uncertainty and low purchase confidence.
+                    </p>
+
+                    <p>
+                        Customers often return products not because of quality, but because they could not confidently visualize how the outfit would look on them personally.
+                    </p>
+
+                    <p class="text-[#c5a059] font-bold uppercase tracking-[0.15em]">
+                        Virtual try-on technology has shown the potential to reduce fitting-related returns by up to 40%.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- MVP SECTION -->
+
+    <section class="py-24 px-6 bg-[#080808] border-y border-white/5">
+
+        <div class="max-w-7xl mx-auto">
+
+            <div class="text-center mb-20">
+
+                <span class="uppercase tracking-[0.35em] text-[10px] text-gray-500 font-bold">
+                    PRODUCT EVOLUTION
+                </span>
+
+                <h2 class="lux-font text-5xl md:text-7xl italic mt-6 mb-6 text-gold-gradient">
+                    Prototype → MVP 1
+                </h2>
+
+                <p class="max-w-3xl mx-auto text-gray-500 leading-relaxed">
+                    From early workflow experiments to a working AI-powered storefront integration system for fashion brands.
+                </p>
+
+            </div>
+
+            <!-- DESKTOP -->
+
+            <div class="hidden md:flex items-center gap-10">
+
+                <!-- PROTOTYPE -->
+
+                <div class="flex-1 bg-white/[0.03] border border-white/10 rounded-3xl p-8">
+
+                    <span class="text-[10px] uppercase tracking-[0.35em] text-gray-500 font-bold">
+                        EARLY PROTOTYPE
+                    </span>
+
+                    <h3 class="lux-font text-3xl italic mt-4 mb-4">
+                        Initial Workflow Exploration
+                    </h3>
+
+                    <p class="text-gray-500 leading-relaxed text-sm mb-6">
+                        Early workflow experiments focused on popup guidance systems, AI fitting flows, product-page logic, and storefront integration structure.
+                    </p>
+
+                    <div class="rounded-2xl overflow-hidden border border-white/10">
+
+                        <iframe width="100%" height="500"
+                            src="https://www.youtube.com/embed/vFYbZa5Ep4s"
+                            frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+                <!-- ARROW -->
+
+                <div class="w-32 h-[2px] bg-gradient-to-r from-[#c5a059] to-transparent relative">
+
+                    <div
+                        class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 rotate-45 border-r border-t border-[#c5a059]">
+                    </div>
+
+                </div>
+
+                <!-- MVP -->
+
+                <div
+                    class="flex-1 bg-white/[0.03] border border-[#c5a059]/30 rounded-3xl p-8 shadow-[0_0_60px_rgba(197,160,89,0.08)]">
+
+                    <span class="text-[10px] uppercase tracking-[0.35em] text-[#c5a059] font-bold">
+                        MVP 1
+                    </span>
+
+                    <h3 class="lux-font text-3xl italic mt-4 mb-4 text-gold-gradient">
+                        Live AI Storefront Workflow
+                    </h3>
+
+                    <p class="text-gray-400 leading-relaxed text-sm mb-6">
+                        Improved AI storefront workflow featuring automatic garment detection, responsive mobile/desktop integration, non-redirect user flow, theme-adaptive fitting buttons, and 5 daily trials per user for infrastructure protection.
+                    </p>
+
+                    <div class="rounded-2xl overflow-hidden border border-white/10">
+
+                        <iframe width="100%" height="500"
+                            src="https://www.youtube.com/embed/qQO-ePIZd_g"
+                            frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- MOBILE -->
+
+            <div class="md:hidden relative pl-10 space-y-20">
+
+                <div
+                    class="absolute left-4 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#c5a059] via-[#f1d18a] to-transparent">
+                </div>
+
+                <!-- PROTOTYPE -->
+
+                <div class="relative">
+
+                    <div
+                        class="absolute -left-[33px] top-2 w-5 h-5 rounded-full bg-[#c5a059] shadow-[0_0_20px_rgba(197,160,89,0.7)]">
+                    </div>
+
+                    <span class="text-[10px] uppercase tracking-[0.35em] text-gray-500 font-bold">
+                        EARLY PROTOTYPE
+                    </span>
+
+                    <h3 class="lux-font text-3xl italic mt-4 mb-4">
+                        Initial Workflow Exploration
+                    </h3>
+
+                    <p class="text-gray-500 text-sm leading-relaxed mb-6">
+                        Early workflow experiments focused on AI fitting guidance, storefront integration logic, and product-page workflow structure.
+                    </p>
+
+                    <div class="rounded-2xl overflow-hidden border border-white/10">
+
+                        <iframe width="100%" height="350"
+                            src="https://www.youtube.com/embed/vFYbZa5Ep4s"
+                            frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+                <!-- MVP -->
+
+                <div class="relative">
+
+                    <div
+                        class="absolute -left-[33px] top-2 w-5 h-5 rounded-full bg-[#c5a059] shadow-[0_0_20px_rgba(197,160,89,0.7)]">
+                    </div>
+
+                    <span class="text-[10px] uppercase tracking-[0.35em] text-[#c5a059] font-bold">
+                        MVP 1
+                    </span>
+
+                    <h3 class="lux-font text-3xl italic mt-4 mb-4 text-gold-gradient">
+                        Live AI Storefront Workflow
+                    </h3>
+
+                    <p class="text-gray-400 text-sm leading-relaxed mb-6">
+                        Improved workflow with automatic garment detection, responsive storefront fitting integration, non-redirect generation flow, theme-adaptive buttons, and 5 daily trials per user.
+                    </p>
+
+                    <div class="rounded-2xl overflow-hidden border border-white/10">
+
+                        <iframe width="100%" height="350"
+                            src="https://www.youtube.com/embed/qQO-ePIZd_g"
+                            frameborder="0"
+                            allowfullscreen>
+                        </iframe>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <p class="text-[11px] uppercase tracking-[0.3em] text-gray-600 mt-14 text-center">
+                Integrated on real D2C storefront workflows during MVP testing
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- BEFORE AFTER -->
+
+    <section class="py-24 px-6">
+
+        <div class="max-w-6xl mx-auto text-center">
+
+            <h2 class="lux-font text-5xl md:text-7xl italic mb-8">
+                Convert Browsers to Buyers.
+            </h2>
+
+            <p class="text-gray-500 max-w-2xl mx-auto mb-16 leading-relaxed">
+                AI fitting removes imagination gaps and helps buyers visualize themselves before purchasing.
+            </p>
+
+            <div
+                class="rounded-3xl overflow-hidden border border-white/10 shadow-2xl bg-white/[0.03]">
+
+                <img
+                    src="https://raw.githubusercontent.com/nikhjoshi123/ai-fitting-labs-site/faffe3f4becd36d99b5907e1e167344578fc20aa/after.png"
+                    class="w-full object-cover">
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BRAND -->
+
+    <section class="py-24 px-6 bg-white/[0.02] border-y border-white/5">
+
+        <div class="max-w-4xl mx-auto text-center">
+
+            <h2 class="lux-font text-4xl uppercase tracking-[0.2em] mb-12">
+                Brand Integrity
+            </h2>
+
+            <div class="grid md:grid-cols-2 gap-12 text-left">
+
+                <div>
+
+                    <h4 class="text-[#c5a059] text-xs uppercase tracking-[0.25em] font-bold mb-4">
+                        Zero Storage Policy
+                    </h4>
+
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        Customer photos are processed through encrypted workflows and removed immediately after generation.
+                    </p>
+
+                </div>
+
+                <div>
+
+                    <h4 class="text-[#c5a059] text-xs uppercase tracking-[0.25em] font-bold mb-4">
+                        Enterprise Security
+                    </h4>
+
+                    <p class="text-gray-500 leading-relaxed text-sm">
+                        Infrastructure designed for stable AI processing, secure workflow handling, and premium storefront performance.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- BIG TEXT -->
+
+    <section class="py-24 px-4 text-center overflow-hidden">
+
+        <h2
+            class="lux-font text-4xl md:text-[10rem] uppercase tracking-tighter text-white/[0.04] leading-[0.9] break-words">
+            AI INFRASTRUCTURE FOR FASHION COMMERCE.
         </h2>
 
-        <div class="space-y-4 text-gray-400 font-light leading-relaxed">
-            <p>
-                Industry research suggests nearly 30% of fashion e-commerce returns are driven by fitting uncertainty and low purchase confidence.
-            </p>
-
-            <p>
-                Customers often return products not because of quality, but because they could not confidently visualize how the outfit would look on them personally.
-            </p>
-
-            <p class="text-gold font-bold text-xl uppercase tracking-wider">
-                Virtual try-on technology has shown the potential to reduce fitting-related returns by up to 40%.
-            </p>
-        </div>
-    </div>
-</div>
-
-</section><section class="py-28 px-6 bg-[#080808] border-y border-white/5 overflow-hidden">
-    <div class="max-w-7xl mx-auto"><div class="text-center mb-20">
-        <span class="uppercase tracking-[0.4em] text-[10px] text-gray-500 font-bold">
-            PRODUCT EVOLUTION
-        </span>
-
-        <h2 class="lux-font text-5xl md:text-7xl italic mt-6 mb-6 text-gold-gradient">
-            Prototype → MVP 1
-        </h2>
-
-        <p class="max-w-3xl mx-auto text-gray-500 leading-relaxed text-sm md:text-base">
-            From early product experiments to a working AI-powered storefront workflow integrated directly into fashion brand websites.
+        <p class="text-gray-600 uppercase tracking-[0.45em] text-[10px] mt-16">
+            Enterprise Grade AI Solutions For Digital Retail
         </p>
+
+    </section>
+
+    <!-- SOCIAL -->
+
+    <div class="flex justify-center gap-8 pb-8 text-xl text-gray-500">
+
+        <a href="https://www.linkedin.com/in/nikhil-joshi-969453288"
+            target="_blank"
+            class="hover:text-[#c5a059] transition-all duration-300">
+
+            <i class="fab fa-linkedin"></i>
+
+        </a>
+
+        <a href="https://www.instagram.com/aifittinglabs"
+            target="_blank"
+            class="hover:text-[#c5a059] transition-all duration-300">
+
+            <i class="fab fa-instagram"></i>
+
+        </a>
+
+        <a href="mailto:nikhil@aifittinglabs.store"
+            class="hover:text-[#c5a059] transition-all duration-300">
+
+            <i class="fas fa-envelope"></i>
+
+        </a>
+
     </div>
 
-    <div class="hidden md:flex items-center justify-center gap-10 mb-16">
+    <!-- FOOTER -->
 
-        <div class="flex-1 bg-white/[0.03] border border-white/10 rounded-3xl p-8 backdrop-blur-xl">
-            <span class="text-[10px] uppercase tracking-[0.4em] text-gray-500 font-bold">
-                EARLY PROTOTYPE
-            </span>
+    <footer class="py-10 text-center border-t border-white/5">
 
-            <h3 class="lux-font text-3xl italic mt-4 mb-4">
-                Initial Workflow Exploration
-            </h3>
-
-            <p class="text-gray-500 leading-relaxed text-sm mb-8">
-                Early AI fitting workflow experiments focused on popup guidance, product-page integration logic, and garment visualization.
-            </p>
-
-            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed/vFYbZa5Ep4s" title="Prototype Demo" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div class="flex items-center justify-center">
-            <div class="w-40 h-[2px] bg-gradient-to-r from-[#c5a059] to-transparent relative">
-                <div class="absolute right-0 top-1/2 -translate-y-1/2 w-4 h-4 rotate-45 border-t border-r border-[#c5a059]"></div>
-            </div>
-        </div>
-
-        <div class="flex-1 bg-white/[0.03] border border-[#c5a059]/30 rounded-3xl p-8 backdrop-blur-xl shadow-[0_0_60px_rgba(197,160,89,0.08)]">
-            <span class="text-[10px] uppercase tracking-[0.4em] text-gold font-bold">
-                MVP 1
-            </span>
-
-            <h3 class="lux-font text-3xl italic mt-4 mb-4 text-gold-gradient">
-                Live AI Storefront Workflow
-            </h3>
-
-            <p class="text-gray-400 leading-relaxed text-sm mb-8">
-                Improved UI system with automated garment detection, theme-adaptive button integration, non-redirect workflows, and real AI try-on generation.
-            </p>
-
-            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <iframe width="100%" height="500" src="https://www.youtube.com/embed/qQO-ePIZd_g" title="MVP 1 Demo" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-
-    <div class="md:hidden relative pl-10 space-y-20">
-
-        <div class="absolute left-4 top-0 bottom-0 w-[2px] bg-gradient-to-b from-[#c5a059] via-[#f1d18a] to-transparent"></div>
-
-        <div class="relative">
-            <div class="absolute -left-[33px] top-2 w-5 h-5 rounded-full bg-[#c5a059] shadow-[0_0_20px_rgba(197,160,89,0.7)]"></div>
-
-            <span class="text-[10px] uppercase tracking-[0.4em] text-gray-500 font-bold">
-                EARLY PROTOTYPE
-            </span>
-
-            <h3 class="lux-font text-3xl italic mt-4 mb-4">
-                Initial Workflow Exploration
-            </h3>
-
-            <p class="text-gray-500 leading-relaxed text-sm mb-6">
-                Early AI fitting workflow experiments focused on popup guidance, product-page integration logic, and garment visualization.
-            </p>
-
-            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <iframe width="100%" height="350" src="https://www.youtube.com/embed/vFYbZa5Ep4s" title="Prototype Demo" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-
-        <div class="relative">
-            <div class="absolute -left-[33px] top-2 w-5 h-5 rounded-full bg-[#c5a059] shadow-[0_0_20px_rgba(197,160,89,0.7)]"></div>
-
-            <span class="text-[10px] uppercase tracking-[0.4em] text-gold font-bold">
-                MVP 1
-            </span>
-
-            <h3 class="lux-font text-3xl italic mt-4 mb-4 text-gold-gradient">
-                Live AI Storefront Workflow
-            </h3>
-
-            <p class="text-gray-400 leading-relaxed text-sm mb-6">
-                Improved UI system with theme-adaptive button integration, automated garment detection, and non-redirect AI fitting workflows.
-            </p>
-
-            <div class="rounded-2xl overflow-hidden border border-white/10 shadow-2xl">
-                <iframe width="100%" height="350" src="https://www.youtube.com/embed/qQO-ePIZd_g" title="MVP 1 Demo" frameborder="0" allowfullscreen></iframe>
-            </div>
-        </div>
-    </div>
-</div>
-
-</section><section class="py-32 px-6">
-    <div class="max-w-6xl mx-auto text-center"><h2 class="lux-font text-5xl md:text-7xl mb-8 italic">
-        Convert Browsers to Buyers.
-    </h2>
-
-    <div class="mt-16 max-w-4xl mx-auto bg-white/5 p-12 rounded-3xl border border-white/10 text-left">
-        <h4 class="lux-font text-3xl mb-4">
-            The Psychology of the Virtual Fit
-        </h4>
-
-        <p class="text-gray-400 font-light leading-relaxed">
-            Buyers return clothes because the reality did not match the imagination. When customers visualize themselves in your products through AI-powered fitting workflows, purchase confidence increases while hesitation decreases.
+        <p class="text-[9px] uppercase tracking-[0.25em] text-gray-600">
+            AI FITTING LABS | NIKHIL@AIFITTINGLABS.STORE
         </p>
-    </div>
-</div>
 
-</section><section class="py-32 px-6 bg-white/[0.02] border-y border-white/5">
-    <div class="max-w-4xl mx-auto text-center"><h2 class="lux-font text-4xl mb-8 uppercase tracking-widest">
-        Brand Integrity
-    </h2>
+    </footer>
 
-    <div class="grid md:grid-cols-2 gap-12 text-left">
+</body>
 
-        <div>
-            <h4 class="text-gold font-bold text-xs uppercase tracking-widest mb-3">
-                Zero-Storage Policy
-            </h4>
-
-            <p class="text-gray-500 text-sm leading-relaxed">
-                Customer photos are processed through encrypted workflows and removed immediately after generation.
-            </p>
-        </div>
-
-        <div>
-            <h4 class="text-gold font-bold text-xs uppercase tracking-widest mb-3">
-                Enterprise Security
-            </h4>
-
-            <p class="text-gray-500 text-sm leading-relaxed">
-                Infrastructure designed for secure AI processing, stable workflows, and premium storefront experiences.
-            </p>
-        </div>
-    </div>
-</div>
-
-</section><section class="py-32 px-6 text-center">
-    <h2 class="lux-font text-6xl md:text-[10rem] tracking-tighter uppercase text-white/5 leading-none mb-12 select-none">
-        AI INFRASTRUCTURE FOR FASHION COMMERCE.
-    </h2><p class="text-gray-500 uppercase tracking-[0.5em] text-[10px] mb-24">
-    Enterprise Grade AI Solutions for Digital Retail
-</p>
-
-</section><div class="flex justify-center gap-8 pb-10 text-[10px] uppercase tracking-[0.3em] text-gray-500">
-    <a href="https://www.linkedin.com/in/nikhil-joshi-969453288" target="_blank" class="hover:text-[#c5a059] transition-all duration-300">
-        LinkedIn
-    </a><a href="https://www.instagram.com/aifittinglabs" target="_blank" class="hover:text-[#c5a059] transition-all duration-300">
-    Instagram
-</a>
-
-</div><footer class="py-20 text-center border-t border-white/5">
-    <p class="text-[8px] uppercase tracking-widest text-gray-600">
-        AI Fitting Labs | nikhil@aifittinglabs.store
-    </p>
-</footer></body>
 </html>
