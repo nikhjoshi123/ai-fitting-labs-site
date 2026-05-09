@@ -1,17 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <link rel="icon" type="image/jpeg" href="https://github.com/nikhjoshi123/ai-fitting-labs-site/blob/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
+
+    <link rel="icon" type="image/jpeg"
+        href="https://github.com/nikhjoshi123/ai-fitting-labs-site/blob/a2d46d836c5139a1d8faf39d067685bd0ed72f2f/ai-fitting-labs-logo.jpeg">
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The Mission | AI FITTING LABS</title>
+
+    <title>The Psychology of Fitting | AI FITTING LABS</title>
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;600&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
     <style>
-        :root { --gold: #c5a059; --dark: #050505; --red: #ff4d4d; --green: #00ff88; }
-        body { background-color: var(--dark); color: #fff; font-family: 'Inter', sans-serif; margin: 0; }
-        .lux-font { font-family: 'Playfair Display', serif; }
-        
+
+        :root {
+            --gold: #c5a059;
+            --dark: #050505;
+            --red: #ff4d4d;
+            --green: #00ff88;
+        }
+
+        body {
+            background-color: var(--dark);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        .lux-font {
+            font-family: 'Playfair Display', serif;
+        }
+
         .rainbow-text {
             background: linear-gradient(to right, #ef4444, #f59e0b, #10b981, #3b82f6, #8b5cf6, #ec4899);
             -webkit-background-clip: text;
@@ -19,21 +49,46 @@
             animation: rainbow-move 5s linear infinite;
             background-size: 200% auto;
         }
-        @keyframes rainbow-move { to { background-position: 200% center; } }
 
-        /* ACTIVE MISSION LINK - PURE GOLD */
-        .nav-mission { color: var(--gold) !important; font-weight: bold; border-bottom: 2px solid var(--gold); }
-
-        /* DATA VISUALS */
-        .chart-box { background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.1); border-radius: 30px; padding: 40px; }
-        .donut {
-            width: 180px; height: 180px; border-radius: 50%;
-            background: conic-gradient(var(--red) 0% 30%, #1a1a1a 30% 100%);
-            display: flex; align-items: center; justify-content: center; position: relative;
+        @keyframes rainbow-move {
+            to {
+                background-position: 200% center;
+            }
         }
-        .donut::after { content: ""; width: 140px; height: 140px; background: var(--dark); border-radius: 50%; position: absolute; }
-        
-        /* THE GOLDEN REVERSE BUTTON */
+
+        .nav-mission {
+            color: var(--gold) !important;
+            font-weight: bold;
+            border-bottom: 2px solid var(--gold);
+        }
+
+        .chart-box {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 30px;
+            padding: 40px;
+        }
+
+        .donut {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: conic-gradient(var(--red) 0% 30%, #1a1a1a 30% 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .donut::after {
+            content: "";
+            width: 140px;
+            height: 140px;
+            background: var(--dark);
+            border-radius: 50%;
+            position: absolute;
+        }
+
         .btn-reverse {
             background-color: var(--gold);
             color: #000;
@@ -55,123 +110,448 @@
             box-shadow: 0 0 30px rgba(197, 160, 89, 0.2);
         }
 
-        .source-link { background: #111; padding: 12px 20px; border-radius: 12px; border: 1px solid #222; font-size: 11px; display: block; transition: 0.3s; color: #888; }
-        .source-link:hover { border-color: var(--gold); color: #fff; }
-
-        /* MOBILE FIXES */
-        @media (max-width: 768px) {
-            .nav-container { padding: 1.5rem 1rem !important; flex-direction: column; gap: 1.5rem; }
-            .nav-links { gap: 1.5rem !important; }
-            .lux-font.text-6xl { font-size: 3rem !important; }
-            .chart-box { padding: 20px; }
+        .source-link {
+            background: #111;
+            padding: 12px 20px;
+            border-radius: 12px;
+            border: 1px solid #222;
+            font-size: 11px;
+            display: block;
+            transition: 0.3s;
+            color: #888;
         }
+
+        .source-link:hover {
+            border-color: var(--gold);
+            color: #fff;
+        }
+
+        @media (max-width: 768px) {
+
+            .nav-container {
+                padding: 1.5rem 1rem !important;
+                flex-direction: column;
+                gap: 1.5rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem !important;
+            }
+
+            .lux-font.text-6xl {
+                font-size: 3rem !important;
+            }
+
+            .chart-box {
+                padding: 20px;
+            }
+
+        }
+
     </style>
+
 </head>
+
 <body>
 
-    <nav class="nav-container fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/5">
+    <!-- NAVBAR -->
+
+    <nav
+        id="navbar"
+        class="nav-container fixed w-full z-50 px-10 py-8 flex justify-between items-center bg-black/80 backdrop-blur-xl border-b border-white/5 transition-transform duration-500">
+
         <div class="lux-font text-xl uppercase tracking-tighter font-bold">
+
             <span class="rainbow-text">AI FITTING LABS</span>
+
         </div>
+
         <div class="nav-links flex gap-6 md:gap-10">
-            <a href="index.html" class="text-gray-500 text-[10px] uppercase tracking-widest hover:text-gold transition">Home</a>
-            <a href="pricing.html" class="text-gray-500 text-[10px] uppercase tracking-widest hover:text-gold transition">Pricing</a>
-            <a href="mission.html" class="nav-mission text-[10px] uppercase tracking-widest">Our Mission</a>
+
+            <a href="index.html"
+                class="text-gray-500 text-[10px] uppercase tracking-widest hover:text-[#c5a059] transition">
+                Home
+            </a>
+
+            <a href="pricing.html"
+                class="text-gray-500 text-[10px] uppercase tracking-widest hover:text-[#c5a059] transition">
+                Pricing
+            </a>
+
+            <a href="mission.html"
+                class="nav-mission text-[10px] uppercase tracking-widest">
+                Psychology
+            </a>
+
         </div>
+
     </nav>
 
+    <!-- HERO -->
+
     <section class="pt-48 pb-20 px-6 text-center max-w-5xl mx-auto">
-        <h2 class="text-gold uppercase text-[10px] tracking-[0.8em] mb-6 font-bold">The Science of Retention</h2>
-        <h1 class="lux-font text-5xl md:text-8xl italic mb-10 leading-tight">2 Problems. <br>1 Solution.</h1>
-        <p class="text-gray-400 font-light max-w-2xl mx-auto italic text-base md:text-lg leading-relaxed">
-            "Your boutique isn't failing because of your clothes. It's struggling because of the 'Visual Gap' between your website and your customer's reality."
+
+        <h2 class="text-[#c5a059] uppercase text-[10px] tracking-[0.8em] mb-6 font-bold">
+            THE PSYCHOLOGY OF FITTING
+        </h2>
+
+        <h1 class="lux-font text-5xl md:text-8xl italic mb-10 leading-tight">
+            2 Problems.
+            <br>
+            1 AI Solution.
+        </h1>
+
+        <p class="text-gray-400 font-light max-w-3xl mx-auto italic text-base md:text-lg leading-relaxed">
+
+            Fashion e-commerce is not losing money because of bad clothing.
+            It loses money because buyers cannot confidently visualize themselves inside the product before purchasing.
+
         </p>
+
     </section>
 
+    <!-- OWNER PROBLEM -->
+
     <section class="py-24 px-6 max-w-6xl mx-auto border-t border-white/5">
+
         <div class="grid md:grid-cols-2 gap-12 md:gap-20">
-            <div class="order-1">
-                <h3 class="lux-font text-3xl md:text-4xl italic text-red-500 mb-8">Problem 01: The Owner's Drain</h3>
+
+            <div>
+
+                <h3 class="lux-font text-3xl md:text-4xl italic text-red-500 mb-8">
+                    Problem 01:
+                    <br>
+                    Return & Shoot Costs
+                </h3>
+
                 <div class="space-y-6 text-gray-400 font-light leading-relaxed">
-                    <p>Traditional boutiques are trapped in an expensive cycle of *Model Shoots* and *Inventory Jams*. You spend thousands to create a unique look, but without high-tech engagement, you are just another store.</p>
+
+                    <p>
+
+                        Traditional fashion stores spend heavily on photoshoots,
+                        models, product marketing, and return logistics —
+                        while still struggling with buyer uncertainty.
+
+                    </p>
+
                     <ul class="space-y-4 text-sm">
-                        <li class="flex gap-3"><span class="text-red-500">●</span> <strong>Expense Overload:</strong> Studio rent and photographers are sunk costs.</li>
-                        <li class="flex gap-3"><span class="text-red-500">●</span> <strong>Logistics Nightmare:</strong> Shipping returns eats 20% of your revenue.</li>
+
+                        <li class="flex gap-3">
+                            <span class="text-red-500">●</span>
+
+                            <span>
+                                <strong>High Return Leakage:</strong>
+
+                                Shipping + reverse logistics reduce profitability every month.
+                            </span>
+                        </li>
+
+                        <li class="flex gap-3">
+                            <span class="text-red-500">●</span>
+
+                            <span>
+                                <strong>Expensive Content Creation:</strong>
+
+                                Repeated model shoots increase operational costs.
+                            </span>
+                        </li>
+
                     </ul>
+
                 </div>
+
             </div>
-            <div class="order-2 chart-box flex flex-col items-center justify-center">
+
+            <div class="chart-box flex flex-col items-center justify-center">
+
                 <div class="donut mb-8">
+
                     <div class="relative z-10 text-center">
-                        <span class="text-3xl font-bold text-red-500">30%</span>
-                        <p class="text-[8px] uppercase tracking-widest text-gray-500">Profit Lost</p>
+
+                        <span class="text-3xl font-bold text-red-500">
+                            30%
+                        </span>
+
+                        <p class="text-[8px] uppercase tracking-widest text-gray-500">
+                            Revenue Leakage
+                        </p>
+
                     </div>
+
                 </div>
+
                 <div class="w-full space-y-4">
-                    <div class="flex justify-between text-[10px] uppercase"><span>Costs</span><span class="text-red-500">CRITICAL</span></div>
-                    <div class="w-full bg-white/5 h-1 rounded-full"><div class="bg-red-500 h-full w-[85%]"></div></div>
+
+                    <div class="flex justify-between text-[10px] uppercase">
+
+                        <span>Operational Loss</span>
+
+                        <span class="text-red-500">High</span>
+
+                    </div>
+
+                    <div class="w-full bg-white/5 h-1 rounded-full">
+
+                        <div class="bg-red-500 h-full w-[85%]"></div>
+
+                    </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
+    <!-- BUYER PROBLEM -->
 
     <section class="py-24 bg-white/[0.02] border-y border-white/5 px-6">
+
         <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+
             <div class="order-2 md:order-1 chart-box text-center">
-                <p class="lux-font text-xl italic text-gray-500 mb-4">"Will I look like the model?"</p>
-                <div class="p-6 bg-red-500/5 border border-red-500/20 rounded-2xl">
-                    <p class="text-xs uppercase tracking-widest text-red-500 font-bold">Abandonment Reason #1</p>
-                </div>
-            </div>
-            <div class="order-1 md:order-2">
-                <h3 class="lux-font text-3xl md:text-4xl italic text-red-500 mb-8">Problem 02: The Buyer's Anxiety</h3>
-                <p class="text-gray-400 font-light leading-relaxed mb-6">
-                    Customers want to buy, but they don't trust the outcome. They ask: <em>"Will it look good on ME?"</em>
+
+                <p class="lux-font text-xl italic text-gray-500 mb-4">
+                    “Will this actually look good on me?”
                 </p>
-                <p class="text-white italic font-bold">"You aren't selling fabric; you are selling confidence."</p>
+
+                <div class="p-6 bg-red-500/5 border border-red-500/20 rounded-2xl">
+
+                    <p class="text-xs uppercase tracking-widest text-red-500 font-bold">
+                        Biggest Purchase Anxiety
+                    </p>
+
+                </div>
+
             </div>
+
+            <div class="order-1 md:order-2">
+
+                <h3 class="lux-font text-3xl md:text-4xl italic text-red-500 mb-8">
+
+                    Problem 02:
+                    <br>
+                    Buyer Uncertainty
+
+                </h3>
+
+                <p class="text-gray-400 font-light leading-relaxed mb-6">
+
+                    Buyers hesitate because they cannot mentally connect
+                    the model image with their own body, face, and proportions.
+
+                </p>
+
+                <p class="text-white italic font-bold">
+
+                    Fashion is emotional.
+                    Confidence drives conversion.
+
+                </p>
+
+            </div>
+
         </div>
+
     </section>
+
+    <!-- SOLUTION -->
 
     <section class="py-32 px-6 max-w-5xl mx-auto text-center">
-        <h2 class="text-green-500 uppercase text-[10px] tracking-[0.6em] mb-4 font-bold">The Solution</h2>
-        <h3 class="lux-font text-4xl md:text-7xl italic mb-12">The "See It On Me" Cure.</h3>
-        
+
+        <h2 class="text-green-500 uppercase text-[10px] tracking-[0.6em] mb-4 font-bold">
+            THE SOLUTION
+        </h2>
+
+        <h3 class="lux-font text-4xl md:text-7xl italic mb-12">
+            The “See It On Me” Experience.
+        </h3>
+
         <div class="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-10 mb-20">
+
             <div class="p-8 bg-white/[0.03] border border-white/5 rounded-3xl">
-                <p class="text-4xl font-bold text-green-500 mb-2">94%</p>
-                <p class="text-[10px] uppercase tracking-widest text-gray-500">Engagement Hike</p>
+
+                <p class="text-4xl font-bold text-green-500 mb-2">
+                    94%
+                </p>
+
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">
+                    Higher Engagement
+                </p>
+
+                <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+                    Buyers spend more time interacting with products using virtual try-on experiences.
+                </p>
+
             </div>
+
             <div class="p-8 bg-white/[0.03] border border-white/5 rounded-3xl">
-                <p class="text-4xl font-bold text-green-500 mb-2">60%</p>
-                <p class="text-[10px] uppercase tracking-widest text-gray-500">Fewer Returns</p>
+
+                <p class="text-4xl font-bold text-green-500 mb-2">
+                    40%
+                </p>
+
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">
+                    Lower Returns
+                </p>
+
+                <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+                    Visual confidence helps reduce fitting-related return behavior.
+                </p>
+
             </div>
+
             <div class="p-8 bg-white/[0.03] border border-white/5 rounded-3xl">
-                <p class="text-4xl font-bold text-green-500 mb-2">₹0</p>
-                <p class="text-[10px] uppercase tracking-widest text-gray-500">Model Fees</p>
+
+                <p class="text-4xl font-bold text-green-500 mb-2">
+                    60%
+                </p>
+
+                <p class="text-[10px] uppercase tracking-widest text-gray-500">
+                    Longer Site Retention
+                </p>
+
+                <p class="text-xs text-gray-600 mt-3 leading-relaxed">
+                    Interactive try-on experiences increase browsing duration and product interaction.
+                </p>
+
             </div>
+
         </div>
+
     </section>
+
+    <!-- SOURCES -->
 
     <section class="py-24 px-6 max-w-6xl mx-auto border-t border-white/5">
-        <h4 class="text-center text-[10px] uppercase tracking-[0.5em] text-gray-600 mb-12 font-bold italic">Global Industry Research</h4>
+
+        <h4 class="text-center text-[10px] uppercase tracking-[0.5em] text-gray-600 mb-12 font-bold italic">
+            Global Industry Research
+        </h4>
+
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            <a href="https://nrf.com/research/2025-retail-returns-landscape" target="_blank" class="source-link">NRF: 2025 Landscape ↗</a>
-            <a href="https://www.sayonetech.com/blog/ai-virtual-try-on-cut-returns-ecommerce/" target="_blank" class="source-link">Sayone: Cut Returns ↗</a>
-            <a href="https://seeonme.ai/news/how-roi-looks-like-for-businesses-implementing-vton" target="_blank" class="source-link">SeeOnMe: ROI Analysis ↗</a>
-            <a href="https://auglio.com/en/news/article/80-the-psychology-behind-virtual-try-on-why-customers-are-more-likely-to-buy" target="_blank" class="source-link">Auglio: Buyer Psychology ↗</a>
+
+            <a href="https://nrf.com/research/2025-retail-returns-landscape"
+                target="_blank"
+                class="source-link">
+                NRF: 2025 Landscape ↗️
+            </a>
+
+            <a href="https://www.sayonetech.com/blog/ai-virtual-try-on-cut-returns-ecommerce/"
+                target="_blank"
+                class="source-link">
+                Sayone: Cut Returns ↗️
+            </a>
+
+            <a href="https://seeonme.ai/news/how-roi-looks-like-for-businesses-implementing-vton"
+                target="_blank"
+                class="source-link">
+                SeeOnMe: ROI Analysis ↗️
+            </a>
+
+            <a href="https://auglio.com/en/news/article/80-the-psychology-behind-virtual-try-on-why-customers-are-more-likely-to-buy"
+                target="_blank"
+                class="source-link">
+                Auglio: Buyer Psychology ↗️
+            </a>
+
         </div>
+
     </section>
+
+    <!-- CTA -->
 
     <section class="py-40 bg-black text-center px-4">
-        <h2 class="lux-font text-4xl md:text-7xl italic mb-12">2 Problems. 1 Solution.</h2>
-        <p class="text-gray-500 text-[10px] tracking-[0.4em] uppercase mb-12">Ready to transform your boutique profit?</p>
-        <a href="pricing.html" class="btn-reverse">GET STARTED</a>
+
+        <h2 class="lux-font text-4xl md:text-7xl italic mb-12">
+            Confidence Converts.
+        </h2>
+
+        <p class="text-gray-500 text-[10px] tracking-[0.4em] uppercase mb-12">
+            Reduce uncertainty. Increase retention.
+        </p>
+
+        <a href="pricing.html" class="btn-reverse">
+            GET STARTED
+        </a>
+
     </section>
 
+    <!-- SOCIAL -->
+
+    <div class="flex justify-center gap-8 pb-8 text-xl text-gray-500">
+
+        <a href="https://www.linkedin.com/in/nikhil-joshi-969453288"
+            target="_blank"
+            class="hover:text-[#c5a059] transition-all duration-300">
+
+            <i class="fab fa-linkedin"></i>
+
+        </a>
+
+        <a href="https://www.instagram.com/aifittinglabs"
+            target="_blank"
+            class="hover:text-[#c5a059] transition-all duration-300">
+
+            <i class="fab fa-instagram"></i>
+
+        </a>
+
+        <a href="mailto:nikhil@aifittinglabs.store"
+            class="hover:text-[#c5a059] transition-all duration-300">
+
+            <i class="fas fa-envelope"></i>
+
+        </a>
+
+    </div>
+
+    <!-- FOOTER -->
+
     <footer class="py-10 text-center border-t border-white/5">
-        <p class="text-[8px] uppercase tracking-widest text-gray-600">AI Fitting Labs | nikhil@aifittinglabs.store</p>
+
+        <p class="text-[8px] uppercase tracking-widest text-gray-600">
+            AI FITTING LABS | nikhil@aifittinglabs.store
+        </p>
+
     </footer>
 
+    <!-- NAVBAR SCRIPT -->
+
+    <script>
+
+        let lastScroll = 0;
+
+        const navbar = document.getElementById('navbar');
+
+        window.addEventListener('scroll', () => {
+
+            const currentScroll = window.pageYOffset;
+
+            if (currentScroll <= 0) {
+
+                navbar.style.transform = 'translateY(0)';
+                return;
+
+            }
+
+            if (currentScroll > lastScroll) {
+
+                navbar.style.transform = 'translateY(-100%)';
+
+            } else {
+
+                navbar.style.transform = 'translateY(0)';
+
+            }
+
+            lastScroll = currentScroll;
+
+        });
+
+    </script>
+
 </body>
+
 </html>
